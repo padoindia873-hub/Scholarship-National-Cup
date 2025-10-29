@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  overflow: auto;
+  height: 100%;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;  
+}
+
+img{
+  width: 50%;
+  height: 400px;
+}
+
+.left-btn, .right-btn{
+  position: absolute;
+  top:30%;
+}
+
+.left-btn{
+  left: 5px;
+}
+
+.right-btn{
+  right: 5px;
+}
+
+button{
+  background-color: orangered;
+  color: white;
+  font-size: 23px;
+  border: none;
+  padding: 3px;
+  cursor: pointer;
+}
+
+h3{
+  /* margin-left:680px; */
+  /* font-size: larger; */
+}
