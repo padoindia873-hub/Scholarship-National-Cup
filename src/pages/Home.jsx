@@ -12,23 +12,23 @@ import ScholarshipCupFlow from '../components/common/ScholarshipCupFlow'
 
 import ImageSliding from '../components/common/ImageSliding'
 import ImageSlidingAsset from '../components/common/ImageSlidingAsset'
+import PrizeListCompetitionExam from "../components/common/prizeListCompetitionExam";
 
 import VideoPlayer from '../components/common/VideoPlayer'
-
 const Home = () => {
   return (
     <div>
         <>
         <Hero/>
-        
+          <PrizeListCompetitionExam/>
         <ImageSlidingAsset/>
         <VideoPlayer/>
         {/* <ImageSliding/> */}
          {/* <ImageSliding/> */}
-        <FacilitiesText/>
+        {/* <FacilitiesText/> */}
         
-        <Facilities/>
-        <ClassSelection/>
+        {/* <Facilities/> */}
+        {/* <ClassSelection/> */}
         <ScholarshipCupFlow/>
         <EducationOverview/>
         <PrizeList/>

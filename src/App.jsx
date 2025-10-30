@@ -15,6 +15,8 @@ import ContactUs from "./pages/ContactUs";
 import PrizeList from "./components/prizes/PrizeList";
 import VideoSliding from "./pages/VideoSliding";
 import TopCandidateList from "./pages/TopCandidateList";
+import GetMemberShipCard from "./pages/GetMemberShipCard";
+
 import EliteMentorship from "./pages/EliteMentorship";
 import ExclusiveScholarships from "./pages/ExclusiveScholarships";
 import OneByOneCoaching from "./pages/OneByOneCoaching";
@@ -26,7 +28,6 @@ import FreeOnlineITClasses from "./pages/FreeOnlineITClasses";
 import FreeCareerCounseling from "./pages/FreeCareerCounseling";
 import LegalSupport from "./pages/LegalSupport";
 import MotivationalAndInspiringClasses from "./pages/MotivationalAndInspiringClasses";
-
 
 
 
@@ -81,7 +82,10 @@ const AppContent = () => {
           <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
           <Route path="/dashboard" element={<ProtectedRoute><UserDashboard /></ProtectedRoute>} />
           <Route path="/videosliding" element={<VideoSliding />} />
+          {/* <Route path="/PrizeListCompetitionExam" element={<PrizeListCompetitionExam />} /> */}
 
+
+          <Route path="/GetMemberShipCard" element={<GetMemberShipCard />} />
 
           <Route path="/topcandidatelist" element={<TopCandidateList />} />
           <Route path="/elitementorship" element={<EliteMentorship />} />
