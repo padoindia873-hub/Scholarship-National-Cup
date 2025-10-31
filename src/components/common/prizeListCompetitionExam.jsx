@@ -51,21 +51,21 @@ export default function PrizeListCompetitionExam({ prizes }) {
     <section className="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
       {/* Header */}
       <header className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-3 mb-6 text-center sm:text-left">
-        <div>
+        {/* <div>
           <h2 className="text-lg sm:text-2xl md:text-3xl font-extrabold text-yellow-400">
             Prize List — Competition
           </h2>
           <p className="text-xs sm:text-sm text-blue-200/80">
             Prize breakdown for the competition. Tap any card for details.
           </p>
-        </div>
+        </div> */}
 
         {/* Always visible on all screen sizes */}
         <Link
           to="/prize-list"
-          className="w-full sm:w-auto px-4 py-2 bg-blue-600 text-white text-sm sm:text-base rounded-2xl shadow-md hover:bg-blue-700 hover:scale-105 transition-transform"
+          className="w-full sm:w-auto px-4 py-2 bg-blue-600 text-white text-[50px] font-bold rounded-2xl shadow-md hover:bg-blue-700 hover:scale-105 transition-transform text-center"
         >
-          View Prize List
+          Level Wish Prize List
         </Link>
       </header>
 
