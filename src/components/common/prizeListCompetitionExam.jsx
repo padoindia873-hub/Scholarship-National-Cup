@@ -22,7 +22,7 @@ export default function PrizeListCompetitionExam({ prizes }) {
   return (
     <section className="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
       {/* Header */}
-      <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6 text-center sm:text-left">
+      <header className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-3 mb-6 text-center sm:text-left">
         <div>
           <h2 className="text-lg sm:text-2xl md:text-3xl font-extrabold text-yellow-400">
             Prize List — Competition
@@ -32,9 +32,10 @@ export default function PrizeListCompetitionExam({ prizes }) {
           </p>
         </div>
 
+        {/* ✅ Always visible on all screen sizes */}
         <Link
           to="/prize-list"
-          className="px-4 py-2 bg-yellow-400 text-blue-900 text-sm sm:text-base rounded-2xl shadow-md hover:scale-105 transition-transform"
+          className="w-full sm:w-auto px-4 py-2 bg-yellow-400 text-blue-900 text-sm sm:text-base rounded-2xl shadow-md hover:scale-105 transition-transform"
         >
           View Full List
         </Link>
