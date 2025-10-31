@@ -6,88 +6,62 @@ import cupImage from "../../assets/cups.png";
 const Hero = () => {
   return (
     <div
-      className="relative h-[165vh] bg-no-repeat bg-cover bg-center"
+      className="relative min-h-screen sm:h-[120vh] md:h-[140vh] lg:h-[160vh] bg-no-repeat bg-cover bg-center"
       style={{
         backgroundImage: `url(${heroImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
       }}
     >
-      {/* Dark overlay */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center">
-        <div className="text-center px-6 md:px-12 lg:px-20 max-w-4xl mx-auto">
-          {/* Main Heading */}
-          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-green-300 leading-relaxed mb-4">
+        <div className="text-center px-4 sm:px-6 md:px-12 lg:px-20 max-w-5xl mx-auto">
+          {/* Headings */}
+          <h1 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold text-green-300 mb-2 sm:mb-3">
             PADHO INDIA PRESENTS
           </h1>
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-yellow-300 leading-relaxed mb-4 text-center whitespace-nowrap">
+          <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-yellow-300 mb-4 leading-tight">
             NATIONAL SCHOLARSHIP CUP
           </h1>
-          {/* Updated Description */}
-          <p className="text-gray-300 text-sm md:text-lg lg:text-xl mb-4 leading-relaxed font-medium">
+
+          {/* Description */}
+          <p className="text-gray-300 text-xs sm:text-sm md:text-lg lg:text-xl mb-6 leading-relaxed font-medium">
             159 Candidates Will Become{" "}
             <span className="text-yellow-400 font-semibold">Crorepatis</span>.
-            <br />
+            <br className="hidden sm:block" />
             Over 2 Lakh Students will get{" "}
-            <span className="text-blue-400 font-semibold">Scholarship</span>...
-            <br />
-            And Millions of Students will make career by{" "}
-            <span className="text-green-400 font-semibold">Higher study</span>.
+            <span className="text-blue-400 font-semibold">Scholarships</span>...
+            <br className="hidden sm:block" />
+            And Millions will build their careers through{" "}
+            <span className="text-green-400 font-semibold">Higher Studies</span>.
           </p>
 
-          {/* Cup Image and Text */}
-          <div className="mb-6 flex flex-col items-center">
+          {/* Cup Image + Text */}
+          <div className="flex flex-col items-center mb-6">
             <img
               src={cupImage}
               alt="Cup"
-              className="w-[200px] h-auto object-contain mb-2"
+              className="w-32 sm:w-40 md:w-48 lg:w-56 h-auto mb-4"
             />
-            {/* <span className="text-white px-6 py-2 font-bold text-lg animate-blinkBg">
-              Scholarship Cup
-            </span> */}
-            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-green-300 leading-relaxed mb-4">
-              1Kg Pure gold trophy
+            <h1 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold text-green-300 mb-6">
+              1Kg Pure Gold Trophy
             </h1>
-            <Link
-              to="/register"
-              className="mt-4 mb-8 inline-block text-black text-[60px] font-semibold px-6 py-3 shadow-lg transition duration-300 animate-blinkYellow"
-            >
-              Registration Now Open
-            </Link>
-             <Link
-              to="/GetMemberShipCard"
-              className="mt-4 mb-8 inline-block text-black text-[60px] font-semibold px-6 py-3 shadow-lg transition duration-300 animate-blinkBlue"
-            >
-              Get Competition Exam
-            </Link>
+
+            {/* Call to Action Buttons */}
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
+              <Link
+                to="/register"
+                className="text-black bg-yellow-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkYellow w-[80%] sm:w-auto text-center"
+              >
+                Registration Now Open
+              </Link>
+
+              <Link
+                to="/GetMemberShipCard"
+                className="text-black bg-blue-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkBlue w-[80%] sm:w-auto text-center"
+              >
+                Get Competition Exam
+              </Link>
+            </div>
           </div>
-          {/*  */}
-
-          {/* Buttons */}
-            {/* <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-              <Link to="/prize-list" className="w-full sm:w-auto">
-                <button className="min-w-[20rem] text-black text-xs md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkYellow hover:scale-105 transition-transform duration-300">
-                  Prize List
-                </button>
-              </Link>
-
-              <Link to="/register" className="w-full sm:w-auto">
-                <button className="min-w-[20rem] text-white text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkBlue hover:scale-105 transition-transform duration-300">
-                  Competitor Registration
-                </button>
-              </Link>
-            </div> */}
-          {/* <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-            <Link to="/register" className="w-full sm:w-auto">
-              <button className="min-w-[20rem] text-white text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkBlue hover:scale-105 transition-transform duration-300">
-                Competition System
-              </button>
-            </Link>
-
-            <button className="min-w-[20rem] text-black text-sm md:text-base px-6 py-3 rounded-md font-semibold shadow-lg animate-blinkYellow hover:scale-105 transition-transform duration-300">
-              Level Details
-            </button>
-          </div> */}
         </div>
       </div>
     </div>
