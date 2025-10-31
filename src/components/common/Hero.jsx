@@ -16,7 +16,7 @@ const Hero = () => {
         <div className="text-center px-4 sm:px-6 md:px-12 lg:px-20 max-w-5xl mx-auto">
           {/* Headings */}
           <h1 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold text-green-300 mb-2 sm:mb-3">
-            PADHO INDIA PRESENTS
+            PADHO HINDUSTAN PRESENTS
           </h1>
           <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-yellow-300 mb-4 leading-tight">
             NATIONAL SCHOLARSHIP CUP

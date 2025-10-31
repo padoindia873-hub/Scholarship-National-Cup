@@ -20,9 +20,9 @@ const Home = () => {
     <div>
         <>
         <Hero/>
-          <PrizeListCompetitionExam/>
-        <ImageSlidingAsset/>
         <VideoPlayer/>
+        <ImageSlidingAsset/>
+        <PrizeListCompetitionExam/>
         {/* <ImageSliding/> */}
          {/* <ImageSliding/> */}
         {/* <FacilitiesText/> */}
@@ -30,11 +30,11 @@ const Home = () => {
         {/* <Facilities/> */}
         {/* <ClassSelection/> */}
         <ScholarshipCupFlow/>
-        <EducationOverview/>
+        {/* <EducationOverview/> */}
         <PrizeList/>
         <Syllabus/>
         <ScholarshipHighlights/>
-        <ImageGallery/>
+        {/* <ImageGallery/> */}
         
         </>
     </div>

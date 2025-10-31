@@ -58,7 +58,7 @@ const Syllabus = () => {
   return (
     <div className="p-4 sm:p-6 md:p-10 bg-gray-50 min-h-screen">
       <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-2 capitalize leading-snug">
-        Padho India National Cup Competition Subjects
+        Padho Hindustan National Cup Competition Subjects
       </h2>
 
       <p className="text-center text-sm sm:text-base text-gray-600 mb-10 italic">

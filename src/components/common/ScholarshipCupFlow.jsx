@@ -54,21 +54,27 @@ const ScholarshipCupFlow = () => {
             </div>
             <div className="w-0.5 h-10 bg-gray-400 my-1" />
              <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             For Qualifying Exam & get Membership Card
+             For Qualifying Exam & get Membership Card 
             </div>
               <div className="w-0.5 h-10 bg-gray-400 my-1" />
            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             Qualify Exam
+             Qualify Exam (Online)
             </div>
              <div className="w-0.5 h-10 bg-gray-400 my-1" />
            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             School & College Level
+             School & College Level (Online)
             </div>
             <div className="w-0.5 h-10 bg-gray-400 my-1" />
 
             <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             Block Level
+             Block Level (Online)
             </div>
+                        <div className="w-0.5 h-10 bg-gray-400 my-1" />
+
+            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+             State Level (Offline)
+            </div>
+
             <div className="w-0.5 h-10 bg-gray-400 my-1" />
            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
              District or State Level (Offline)
@@ -103,16 +109,21 @@ const ScholarshipCupFlow = () => {
             </div>
              <div className="w-0.5 h-10 bg-gray-400 my-1" />
            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             Qualify Exam
+             Qualify Exam (Online)
             </div>
              <div className="w-0.5 h-10 bg-gray-400 my-1" />
            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             School & College Level
+             School & College Level (Online)
             </div>
              <div className="w-0.5 h-10 bg-gray-400 my-1" />
 
             <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             Block Level
+             Block Level (Online)
+            </div> 
+                    <div className="w-0.5 h-10 bg-gray-400 my-1" />
+
+            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+             State Level (Offline)
             </div>
             <div className="w-0.5 h-10 bg-gray-400 my-1" />
            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
@@ -150,16 +161,21 @@ const ScholarshipCupFlow = () => {
             </div>
              <div className="w-0.5 h-10 bg-gray-400 my-1" />
            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             Qualify Exam
+             Qualify Exam (Online)
             </div>
              <div className="w-0.5 h-10 bg-gray-400 my-1" />
            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             School & College Level
+             School & College Level (Online)
             </div>
              <div className="w-0.5 h-10 bg-gray-400 my-1" />
 
             <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             Block Level
+             Block Level (Online)
+            </div>
+                    <div className="w-0.5 h-10 bg-gray-400 my-1" />
+
+            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+             State Level (Offline)
             </div>
             <div className="w-0.5 h-10 bg-gray-400 my-1" />
            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">

@@ -32,7 +32,7 @@ const { Panel } = Collapse
 
 const prizeData = [
   {
-    level: 'School and College Level',
+    level: 'School and College Level (Online)',
     winner: '1st Winner will get Rs. 10000',
      winnerone: '2nd to 11th Rannkers will get Rs. 5000',
     diamondCard: {
@@ -49,7 +49,7 @@ const prizeData = [
       images: [schoolImg1],
   },
   {
-    level: 'Block Level',
+    level: 'Block Level (Online)',
     prizes: [
       '1st Winner: Rs. 1,00,000/- Scholarship',
       'Consolation: 10th Top Winner Rs. 25,000/- Scholarship (Each)',
@@ -58,7 +58,7 @@ const prizeData = [
     images: [blockImg1],
   },
   {
-    level: 'District Level',
+    level: 'District Level (Offline)',
     prizes: [
       '**** 1st 46 Rankers will get ****',
       '50 Lakhs Cash',
@@ -76,6 +76,65 @@ const prizeData = [
     ],
     images: [districtImg1, districtImg2, districtImg3, districtImg4, districtImg5, districtImg6],
   },
+  {
+    level: 'State Level (Offline)',
+    rounds: [
+      '1st Round: 500 Losers get 1 Crore cash (Higher Study)',
+      '2nd Round: 40 Losers get 2 Crore + 3 BHK Flat',
+      'Final Round: 9 Losers get 4 Crore + 4 BHK Flat + Mercedes Benz',
+    ],
+    winners: [
+      {
+        title: '1st Prize',
+        rewards: [
+          '1 Kg Gold Trophy',
+          '10 Crore Cash',
+          'Jaguar Car',
+          '5 BHK Flat',
+          'Foreign Tour (4 people, 10 days)',
+        ],
+      },
+      {
+        title: '2nd Prize',
+        rewards: [
+          '500 gm Gold Trophy',
+          '8 Crore Cash',
+          'Jaguar Car',
+          '5 BHK Flat',
+          'Foreign Tour (4 people, 10 days)',
+        ],
+      },
+      {
+        title: '3rd Prize',
+        rewards: [
+          '250 gm Gold Trophy',
+          '6 Crore Cash',
+          'Jaguar Car',
+          '5 BHK Flat',
+          'Foreign Tour (4 people, 10 days)',
+        ],
+      },
+      {
+        title: '4th to 92nd Rankers wiil get',
+        rewards: [
+          
+          '3 Crore Cash',
+          'Fortuner Car',
+          
+        ],
+      },
+      {
+        title: '93rd to remaining all competitors wiil get',
+        rewards: [
+          
+          '50 Lakhs Cash',
+          'Maruti Brezza Car',
+          
+        ],
+      },
+    ],
+    images: [finalImg1, finalImg2, finalImg3, finalImg4],
+  },
   // {
   //   level: 'State Level',
   //   prizes: [
@@ -87,7 +146,7 @@ const prizeData = [
   //   images: [stateImg1, stateImg2, stateImg3],
   // },
   {
-    level: 'Final Level (National Level)',
+    level: 'Final Level (National Level) (offline) ',
     rounds: [
       '1st Round: 500 Losers get 1 Crore cash (Higher Study)',
       '2nd Round: 40 Losers get 2 Crore + 3 BHK Flat',
@@ -151,7 +210,7 @@ const PrizeList = () => {
   return (
     <div className="p-5 md:p-8 bg-gray-50">
       <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center mb-2 text-gray-800">
-        Padho India National Cup
+        Padho Hindustan National Cup
       </h2>
       <p className="text-center text-sm sm:text-base text-gray-600 mb-10 italic">
         <span className="font-semibold text-yellow-600">Unleash Your Potential</span>, Rise Through Every <span className="font-semibold text-yellow-600">Level</span>!

@@ -34,7 +34,7 @@ const Gallery = () => {
   return (
     <div className="p-4 sm:p-6 md:p-10 bg-gray-50 min-h-screen">
       <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-4">
-        Padho India Exam Preparation Gallery
+        Padho Hindustan Exam Preparation Gallery
       </h2>
 
       <p className="text-center text-gray-600 italic font-medium mb-8">
