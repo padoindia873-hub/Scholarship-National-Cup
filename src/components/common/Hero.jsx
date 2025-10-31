@@ -31,7 +31,8 @@ const Hero = () => {
             <span className="text-blue-400 font-semibold">Scholarships</span>...
             <br className="hidden sm:block" />
             And Millions will build their careers through{" "}
-            <span className="text-green-400 font-semibold">Higher Studies</span>.
+            <span className="text-green-400 font-semibold">Higher Studies</span>
+            .
           </p>
 
           {/* Cup Image + Text */}
@@ -59,6 +60,21 @@ const Hero = () => {
                 className="text-black bg-blue-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkBlue w-[80%] sm:w-auto text-center"
               >
                 Get Competition Exam
+              </Link>
+            </div>
+            <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
+              <Link
+                to="/register"
+                className="text-black bg-yellow-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkYellow w-full sm:w-[310px] text-center"
+              >
+                Computer System
+              </Link>
+
+              <Link
+                to="/GetMemberShipCard"
+                className="text-black bg-blue-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkBlue w-full sm:w-[310px] text-center"
+              >
+                All Prize List
               </Link>
             </div>
           </div>

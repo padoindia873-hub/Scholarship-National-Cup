@@ -60,7 +60,7 @@ export default function PrizeListCompetitionExam({ prizes }) {
           </p>
         </div>
 
-        {/* ✅ Always visible on all screen sizes */}
+        {/* Always visible on all screen sizes */}
         <Link
           to="/prize-list"
           className="w-full sm:w-auto px-4 py-2 bg-blue-600 text-white text-sm sm:text-base rounded-2xl shadow-md hover:bg-blue-700 hover:scale-105 transition-transform"
