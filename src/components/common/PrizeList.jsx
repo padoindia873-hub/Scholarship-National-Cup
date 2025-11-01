@@ -27,113 +27,108 @@ import finalImg1 from '../../assets/final1.jpg'
 import finalImg2 from '../../assets/final2.jpg'
 import finalImg3 from '../../assets/final3.jpg'
 import finalImg4 from '../../assets/final4.jpg'
+import ruppes from '../../assets/wp4.jpg'
+import cupImage from "../../assets/cups.png";
 
 const { Panel } = Collapse
 
 const prizeData = [
   {
     level: 'School and College Level (Online)',
-    winner: '1st Winner will get Rs. 10000',
-     winnerone: '2nd to 11th Rannkers will get Rs. 5000',
-    diamondCard: {
-      title: 'Diamond Card Facilities (Top 11)',
-      facilities: [
-        'Free Online IT Training',
-        'Free Legal Support in High Court',
-        'Higher Study Chances',
-        'Free Career Counselling classes',
-        'Extra Personality Buildup Motivation Classes',
-      ],
-    },
+    winner: '1st Winner will get Rs. 5000',
+     winnerone: '',
+    // diamondCard: {
+    //   title: 'Diamond Card Facilities (Top 11)',
+    //   facilities: [
+    //     'Free Online IT Training',
+    //     'Free Legal Support in High Court',
+    //     'Higher Study Chances',
+    //     'Free Career Counselling classes',
+    //     'Extra Personality Buildup Motivation Classes',
+    //   ],
+    // },
     // images: [schoolImg1, schoolImg2, schoolImg3, schoolImg4, schoolImg5, schoolImg6],
       images: [schoolImg1],
   },
   {
     level: 'Block Level (Online)',
     prizes: [
-      '1st Winner: Rs. 1,00,000/- Scholarship',
-      'Consolation: 10th Top Winner Rs. 25,000/- Scholarship (Each)',
-       'Consolation: 12th to 92th  Ranker  Rs. 10,000/- Scholarship (Each)',
+      '1st Winner: Rs. 50000/- Scholarship',
+      'Consolation: 2nd Rank to 13th Top Rankers Will Get 10,000/- Rupees Each and Every One',
+       '',
     ],
     images: [blockImg1],
   },
   {
     level: 'District Level (Offline)',
     prizes: [
-      '**** 1st 46 Rankers will get ****',
-      '50 Lakhs Cash',
-       '3BHK Flat',
-      '50gm Gold Medal',
-      'Hyundai Exter Car',
-      // '6th to 11th: Android Phone (Total 7)',
-       '**** Remaining all Competitors will get ****',
-       '70 Lakhs Cash ',
-       '2BHK Flat ',
-       '10gm Gold Medal ',
-       'Hyundai Exter Car'
-
-     
+      '1st Prize >  5,00,000/- + BMW Bike',
+      '2ed Prize >  3,00,000/- + KTM Bike',
+      '3rd Prize > 2,00,000/- + Pulsar Bike',
+      'Consolation Prize > 1,00,000/- + Scooty All Remaining Candidates ',     
     ],
-    images: [districtImg1, districtImg2, districtImg3, districtImg4, districtImg5, districtImg6],
+    images: [districtImg1, districtImg2, districtImg3, districtImg5],
   },
   {
     level: 'State Level (Offline)',
+        TopWinners :"",
+
     rounds: [
-      '1st Round: 500 Losers get 1 Crore cash (Higher Study)',
-      '2nd Round: 40 Losers get 2 Crore + 3 BHK Flat',
+      'Top 8 Ranker Will Get 50,00,000/- + 50 GM Pure Gold Medal',
+      'Consolation Prize > Remaining All Candidates Will Get 10,00,000/- Rupees Each And Every One',
       'Final Round: 9 Losers get 4 Crore + 4 BHK Flat + Mercedes Benz',
     ],
     winners: [
-      {
-        title: '1st Prize',
-        rewards: [
-          '1 Kg Gold Trophy',
-          '10 Crore Cash',
-          'Jaguar Car',
-          '5 BHK Flat',
-          'Foreign Tour (4 people, 10 days)',
-        ],
-      },
-      {
-        title: '2nd Prize',
-        rewards: [
-          '500 gm Gold Trophy',
-          '8 Crore Cash',
-          'Jaguar Car',
-          '5 BHK Flat',
-          'Foreign Tour (4 people, 10 days)',
-        ],
-      },
-      {
-        title: '3rd Prize',
-        rewards: [
-          '250 gm Gold Trophy',
-          '6 Crore Cash',
-          'Jaguar Car',
-          '5 BHK Flat',
-          'Foreign Tour (4 people, 10 days)',
-        ],
-      },
-      {
-        title: '4th to 92nd Rankers wiil get',
-        rewards: [
+      // {
+      //   title: '1st Prize',
+      //   rewards: [
+      //     '1 Kg Gold Trophy',
+      //     '10 Crore Cash',
+      //     'Jaguar Car',
+      //     '5 BHK Flat',
+      //     'Foreign Tour (4 people, 10 days)',
+      //   ],
+      // },
+      // {
+      //   title: '2nd Prize',
+      //   rewards: [
+      //     '500 gm Gold Trophy',
+      //     '8 Crore Cash',
+      //     'Jaguar Car',
+      //     '5 BHK Flat',
+      //     'Foreign Tour (4 people, 10 days)',
+      //   ],
+      // },
+      // {
+      //   title: '3rd Prize',
+      //   rewards: [
+      //     '250 gm Gold Trophy',
+      //     '6 Crore Cash',
+      //     'Jaguar Car',
+      //     '5 BHK Flat',
+      //     'Foreign Tour (4 people, 10 days)',
+      //   ],
+      // },
+      // {
+      //   title: '4th to 92nd Rankers wiil get',
+      //   rewards: [
           
-          '3 Crore Cash',
-          'Fortuner Car',
+      //     '3 Crore Cash',
+      //     'Fortuner Car',
           
-        ],
-      },
-      {
-        title: '93rd to remaining all competitors wiil get',
-        rewards: [
+      //   ],
+      // },
+      // {
+      //   title: '93rd to remaining all competitors wiil get',
+      //   rewards: [
           
-          '50 Lakhs Cash',
-          'Maruti Brezza Car',
+      //     '50 Lakhs Cash',
+      //     'Maruti Brezza Car',
           
-        ],
-      },
+      //   ],
+      // },
     ],
-    images: [finalImg1, finalImg2, finalImg3, finalImg4],
+    images: [ruppes, finalImg2, ],
   },
   // {
   //   level: 'State Level',
@@ -147,6 +142,7 @@ const prizeData = [
   // },
   {
     level: 'Final Level (National Level) (offline) ',
+    TopWinners :"Top Winners",
     rounds: [
       '1st Round: 500 Losers get 1 Crore cash (Higher Study)',
       '2nd Round: 40 Losers get 2 Crore + 3 BHK Flat',
@@ -157,52 +153,54 @@ const prizeData = [
         title: '1st Prize',
         rewards: [
           '1 Kg Gold Trophy',
-          '10 Crore Cash',
+          '5 Crore Cash',
           'Jaguar Car',
           '5 BHK Flat',
-          'Foreign Tour (4 people, 10 days)',
+          'Scholarship For Abroad Study',
         ],
       },
       {
         title: '2nd Prize',
         rewards: [
           '500 gm Gold Trophy',
-          '8 Crore Cash',
+          '3 Crore Cash',
           'Jaguar Car',
           '5 BHK Flat',
-          'Foreign Tour (4 people, 10 days)',
+          'Scholarship For Abroad Study',
         ],
       },
       {
         title: '3rd Prize',
         rewards: [
           '250 gm Gold Trophy',
-          '6 Crore Cash',
+          '2 Crore Cash',
           'Jaguar Car',
           '5 BHK Flat',
-          'Foreign Tour (4 people, 10 days)',
+          'Scholarship For Abroad Study',
         ],
       },
       {
-        title: '4th to 92nd Rankers wiil get',
+        title: '4th to 48th Rankers Will Get',
         rewards: [
           
-          '3 Crore Cash',
+          '1,00,00,000/-  Cash',
+          '3 BHK Flat',
           'Fortuner Car',
           
         ],
       },
       {
-        title: '93rd to remaining all competitors wiil get',
+        title: 'Remaining 800th Rankers Will Get',
         rewards: [
           
-          '50 Lakhs Cash',
-          'Maruti Brezza Car',
+          '50,00,000/-  Cash',
+          '2 BHK Flat',
+          'Hyundai Exter Car',
           
         ],
       },
     ],
-    images: [finalImg1, finalImg2, finalImg3, finalImg4],
+    images: [cupImage, finalImg4,ruppes],
   },
 ]
 
@@ -290,7 +288,7 @@ const PrizeList = () => {
 
             {section.winners && (
               <>
-                <h4 className="text-lg font-semibold mt-4 text-yellow-800">Top Winners</h4>
+                <h4 className="text-lg font-semibold mt-4 text-yellow-800">{section.TopWinners}</h4>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
                   {section.winners.map((winner, idx) => (
                     <Card

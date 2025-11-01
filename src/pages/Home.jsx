@@ -21,8 +21,7 @@ const Home = () => {
         <>
         <Hero/>
         <VideoPlayer/>
-        <ImageSlidingAsset/>
-        <PrizeListCompetitionExam/>
+       
         {/* <ImageSliding/> */}
          {/* <ImageSliding/> */}
         {/* <FacilitiesText/> */}
@@ -32,6 +31,8 @@ const Home = () => {
         <ScholarshipCupFlow/>
         {/* <EducationOverview/> */}
         <PrizeList/>
+         <ImageSlidingAsset/>
+        <PrizeListCompetitionExam/>
         <Syllabus/>
         <ScholarshipHighlights/>
         {/* <ImageGallery/> */}
