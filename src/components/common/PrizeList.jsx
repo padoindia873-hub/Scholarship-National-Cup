@@ -76,7 +76,7 @@ const prizeData = [
     rounds: [
       'Top 8 Ranker Will Get 50,00,000/- + 50 GM Pure Gold Medal',
       'Consolation Prize > Remaining All Candidates Will Get 10,00,000/- Rupees Each And Every One',
-      'Final Round: 9 Losers get 4 Crore + 4 BHK Flat + Mercedes Benz',
+      // 'Final Round: 9 Losers get 4 Crore + 4 BHK Flat + Mercedes Benz',
     ],
     winners: [
       // {

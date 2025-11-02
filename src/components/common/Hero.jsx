@@ -56,7 +56,7 @@ const Hero = () => {
               </Link>
 
               <Link
-                to="/GetMemberShipCard"
+                to="/GetCompetitionExam"
                 className="text-black bg-blue-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkBlue w-[80%] sm:w-auto text-center"
               >
                 Get Competition Exam
@@ -64,7 +64,7 @@ const Hero = () => {
             </div>
             <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
               <Link
-                to="/register"
+                to="/GetMemberShipCard"
                 className="text-black bg-yellow-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkYellow w-full sm:w-[310px] text-center"
               >
                 Computer System

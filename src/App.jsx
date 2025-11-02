@@ -28,7 +28,7 @@ import FreeOnlineITClasses from "./pages/FreeOnlineITClasses";
 import FreeCareerCounseling from "./pages/FreeCareerCounseling";
 import LegalSupport from "./pages/LegalSupport";
 import MotivationalAndInspiringClasses from "./pages/MotivationalAndInspiringClasses";
-
+import GetCompetitionExam from "./pages/GetCompetitionExam"
 
 
 const Home = lazy(() => import("./pages/Home"));
@@ -85,6 +85,7 @@ const AppContent = () => {
           {/* <Route path="/PrizeListCompetitionExam" element={<PrizeListCompetitionExam />} /> */}
 
 
+          <Route path="/GetCompetitionExam" element={<GetCompetitionExam />} />
           <Route path="/GetMemberShipCard" element={<GetMemberShipCard />} />
 
           <Route path="/topcandidatelist" element={<TopCandidateList />} />
