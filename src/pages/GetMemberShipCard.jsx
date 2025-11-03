@@ -55,15 +55,15 @@ const GetMemberShipCard = () => {
       <img
         src={commingSoon}
         alt="Coming Soon"
-        className="w-full max-w-[400px] mb-6 drop-shadow-2xl rounded-xl"
+        className="w-full max-w-[300px] mb-6 drop-shadow-2xl rounded-lg"
       />
 
       {timeLeft.expired ? (
-        <span className="text-green-400 text-2xl md:text-3xl font-bold animate-pulse">
+        <span className="text-green-400 text-xl md:text-2xl font-bold animate-pulse">
           Live Now!
         </span>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6 mt-6 w-full max-w-6xl">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4 mt-4 w-full max-w-4xl">
           {[
             { label: "weeks", key: "weeks" },
             { label: "days", key: "days" },
@@ -73,12 +73,12 @@ const GetMemberShipCard = () => {
           ].map(({ label, key }) => (
             <div
               key={label}
-              className="bg-black/60 backdrop-blur-sm rounded-2xl border border-gray-700 shadow-md flex flex-col justify-center items-center p-4 sm:p-6"
+              className="bg-black/60 backdrop-blur-sm rounded-xl border border-gray-700 shadow-md flex flex-col justify-center items-center p-3 sm:p-4"
             >
-              <div className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white leading-none tracking-widest">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-none tracking-wider">
                 {timeLeft[key]}
               </div>
-              <div className="text-lg sm:text-xl md:text-2xl uppercase text-gray-300 font-semibold mt-2">
+              <div className="text-sm sm:text-base md:text-lg uppercase text-gray-300 font-medium mt-1">
                 {label}
               </div>
             </div>
