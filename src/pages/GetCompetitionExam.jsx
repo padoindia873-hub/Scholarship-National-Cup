@@ -6,16 +6,16 @@ const GetCompetitionExam = () => {
       {/* ===== SECTION 1: Learn to Code ===== */}
       <div className="relative flex flex-col items-center justify-center min-h-screen w-full bg-[#2b2f3a] text-white p-6">
         <div className="z-10">
-          <h1 className="text-4xl font-bold mb-3">Learn to Code</h1>
+          <h1 className="text-4xl font-bold mb-3">Scholarship National Cup </h1>
           <p className="text-yellow-400 mb-10 text-lg">
-            With the world's largest web developer site.
+          159 Crorepatis Will Become in a Competition  
           </p>
 
           {/* Search bar */}
           <div className="flex w-full max-w-md bg-white rounded-full overflow-hidden shadow-lg mb-8">
             <input
               type="text"
-              placeholder="Search our tutorials, e.g. HTML"
+              placeholder="Search our Account"
               className="flex-1 px-5 py-3 text-gray-700 focus:outline-none"
             />
             <button className="bg-green-500 hover:bg-green-600 px-5 flex items-center justify-center transition">
@@ -40,7 +40,7 @@ const GetCompetitionExam = () => {
             href="#"
             className="text-white font-semibold underline hover:text-yellow-400 transition"
           >
-            Not Sure Where To Begin?
+            World's Number One Competition
           </a>
         </div>
 
@@ -50,127 +50,168 @@ const GetCompetitionExam = () => {
 
       {/* ===== SECTION 2: HTML Section ===== */}
       <div className="flex flex-col items-center justify-center min-h-screen w-full bg-[#d8ede1] text-center p-6">
-        <h1 className="text-5xl font-extrabold text-black mb-4">HTML</h1>
+        <h1 className="text-5xl font-extrabold text-black mb-4">Qualifying Exam</h1>
         <p className="text-gray-800 text-lg mb-10">
-          The language for building web pages
+          Chance For School And Collage Level (Online)
         </p>
 
         <div className="flex flex-col gap-4 w-full max-w-xs">
           <button className="bg-green-500 text-white font-semibold py-3 rounded-full hover:bg-green-600 transition">
-            Learn HTML
+            Input Pin Number
           </button>
 
           <button className="bg-[#fff2a8] text-black font-semibold py-3 rounded-full hover:bg-[#ffe97a] transition">
-            Video Tutorial
+            Exam Date And Time
           </button>
 
           <button className="bg-[#2b2f3a] text-white font-semibold py-3 rounded-full hover:bg-[#3d424e] transition">
-            HTML Reference
+           Won Result
           </button>
 
           <button className="bg-[#fbc8c8] text-black font-semibold py-3 rounded-full hover:bg-[#ffb3b3] transition">
-            Get Certified
+            Group Result
           </button>
         </div>
       </div>
       {/* ===== SECTION 3: HTML Section ===== */}
       <div className="flex flex-col items-center justify-center min-h-screen w-full bg-[#ffe97a] text-center p-6">
-        <h1 className="text-5xl font-extrabold text-black mb-4">CSS</h1>
+        <h1 className="text-5xl font-extrabold text-black mb-4">School And Collage Level</h1>
         <p className="text-gray-800 text-lg mb-10">
-          The language for building web pages
+        Chance For Block Level (Online)
+
         </p>
 
+        
         <div className="flex flex-col gap-4 w-full max-w-xs">
           <button className="bg-green-500 text-white font-semibold py-3 rounded-full hover:bg-green-600 transition">
-            Learn HTML
+           All Prize List
           </button>
 
           <button className="bg-[#fff2a8] text-black font-semibold py-3 rounded-full hover:bg-[#ffe97a] transition">
-            Video Tutorial
+            Exam Date And Time
           </button>
 
           <button className="bg-[#2b2f3a] text-white font-semibold py-3 rounded-full hover:bg-[#3d424e] transition">
-            HTML Reference
+           Won Result
           </button>
 
           <button className="bg-[#fbc8c8] text-black font-semibold py-3 rounded-full hover:bg-[#ffb3b3] transition">
-            Get Certified
+            Group Result
+          </button>
+
+          <button className="bg-green-500 text-white font-semibold py-3 rounded-full hover:bg-green-600 transition">
+            Wining Prize Amount
+          </button>
+           <button className="bg-[#2b2f3a] text-white font-semibold py-3 rounded-full hover:bg-[#3d424e] transition">
+            Withdraw Amount
           </button>
         </div>
       </div>
        {/* ===== SECTION 4: HTML Section ===== */}
-      <div className="flex flex-col items-center justify-center min-h-screen w-full bg-[#3d424e] text-center p-6">
-        <h1 className="text-5xl font-extrabold text-black mb-4">Python</h1>
+      <div className="flex flex-col items-center justify-center min-h-screen w-full bg-[#C9FFB3FF] text-center p-6">
+        <h1 className="text-5xl font-extrabold text-black mb-4">Block Level</h1>
         <p className="text-gray-800 text-lg mb-10">
-          The language for building web pages
+          Chance For District Level (Online)
         </p>
 
-        <div className="flex flex-col gap-4 w-full max-w-xs">
+    <div className="flex flex-col gap-4 w-full max-w-xs">
           <button className="bg-green-500 text-white font-semibold py-3 rounded-full hover:bg-green-600 transition">
-            Learn HTML
+           All Prize List
           </button>
 
           <button className="bg-[#fff2a8] text-black font-semibold py-3 rounded-full hover:bg-[#ffe97a] transition">
-            Video Tutorial
+            Exam Date And Time
           </button>
 
           <button className="bg-[#2b2f3a] text-white font-semibold py-3 rounded-full hover:bg-[#3d424e] transition">
-            HTML Reference
+           Won Result
           </button>
 
           <button className="bg-[#fbc8c8] text-black font-semibold py-3 rounded-full hover:bg-[#ffb3b3] transition">
-            Get Certified
+            Group Result
+          </button>
+
+          <button className="bg-green-500 text-white font-semibold py-3 rounded-full hover:bg-green-600 transition">
+            Wining Prize Amount
+          </button>
+           <button className="bg-[#2b2f3a] text-white font-semibold py-3 rounded-full hover:bg-[#3d424e] transition">
+            Withdraw Amount
           </button>
         </div>
       </div>
        {/* ===== SECTION 5: HTML Section ===== */}
       <div className="flex flex-col items-center justify-center min-h-screen w-full bg-[#ffb3b3] text-center p-6">
-        <h1 className="text-5xl font-extrabold text-black mb-4">JavaScript</h1>
+        <h1 className="text-5xl font-extrabold text-black mb-4">District Level (Offline)</h1>
         <p className="text-gray-800 text-lg mb-10">
-          The language for building web pages
+         Chance For National Level
         </p>
-
-        <div className="flex flex-col gap-4 w-full max-w-xs">
+<div className="flex flex-col gap-4 w-full max-w-xs">
           <button className="bg-green-500 text-white font-semibold py-3 rounded-full hover:bg-green-600 transition">
-            Learn HTML
+           All Prize List
           </button>
 
           <button className="bg-[#fff2a8] text-black font-semibold py-3 rounded-full hover:bg-[#ffe97a] transition">
-            Video Tutorial
+            Exam Date And Time
           </button>
 
           <button className="bg-[#2b2f3a] text-white font-semibold py-3 rounded-full hover:bg-[#3d424e] transition">
-            HTML Reference
+           Won Result
           </button>
 
           <button className="bg-[#fbc8c8] text-black font-semibold py-3 rounded-full hover:bg-[#ffb3b3] transition">
-            Get Certified
+            Group Result
           </button>
+
+          <button className="bg-green-500 text-white font-semibold py-3 rounded-full hover:bg-green-600 transition">
+            Wining Prize Amount
+          </button>
+           <button className="bg-[#2b2f3a] text-white font-semibold py-3 rounded-full hover:bg-[#3d424e] transition">
+            Withdraw Amount
+          </button>
+           <button className="bg-Pink-500 text-white font-semibold py-3 rounded-full hover:bg-green-600 transition">
+           Exam Venue
+          </button>
+           <button className="bg-blue-500 text-white font-semibold py-3 rounded-full hover:bg-blue-600 transition">
+           Chief Guest List
+           </button>
         </div>
       </div>
         {/* ===== SECTION 6: HTML Section ===== */}
       <div className="flex flex-col items-center justify-center min-h-screen w-full bg-[#C9FFB3FF] text-center p-6">
-        <h1 className="text-5xl font-extrabold text-black mb-4">SQL</h1>
+        <h1 className="text-5xl font-extrabold text-black mb-4">National Level (Offline)</h1>
         <p className="text-gray-800 text-lg mb-10">
-          The language for building web pages
+          Chance For Scholarship Asia Cup 
         </p>
 
         <div className="flex flex-col gap-4 w-full max-w-xs">
-          <button className="bg-green-500 text-white font-semibold py-3 rounded-full hover:bg-green-600 transition">
-            Learn HTML
+            <button className="bg-green-500 text-white font-semibold py-3 rounded-full hover:bg-green-600 transition">
+           All Prize List
           </button>
 
           <button className="bg-[#fff2a8] text-black font-semibold py-3 rounded-full hover:bg-[#ffe97a] transition">
-            Video Tutorial
+            Exam Date And Time
           </button>
 
           <button className="bg-[#2b2f3a] text-white font-semibold py-3 rounded-full hover:bg-[#3d424e] transition">
-            HTML Reference
+           Won Result
           </button>
 
           <button className="bg-[#fbc8c8] text-black font-semibold py-3 rounded-full hover:bg-[#ffb3b3] transition">
-            Get Certified
+            Group Result
           </button>
+
+          <button className="bg-green-500 text-white font-semibold py-3 rounded-full hover:bg-green-600 transition">
+            Wining Prize Amount
+          </button>
+           <button className="bg-[#2b2f3a] text-white font-semibold py-3 rounded-full hover:bg-[#3d424e] transition">
+            Withdraw Amount
+          </button>
+           <button className="bg-Pink-500 text-white font-semibold py-3 rounded-full hover:bg-green-600 transition">
+           Exam Venue
+          </button>
+          <button className="bg-blue-500 text-white font-semibold py-3 rounded-full hover:bg-blue-600 transition">
+           Chief Guest List
+           </button>
         </div>
       </div>
 
@@ -179,69 +220,48 @@ const GetCompetitionExam = () => {
   <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-5xl">
     {/* Card 1: PHP */}
     <div className="bg-[#fbc8c8] rounded-lg shadow-lg text-center p-10">
-      <h1 className="text-4xl font-extrabold text-black mb-4">PHP</h1>
+      <h1 className="text-4xl font-extrabold text-black mb-4">Participate Schools List </h1>
       <p className="text-gray-800 text-lg mb-8">
-        A web server programming language
-      </p>
+       Chance Every State Schools And 50 Bengal Schools      </p>
       <button className="bg-[#2b2f3a] text-white font-semibold py-3 px-8 rounded-full hover:bg-[#3d424e] transition">
-        Learn PHP
+        Click Hear
       </button>
     </div>
 
     {/* Card 2: jQuery */}
     <div className="bg-[#fff2a8] rounded-lg shadow-lg text-center p-10">
-      <h1 className="text-4xl font-extrabold text-black mb-4">jQuery</h1>
+      <h1 className="text-4xl font-extrabold text-black mb-4">Event Details</h1>
       <p className="text-gray-800 text-lg mb-8">
-        A JS library for developing web pages
+        About All Events 
       </p>
       <button className="bg-[#2b2f3a] text-white font-semibold py-3 px-8 rounded-full hover:bg-[#3d424e] transition">
-        Learn jQuery
+        Click Hear
       </button>
     </div>
 
     {/* Card 3: Java */}
     <div className="bg-[#fffaf5] rounded-lg shadow-lg text-center p-10">
-      <h1 className="text-4xl font-extrabold text-black mb-4">Java</h1>
+      <h1 className="text-4xl font-extrabold text-black mb-4">Spacial Foreign Guest</h1>
       <p className="text-gray-800 text-lg mb-8">
-        A programming language
+       Country Details
       </p>
       <button className="bg-[#2b2f3a] text-white font-semibold py-3 px-8 rounded-full hover:bg-[#3d424e] transition">
-        Learn Java
+        Click Hear
       </button>
     </div>
 
     {/* Card 4: C++ */}
     <div className="bg-[#d8ede1] rounded-lg shadow-lg text-center p-10">
-      <h1 className="text-4xl font-extrabold text-black mb-4">C++</h1>
+      <h1 className="text-4xl font-extrabold text-black mb-4">Gift Candidates Details</h1>
       <p className="text-gray-800 text-lg mb-8">
-        A programming language
+        Spacial Gift
       </p>
       <button className="bg-[#2b2f3a] text-white font-semibold py-3 px-8 rounded-full hover:bg-[#3d424e] transition">
-        Learn C++
+        Click Hear
       </button>
     </div>
 
-    {/* Card 5: W3.CSS */}
-    <div className="bg-[#b8e6e1] rounded-lg shadow-lg text-center p-10">
-      <h1 className="text-4xl font-extrabold text-black mb-4">W3.CSS</h1>
-      <p className="text-gray-800 text-lg mb-8">
-        A CSS framework for faster responsive web pages
-      </p>
-      <button className="bg-[#2b2f3a] text-white font-semibold py-3 px-8 rounded-full hover:bg-[#3d424e] transition">
-        Learn W3.CSS
-      </button>
-    </div>
-
-    {/* Card 6: Bootstrap */}
-    <div className="bg-[#e9e9e9] rounded-lg shadow-lg text-center p-10">
-      <h1 className="text-4xl font-extrabold text-black mb-4">Bootstrap</h1>
-      <p className="text-gray-800 text-lg mb-8">
-        A CSS framework for designing better web pages
-      </p>
-      <button className="bg-[#2b2f3a] text-white font-semibold py-3 px-8 rounded-full hover:bg-[#3d424e] transition">
-        Learn Bootstrap
-      </button>
-    </div>
+   
   </div>
 </div>
 
