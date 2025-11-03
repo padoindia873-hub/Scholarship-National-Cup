@@ -50,22 +50,20 @@ const GetMemberShipCard = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center py-10 text-center bg-gradient-to-br from-pink-700 to-purple-800 text-white min-h-[60vh]">
+    <div className="flex flex-col items-center justify-center py-10 px-4 text-center bg-gradient-to-br from-pink-700 to-purple-800 text-white min-h-[60vh]">
       {/* Top Image */}
       <img
         src={commingSoon}
         alt="Coming Soon"
-        className="w-100 md:w-100 mb-6 drop-shadow-2xl rounded-xl"
+        className="w-full max-w-[400px] mb-6 drop-shadow-2xl rounded-xl"
       />
 
-      {/* <h1 className="text-3xl font-extrabold mb-3">Next Year Begins In:</h1> */}
-
       {timeLeft.expired ? (
-        <span className="text-green-400 text-2xl font-bold animate-pulse">
+        <span className="text-green-400 text-2xl md:text-3xl font-bold animate-pulse">
           Live Now!
         </span>
       ) : (
-        <div className="flex gap-3 md:gap-5 mt-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6 mt-6 w-full max-w-6xl">
           {[
             { label: "weeks", key: "weeks" },
             { label: "days", key: "days" },
@@ -75,12 +73,12 @@ const GetMemberShipCard = () => {
           ].map(({ label, key }) => (
             <div
               key={label}
-              className="w-[200px] h-[200px] bg-black/70 backdrop-blur-sm rounded-2xl shadow-md border border-gray-700 flex flex-col justify-center items-center"
+              className="bg-black/60 backdrop-blur-sm rounded-2xl border border-gray-700 shadow-md flex flex-col justify-center items-center p-4 sm:p-6"
             >
-              <div className="text-[100px] font-extrabold text-white leading-none tracking-widest">
+              <div className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white leading-none tracking-widest">
                 {timeLeft[key]}
               </div>
-              <div className=" text-[40px] uppercase text-lg text-gray-300 font-semibold mt-2">
+              <div className="text-lg sm:text-xl md:text-2xl uppercase text-gray-300 font-semibold mt-2">
                 {label}
               </div>
             </div>

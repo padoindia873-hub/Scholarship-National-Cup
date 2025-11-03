@@ -67,7 +67,7 @@ const Hero = () => {
                 to="/GetMemberShipCard"
                 className="text-black bg-yellow-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkYellow w-full sm:w-[310px] text-center"
               >
-                Computer System
+                Competition System
               </Link>
 
               <Link
