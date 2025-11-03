@@ -46,7 +46,7 @@ const Hero = () => {
             </h1>
             <h1
               className="text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold text-yellow-300 mb-6 animate-blink"
-              style={{ fontSize: "80px" }}
+              style={{ fontSize: "50px" }}
             >
               159 Crorepatis
             </h1>
