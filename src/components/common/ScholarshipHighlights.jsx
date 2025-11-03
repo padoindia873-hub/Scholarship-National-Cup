@@ -53,7 +53,7 @@ const ScholarshipHighlights = () => {
              KK Padho India Scholarship National Cup Rules And System
              </h2>
             <p className="text-center text-sm sm:text-base text-gray-600 italic mb-6">
-                Empowering dreams through <span className="font-semibold text-yellow-600">education</span>, <span className="font-semibold text-yellow-600">support</span>, and <span className="font-semibold text-yellow-600">opportunity</span>.
+                Empowering dreams through <span className="font-semibold text-green-600">education</span>, <span className="font-semibold text-green-600">support</span>, and <span className="font-semibold text-green-600">opportunity</span>.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import heroImage from "../../assets/hero1.jpg";
 import cupImage from "../../assets/cups.png";
-
 const Hero = () => {
   return (
     <div
@@ -16,7 +15,7 @@ const Hero = () => {
         <div className="text-center px-4 sm:px-6 md:px-12 lg:px-20 max-w-5xl mx-auto">
           {/* Headings */}
           <h1 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold text-green-300 mb-2 sm:mb-3">
-            PADHO HINDUSTAN PRESENTS
+            KK PADHO INDIA PRESENTS
           </h1>
           <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-yellow-300 mb-4 leading-tight">
             NATIONAL SCHOLARSHIP CUP
@@ -45,9 +44,14 @@ const Hero = () => {
             <h1 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold text-green-300 mb-6">
               1Kg Pure Gold Trophy
             </h1>
-
+            <h1
+              className="text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold text-yellow-300 mb-6 animate-blink"
+              style={{ fontSize: "80px" }}
+            >
+              159 Crorepatis
+            </h1>
             {/* Call to Action Buttons */}
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
+            <div className="mt-10 text-[100px] flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
               <Link
                 to="/register"
                 className="text-black bg-yellow-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkYellow w-[80%] sm:w-auto text-center"
@@ -71,7 +75,7 @@ const Hero = () => {
               </Link>
 
               <Link
-                to="/GetMemberShipCard"
+                to="/prize-list"
                 className="text-black bg-blue-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkBlue w-full sm:w-[310px] text-center"
               >
                 All Prize List

@@ -208,7 +208,7 @@ const PrizeList = () => {
   return (
     <div className="p-5 md:p-8 bg-gray-50">
       <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center mb-2 text-gray-800">
-        Padho Hindustan National Cup
+        Kk Padho India National Cup
       </h2>
       <p className="text-center text-sm sm:text-base text-gray-600 mb-10 italic">
         <span className="font-semibold text-yellow-600">Unleash Your Potential</span>, Rise Through Every <span className="font-semibold text-yellow-600">Level</span>!

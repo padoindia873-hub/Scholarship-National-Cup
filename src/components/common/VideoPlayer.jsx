@@ -8,12 +8,12 @@ const VideoPlayer = () => {
   const videos = [
     {
       id: 1,
-      title: "PADHO INDIA SCHOLARSHIP",
+      title: "KK PADHO INDIA SCHOLARSHIP",
       url: "https://www.youtube.com/embed/LBLPIdj3Z5Y",
     },
     {
       id: 2,
-      title: "PADHO INDIA SCHOLARSHIP",
+      title: "KK PADHO INDIA SCHOLARSHIP",
       url: "https://www.youtube.com/embed/n2GaqHRRUcU",
     },
   ];

@@ -15,6 +15,8 @@ import ImageSlidingAsset from '../components/common/ImageSlidingAsset'
 import PrizeListCompetitionExam from "../components/common/prizeListCompetitionExam";
 
 import VideoPlayer from '../components/common/VideoPlayer'
+import DualCompetition from "../pages/DualCompetition";
+
 const Home = () => {
   return (
     <div>
@@ -35,6 +37,7 @@ const Home = () => {
         <PrizeListCompetitionExam/>
         <Syllabus/>
         <ScholarshipHighlights/>
+        <DualCompetition/>
         {/* <ImageGallery/> */}
         
         </>

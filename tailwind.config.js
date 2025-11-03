@@ -30,11 +30,17 @@ module.exports = {
             background: 'linear-gradient(to right,rgb(245, 57, 57), #3b82f6)',
           },
         },
+         blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
+        },
       },
       animation: {
         blinkBg: 'blinkBg 1.5s infinite',
         blinkYellow: 'blinkYellow 1.5s infinite',
         blinkBlue: 'blinkBlue 1.5s infinite',
+                blink: 'blink 1s infinite',
+
       },
     },
   },

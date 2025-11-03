@@ -90,8 +90,11 @@ const AppContent = () => {
           {/* <Route path="/PrizeListCompetitionExam" element={<PrizeListCompetitionExam />} /> */}
           <Route path="/ScholarshipCupFlow" element={<ScholarshipCupFlow />} />
 
+          
 
           <Route path="/GetMemberShipCard" element={<GetMemberShipCard />} />
+                    <Route path="/GetCompetitionExam" element={<GetCompetitionExam />} />
+
 
           <Route path="/topcandidatelist" element={<TopCandidateList />} />
           <Route path="/elitementorship" element={<EliteMentorship />} />
