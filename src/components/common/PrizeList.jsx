@@ -69,16 +69,16 @@ const prizeData = [
     ],
     images: [districtImg1, districtImg2, districtImg3, districtImg5],
   },
-  {
-    level: 'State Level (Offline)',
-        TopWinners :"",
+  // {
+  //   level: 'State Level (Offline)',
+  //       TopWinners :"",
 
-    rounds: [
-      'Top 8 Ranker Will Get 50,00,000/- + 50 GM Pure Gold Medal',
-      'Consolation Prize > Remaining All Candidates Will Get 10,00,000/- Rupees Each And Every One',
-      // 'Final Round: 9 Losers get 4 Crore + 4 BHK Flat + Mercedes Benz',
-    ],
-    winners: [
+  //   rounds: [
+  //     'Top 8 Ranker Will Get 50,00,000/- + 50 GM Pure Gold Medal',
+  //     'Consolation Prize > Remaining All Candidates Will Get 10,00,000/- Rupees Each And Every One',
+  //     // 'Final Round: 9 Losers get 4 Crore + 4 BHK Flat + Mercedes Benz',
+  //   ],
+  //   winners: [
       // {
       //   title: '1st Prize',
       //   rewards: [
@@ -127,9 +127,9 @@ const prizeData = [
           
       //   ],
       // },
-    ],
-    images: [ruppes, finalImg2, ],
-  },
+  //   ],
+  //   images: [ruppes, finalImg2, ],
+  // },
   // {
   //   level: 'State Level',
   //   prizes: [
@@ -143,11 +143,11 @@ const prizeData = [
   {
     level: 'Final Level (National Level) (offline) ',
     TopWinners :"Top Winners",
-    rounds: [
-      '1st Round: 500 Losers get 1 Crore cash (Higher Study)',
-      '2nd Round: 40 Losers get 2 Crore + 3 BHK Flat',
-      'Final Round: 9 Losers get 4 Crore + 4 BHK Flat + Mercedes Benz',
-    ],
+    // rounds: [
+    //   '1st Round: 500 Losers get 1 Crore cash (Higher Study)',
+    //   '2nd Round: 40 Losers get 2 Crore + 3 BHK Flat',
+    //   'Final Round: 9 Losers get 4 Crore + 4 BHK Flat + Mercedes Benz',
+    // ],
     winners: [
       {
         title: '1st Prize',
@@ -180,25 +180,25 @@ const prizeData = [
         ],
       },
       {
-        title: '4th to 48th Rankers Will Get',
-        rewards: [
-          
-          '1,00,00,000/-  Cash',
-          '3 BHK Flat',
-          'Fortuner Car',
-          
-        ],
-      },
-      {
-        title: 'Remaining 800th Rankers Will Get',
+        title: '4th to 159th Rankers Will Get',
         rewards: [
           
           '50,00,000/-  Cash',
-          '2 BHK Flat',
-          'Hyundai Exter Car',
-          
+          '3 BHK Flat',
+          'Honda City Car ',
+          '50 Gram Pure Gold Medal',          
         ],
       },
+      // {
+      //   title: 'Remaining 800th Rankers Will Get',
+      //   rewards: [
+          
+      //     '50,00,000/-  Cash',
+      //     '2 BHK Flat',
+      //     'Hyundai Exter Car',
+          
+      //   ],
+      // },
     ],
     images: [cupImage, finalImg4,ruppes],
   },

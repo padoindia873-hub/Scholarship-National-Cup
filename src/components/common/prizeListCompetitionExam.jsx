@@ -68,12 +68,15 @@ export default function PrizeListCompetitionExam({ prizes }) {
       </header>
 
       {/* Grid */}
-      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6"
+      
+      >
         {list.map((p) => (
           <li key={p.id}>
             <Link
               to={`/prize/${p.id}`}
               className="block rounded-2xl p-5 sm:p-6 bg-blue-900/60 hover:bg-blue-900/80 focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-lg transition-colors"
+              
             >
               {/* Rank + Details */}
               <div className="flex items-start gap-4">

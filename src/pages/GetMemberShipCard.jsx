@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import commingSoon from "../assets/comming_soon.webp";
-
+import ScholarshipHighlights from "../components/common/ScholarshipHighlights";
 const GetMemberShipCard = () => {
   const targetDate = new Date("January 1, 2026 00:00:00").getTime();
 
@@ -50,6 +50,7 @@ const GetMemberShipCard = () => {
   }, []);
 
   return (
+    <div>
     <div className="flex flex-col items-center justify-center py-10 px-4 text-center bg-gradient-to-br from-pink-700 to-purple-800 text-white min-h-[60vh]">
       {/* Top Image */}
       <img
@@ -57,7 +58,7 @@ const GetMemberShipCard = () => {
         alt="Coming Soon"
         className="w-full max-w-[300px] mb-6 drop-shadow-2xl rounded-lg"
       />
-
+       <h1 className="text-sm sm:text-base md:text-lg uppercase text-gray-300 font-medium mt-1">Will Be Started From 1st January</h1>
       {timeLeft.expired ? (
         <span className="text-green-400 text-xl md:text-2xl font-bold animate-pulse">
           Live Now!
@@ -83,8 +84,13 @@ const GetMemberShipCard = () => {
               </div>
             </div>
           ))}
+                         
+
         </div>
+
       )}
+    </div>
+     <ScholarshipHighlights/>
     </div>
   );
 };
