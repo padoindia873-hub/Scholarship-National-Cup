@@ -13,6 +13,8 @@ import About from "./pages/About";
 import Events from "./pages/Events";
 import ContactUs from "./pages/ContactUs";
 import PrizeList from "./components/prizes/PrizeList";
+import PrizeLists from './components/common/PrizeList'
+
 import VideoSliding from "./pages/VideoSliding";
 import TopCandidateList from "./pages/TopCandidateList";
 import GetMemberShipCard from "./pages/GetMemberShipCard";
@@ -29,6 +31,7 @@ import FreeCareerCounseling from "./pages/FreeCareerCounseling";
 import LegalSupport from "./pages/LegalSupport";
 import MotivationalAndInspiringClasses from "./pages/MotivationalAndInspiringClasses";
 import GetCompetitionExam from "./pages/GetCompetitionExam"
+import ScholarshipCupFlow from "./components/common/ScholarshipCupFlow";
 
 
 const Home = lazy(() => import("./pages/Home"));
@@ -78,14 +81,16 @@ const AppContent = () => {
           <Route path="/contact" element={<ContactUs />} />
           
           <Route path="/prize-list" element={<PrizeList/>} />
+                    <Route path="/PrizeLists" element={<PrizeLists/>} />
+
 
           <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
           <Route path="/dashboard" element={<ProtectedRoute><UserDashboard /></ProtectedRoute>} />
           <Route path="/videosliding" element={<VideoSliding />} />
           {/* <Route path="/PrizeListCompetitionExam" element={<PrizeListCompetitionExam />} /> */}
+          <Route path="/ScholarshipCupFlow" element={<ScholarshipCupFlow />} />
 
 
-          <Route path="/GetCompetitionExam" element={<GetCompetitionExam />} />
           <Route path="/GetMemberShipCard" element={<GetMemberShipCard />} />
 
           <Route path="/topcandidatelist" element={<TopCandidateList />} />
