@@ -53,10 +53,10 @@ const Hero = () => {
             {/* Call to Action Buttons */}
             <div className="mt-10 text-[100px] flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
               <Link
-                to="/register"
+                to="/DemoQuestions"
                 className="text-black bg-yellow-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkYellow w-[80%] sm:w-auto text-center"
               >
-                Registration Now Open
+                Demo Question
               </Link>
 
               <Link
