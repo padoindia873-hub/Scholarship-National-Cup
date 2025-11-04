@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const GetCompetitionExam = () => {
   return (
@@ -71,6 +72,13 @@ const GetCompetitionExam = () => {
           <button className="bg-[#fbc8c8] text-black font-semibold py-3 rounded-full hover:bg-[#ffb3b3] transition">
             Group Result
           </button>
+           <Link
+                to="/WelcomePopup"
+                className="mt-10 text-black bg-blue-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 w-[80%] sm:w-auto text-center animate-blink"
+                style={{ fontSize: "40px" }}
+              >
+                Start Exam
+              </Link>
         </div>
       </div>
       {/* ===== SECTION 3: HTML Section ===== */}
@@ -105,6 +113,13 @@ const GetCompetitionExam = () => {
            <button className="bg-[#2b2f3a] text-white font-semibold py-3 rounded-full hover:bg-[#3d424e] transition">
             Withdraw Amount
           </button>
+          <Link
+                to="/GetCompetitionExam"
+                className="mt-10 text-black bg-blue-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 w-[80%] sm:w-auto text-center animate-blink"
+                style={{ fontSize: "40px" }}
+              >
+                Start Exam
+              </Link>
         </div>
       </div>
        {/* ===== SECTION 4: HTML Section ===== */}
@@ -137,6 +152,13 @@ const GetCompetitionExam = () => {
            <button className="bg-[#2b2f3a] text-white font-semibold py-3 rounded-full hover:bg-[#3d424e] transition">
             Withdraw Amount
           </button>
+          <Link
+                to="/GetCompetitionExam"
+                className="mt-10 text-black bg-blue-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 w-[80%] sm:w-auto text-center animate-blink"
+                style={{ fontSize: "40px" }}
+              >
+                Start Exam
+              </Link>
         </div>
       </div>
        {/* ===== SECTION 5: HTML Section ===== */}
@@ -174,6 +196,13 @@ const GetCompetitionExam = () => {
            <button className="bg-blue-500 text-white font-semibold py-3 rounded-full hover:bg-blue-600 transition">
            Chief Guest List
            </button>
+           <Link
+                to="/GetCompetitionExam"
+                className="mt-10 text-black bg-blue-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 w-[80%] sm:w-auto text-center animate-blink"
+                style={{ fontSize: "40px" }}
+              >
+                Offline Exam
+              </Link>
         </div>
       </div>
         {/* ===== SECTION 6: HTML Section ===== */}
@@ -212,6 +241,13 @@ const GetCompetitionExam = () => {
           <button className="bg-blue-500 text-white font-semibold py-3 rounded-full hover:bg-blue-600 transition">
            Chief Guest List
            </button>
+            <Link
+                to="/GetCompetitionExam"
+                className="mt-10 text-black bg-blue-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 w-[80%] sm:w-auto text-center animate-blink"
+                style={{ fontSize: "40px" }}
+              >
+                Offline Exam
+              </Link>
         </div>
       </div>
 

@@ -46,7 +46,7 @@ const Hero = () => {
             </h1>
             <h1
               className="text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold text-yellow-300 mb-6 animate-blink"
-              style={{ fontSize: "50px" }}
+              style={{ fontSize: "45px" }}
             >
               159 Crorepatis
             </h1>
@@ -58,12 +58,11 @@ const Hero = () => {
               >
                 Demo Question
               </Link>
-
               <Link
-                to="/GetCompetitionExam"
-                className="text-black bg-blue-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkBlue w-[80%] sm:w-auto text-center"
+                to="/prize-list"
+                className="text-black bg-blue-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkBlue w-full sm:w-[310px] text-center"
               >
-                Get Competition Exam
+                All Prize List
               </Link>
             </div>
             <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
@@ -73,12 +72,12 @@ const Hero = () => {
               >
                 Competition System
               </Link>
-
               <Link
-                to="/prize-list"
-                className="text-black bg-blue-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkBlue w-full sm:w-[310px] text-center"
+                to="/GetCompetitionExam"
+                className="text-black bg-blue-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 w-[80%] sm:w-auto text-center animate-blink"
+                style={{ fontSize: "40px" }}
               >
-                All Prize List
+                Get Exam
               </Link>
             </div>
           </div>

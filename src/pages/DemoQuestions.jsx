@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 // -------------------------
-// 🧠 General Knowledge Questions (50 max)
+// 🧠 General Knowledge Questions
 // -------------------------
 const gkQuestions = [
   {
@@ -47,7 +48,7 @@ const gkQuestions = [
 ];
 
 // -------------------------
-// 📚 Academic (Math + History + English) Questions (50 max)
+// 📚 Academic Questions
 // -------------------------
 const academicQuestions = [
   {
@@ -90,6 +91,7 @@ const DemoQuestions = () => {
   const [current, setCurrent] = useState(0);
   const [score, setScore] = useState(0);
   const [selected, setSelected] = useState(null);
+  const [answers, setAnswers] = useState({});
   const [showResult, setShowResult] = useState(false);
   const [time, setTime] = useState(0);
 
@@ -101,26 +103,49 @@ const DemoQuestions = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const handleSelect = (opt) => {
+    setSelected(opt);
+    setAnswers((prev) => ({
+      ...prev,
+      [current]: opt,
+    }));
+  };
+
   const handleNext = () => {
-    if (selected) {
-      if (selected === questions[current].answer) {
-        setScore((prev) => prev + 1);
-      }
-      setSelected(null);
-      if (current + 1 < questions.length) {
-        setCurrent((prev) => prev + 1);
-      } else {
-        setShowResult(true);
-      }
-    } else {
+    if (!selected && answers[current] == null) {
       alert("Please select an answer before continuing!");
+      return;
     }
+
+    if (current + 1 < questions.length) {
+      setCurrent((prev) => prev + 1);
+      setSelected(answers[current + 1] || null);
+    } else {
+      calculateScore();
+      setShowResult(true);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (current > 0) {
+      setCurrent((prev) => prev - 1);
+      setSelected(answers[current - 1] || null);
+    }
+  };
+
+  const calculateScore = () => {
+    let total = 0;
+    questions.forEach((q, index) => {
+      if (answers[index] === q.answer) total += 1;
+    });
+    setScore(total);
   };
 
   const handleRestart = () => {
     setCurrent(0);
     setScore(0);
     setSelected(null);
+    setAnswers({});
     setShowResult(false);
     setTime(0);
   };
@@ -135,30 +160,34 @@ const DemoQuestions = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 text-gray-800 px-4 py-10">
-      {/* Header Tabs */}
+      <h1 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold text-black-300 mb-2 sm:mb-3">
+        KK PADHO INDIA PRESENTS
+      </h1>
+
+    
+
+      {/* Tabs */}
       <div className="flex space-x-4 mb-6 border-b-2 border-green-200">
-        {/* GK Tab */}
         <button
           onClick={() => handleTabChange("GK")}
           className={`px-6 py-2 font-semibold rounded-t-lg transition-all duration-300 ${
             activeTab === "GK"
               ? "border-b-4 border-green-500 text-white bg-green-500 shadow-md"
-              : "text-blue-500 hover:text-blue-600 hover:bg-blue-50 border-b-4 border-transparent"
+              : "border-b-4 border-green-500 text-white bg-green-500 shadow-md"
           }`}
         >
-          General Knowledge (50 Marks)
+          General Knowledge 40 Marks
         </button>
 
-        {/* Academic Tab */}
         <button
           onClick={() => handleTabChange("Academic")}
           className={`px-6 py-2 font-semibold rounded-t-lg transition-all duration-300 ${
             activeTab === "Academic"
               ? "border-b-4 border-green-500 text-white bg-green-500 shadow-md"
-              : "text-blue-500 hover:text-blue-600 hover:bg-blue-50 border-b-4 border-transparent"
+              : "border-b-4 border-green-500 text-white bg-green-500 shadow-md"
           }`}
         >
-          Math, History & English (50 Marks)
+          Math, History & English 60 Marks
         </button>
       </div>
 
@@ -167,8 +196,8 @@ const DemoQuestions = () => {
         <div className="w-full max-w-2xl bg-white rounded-2xl shadow-lg p-8">
           <h1 className="text-3xl font-bold text-center mb-6">
             {activeTab === "GK"
-              ? "General Knowledge Quiz"
-              : "Math, History & English Quiz"}
+              ? "Qualifying Exam "
+              : "Qualifying Exam"}
           </h1>
           <h2 className="text-lg font-semibold mb-4">
             Question {current + 1} of {questions.length}
@@ -190,24 +219,43 @@ const DemoQuestions = () => {
                   name="option"
                   value={opt}
                   checked={selected === opt}
-                  onChange={() => setSelected(opt)}
+                  onChange={() => handleSelect(opt)}
                   className="mr-3 accent-green-500"
                 />
                 {opt}
               </label>
             ))}
           </div>
-
           <div className="flex justify-between items-center mt-6">
             <button
-              onClick={handleNext}
-              className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition"
+              onClick={handlePrevious}
+              disabled={current === 0}
+              className={`flex items-center gap-2 px-6 py-2 rounded-lg transition ${
+                current === 0
+                  ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+                  : "bg-blue-500 text-white hover:bg-blue-600"
+              }`}
             >
-              {current + 1 === questions.length ? "Finish" : "Next →"}
+              <ArrowLeft size={20} />
+              <span className="text-lg font-semibold">Back</span>
             </button>
-            <p className="text-sm text-gray-500">
-              ⏱ {minutes}:{seconds.toString().padStart(2, "0")}
-            </p>
+
+            <div className="flex items-center gap-15">
+              {"   "}
+              {/* Adds space between Next and Timer */}
+              <button
+                onClick={handleNext}
+                className="flex items-center gap-2 bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition mr-6" // 👈 added mr-6
+              >
+                <span className="text-lg font-semibold">
+                  {current + 1 === questions.length ? "Finish" : "Next"}
+                </span>
+                {current + 1 !== questions.length && <ArrowRight size={20} />}
+              </button>
+              <p className="text-sm text-gray-500">
+                ⏱ {minutes}:{seconds.toString().padStart(2, "0")}
+              </p>
+            </div>
           </div>
         </div>
       ) : (
@@ -217,28 +265,16 @@ const DemoQuestions = () => {
               ? "General Knowledge Result"
               : "Math, History & English Result"}
           </h1>
-          <h2 className="text-xl font-semibold mb-2">Result:</h2>
           <p className="text-lg mb-2">
-            {score} of {questions.length}
+            Score: {score} / {questions.length}
           </p>
           <p className="text-2xl font-bold text-green-600 mb-4">
             {Math.round((score / questions.length) * 100)}%
-          </p>
-          <p className="text-gray-500 mb-6">
-            {score < questions.length / 2
-              ? "You must study much harder!"
-              : "Excellent work!"}
           </p>
           <p className="text-gray-400 mb-6">
             Time Spent: {minutes}:{seconds.toString().padStart(2, "0")}
           </p>
           <div className="flex justify-center gap-3">
-            <button
-              onClick={() => alert("Feature coming soon!")}
-              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
-            >
-              Check Answers
-            </button>
             <button
               onClick={handleRestart}
               className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
@@ -249,7 +285,7 @@ const DemoQuestions = () => {
               onClick={() =>
                 handleTabChange(activeTab === "GK" ? "Academic" : "GK")
               }
-              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+              className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600"
             >
               Back to Tabs
             </button>
