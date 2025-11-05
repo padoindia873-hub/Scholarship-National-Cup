@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      API.get("/user/profile", {
+      API.get("/auth/profile", {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => setUser(res.dta.user))
@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (credentials) => {
     try {
-      const res = await API.post("/user/login", credentials);
+      const res = await API.post("/auth/login", credentials);
       localStorage.setItem("token", res.data.token);
       setUser(res.data.user);
       toast.success("Login Successful");

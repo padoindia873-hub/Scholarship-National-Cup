@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API = axios.create({
   // baseURL: "http://localhost:5000/api",
-  baseURL: "https://padho-india-backend.onrender.com/api",
+  baseURL: "https://quiz-backend-aixd.onrender.com/api",
   headers: { "Content-Type": "application/json" },
 });
 

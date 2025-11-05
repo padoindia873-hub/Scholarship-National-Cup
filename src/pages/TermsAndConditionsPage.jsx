@@ -24,7 +24,7 @@ export default function TermsAndConditionsPage() {
     }
 
     //  Navigate to your next page after accepting
-    navigate("/DemoQuestions"); // <-- change this to your desired route
+    navigate("/QuestionPopUp"); // <-- change this to your desired route
   }
 
   return (
