@@ -36,7 +36,6 @@ import DemoQuestions from "./pages/DemoQuestions";
 import WelcomePopup from "./components/common/WelcomePopup";
 import Questions from "./pages/Question";
 import QuestionPopUp from "./components/common/QuestionPopUp";
-
 const Home = lazy(() => import("./pages/Home"));
 
 const Login = lazy(() => import("./components/auth/Login"));
