@@ -277,7 +277,7 @@ const Questions = ({ user }) => {
               : "border-b-4 border-green-500 text-white bg-green-500 shadow-md"
           }`}
         >
-          General Knowledge 40 Marks
+          General Knowledge 40 Marks1
         </button>
 
         <button
