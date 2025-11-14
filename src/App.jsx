@@ -36,6 +36,7 @@ import DemoQuestions from "./pages/DemoQuestions";
 import WelcomePopup from "./components/common/WelcomePopup";
 import Questions from "./pages/Question";
 import QuestionPopUp from "./components/common/QuestionPopUp";
+
 const Home = lazy(() => import("./pages/Home"));
 
 const Login = lazy(() => import("./components/auth/Login"));
@@ -43,8 +44,12 @@ const Register = lazy(() => import("./components/auth/Register"));
 const ForgotPassword = lazy(() => import("./components/auth/ForgotPassword"));
 const ResetPassword = lazy(() => import("./components/auth/ResetPassword"));
 const ConfirmOtp = lazy(() => import("./components/auth/ConfirmOtp"));
-const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard"));
+const QuestionsEntry = lazy(() => import("./pages/admin/QuestionsEntry"));
 const UserDashboard = lazy(() => import("./pages/user/UserDashboard"));
+const StudentsDetails = lazy(() => import("./pages/admin/StudentsDetails"));
+const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard"));
+const CompetitorsManagement = lazy(() => import("./pages/admin/CompetitorsManagement"));
+const CompetitorsInputSection = lazy(() => import("./pages/admin/CompetitorsInputSection"));
 
 
 
@@ -83,10 +88,15 @@ const AppContent = () => {
           <Route path="/contact" element={<ContactUs />} />
           
           <Route path="/prize-list" element={<PrizeList/>} />
-                    <Route path="/PrizeLists" element={<PrizeLists/>} />
+          <Route path="/PrizeLists" element={<PrizeLists/>} />
 
 
           <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+          <Route path="/competitorsManagement" element={<ProtectedRoute><CompetitorsManagement /></ProtectedRoute>} />
+          <Route path="/competitorsInputSection" element={<ProtectedRoute><CompetitorsInputSection /></ProtectedRoute>} />
+
+          <Route path="/questionsEntry" element={<ProtectedRoute><QuestionsEntry /></ProtectedRoute>} />
+          <Route path="/studentsDetails" element={<ProtectedRoute><StudentsDetails /></ProtectedRoute>} />
           <Route path="/dashboard" element={<ProtectedRoute><UserDashboard /></ProtectedRoute>} />
           <Route path="/videosliding" element={<VideoSliding />} />
           {/* <Route path="/PrizeListCompetitionExam" element={<PrizeListCompetitionExam />} /> */}

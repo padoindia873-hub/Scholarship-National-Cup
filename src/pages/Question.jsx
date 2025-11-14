@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import jsPDF from "jspdf";
-
+import axios from "axios";
 const Questions = ({ user }) => {
   const [activeTab, setActiveTab] = useState("GK");
   const [questions, setQuestions] = useState([]);
@@ -12,13 +12,12 @@ const Questions = ({ user }) => {
   const [answers, setAnswers] = useState({});
   const [showResult, setShowResult] = useState(false);
   const [loading, setLoading] = useState(true);
-
   const [time, setTime] = useState(0);
-
-  // ✅ NEW STATES TO STORE SCORES
+  const [score, setScore] = useState(0);
+  // NEW STATES TO STORE SCORES
   const [gkScore, setGkScore] = useState(null);
   const [academicScore, setAcademicScore] = useState(null);
-
+  const [results, setResults] = useState([]);
   const BASE_URL = "https://quiz-backend-aixd.onrender.com/api/questions";
 
   // Fetch all questions (GK + Academic)
@@ -69,9 +68,49 @@ const Questions = ({ user }) => {
     }));
   };
 
-  // ✅ Score calculation for section
-  const calculateScore = () => {
+  // Score calculation for section
+  const calculateScore = async () => {
     let total = 0;
+    const answerRecords = [];
+    filteredQuestions.forEach((q, index) => {
+      const userAns = answers[index];
+      const correct = userAns === q.answer;
+      if (correct) total += 1;
+
+      answerRecords.push({
+        question: q.question,
+        selected: userAns,
+        correct: q.answer,
+        isCorrect: correct,
+      });
+    });
+    setScore(total);
+
+    const resultPayload = {
+      name: user.name,
+      roll: user.roll,
+      topic: activeTab,
+      score: total,
+      total: filteredQuestions.length,
+      percentage: Math.round((total / filteredQuestions.length) * 100),
+      timeSpent: `${minutes}:${seconds.toString().padStart(2, "0")}`,
+      answers: answerRecords,
+    };
+
+    try {
+      await fetch(
+        "https://quiz-backend-aixd.onrender.com/api/result/save-result",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(resultPayload),
+        }
+      );
+      console.log("Result saved");
+    } catch (err) {
+      console.error(" Failed to save result", err);
+    }
+
     filteredQuestions.forEach((q, index) => {
       if (answers[index] === q.answer) total++;
     });
@@ -128,84 +167,90 @@ const Questions = ({ user }) => {
     setActiveTab(tab);
     handleRestart();
   };
+  useEffect(() => {
+    if (user?.roll) {
+      fetchResult();
+    }
+  }, [user]);
 
-  // ✅ PDF includes BOTH results
-const downloadResultPDF = () => {
-  const doc = new jsPDF();
+  const fetchResult = async () => {
+    try {
+      const res = await axios.get(
+        `https://quiz-backend-aixd.onrender.com/api/result/result/${user.roll}`
+      );
+      console.log("API DATA:", res.data.results);
+      setResults(res.data.results);
+    } catch (err) {
+      console.log("API Error", err);
+    }
+  };
 
-  // Determine which score to use
-  const finalScore = activeTab === "GK" ? gkScore : academicScore;
+  const downloadResultPDF = () => {
+    if (!results || results.length === 0) {
+      return alert("No result data found!");
+    }
 
-  doc.setFont("Helvetica", "bold");
-  doc.setFontSize(18);
-  doc.text("Quiz Result", 80, 15);
+    const doc = new jsPDF();
+    doc.setFont("Helvetica", "bold");
+    doc.setFontSize(18);
+    doc.text("Quiz Result", 80, 15);
 
-  doc.setFontSize(12);
-  let y = 30;
+    let y = 30;
 
-  // User Details
-  doc.setTextColor(0, 0, 0);
-  doc.text(`Name: ${user.name}`, 10, y); y += 7;
-  doc.text(`Roll: ${user.roll}`, 10, y); y += 10;
+    results.forEach((result, idx) => {
+      doc.setFontSize(12);
+      doc.setTextColor(0, 0, 0);
 
-  // Score Details
-  const totalQs = filteredQuestions.length;
-  const correctCount = finalScore;
-  const missedCount = Object.values(answers).filter(a => !a).length;
-  const wrongCount = totalQs - correctCount - missedCount;
-  const percentage = Math.round((correctCount / totalQs) * 100);
-
-  doc.text(`Topic: ${activeTab}`, 10, y); y += 7;
-  doc.text(`Total Questions: ${totalQs}`, 10, y); y += 7;
-  doc.text(`Correct Answers: ${correctCount}`, 10, y); y += 7;
-  doc.text(`Wrong Answers: ${wrongCount}`, 10, y); y += 7;
-  doc.setTextColor(255, 140, 0);
-  doc.text(`Missed / Not Attempted: ${missedCount}`, 10, y); y += 7;
-  doc.setTextColor(0, 0, 0);
-  doc.text(`Percentage: ${percentage}%`, 10, y); y += 7;
-  doc.text(`Time Spent: ${minutes}:${seconds.toString().padStart(2, "0")}`, 10, y);
-  y += 12;
-
-  doc.setFont("Helvetica", "normal");
-
-  // Question List
-  filteredQuestions.forEach((q, index) => {
-    if (y > 270) { doc.addPage(); y = 10; }
-
-    doc.setTextColor(0, 0, 0);
-    doc.text(`${index + 1}. ${q.question}`, 10, y);
-    y += 6;
-
-    const userAnswer = answers[index];
-
-    if (!userAnswer) {
-      doc.setTextColor(255, 140, 0); // Orange - Missed
-      doc.text(`Not Attempted`, 10, y);
+      doc.text(`-----------------------------------------`, 10, y);
       y += 6;
-      doc.setTextColor(0, 150, 0); // Green
-      doc.text(`Correct Ans: ${q.answer}`, 10, y);
+      doc.text(`Result #${idx + 1}`, 10, y);
+      y += 6;
+      doc.text(`Name: ${result.name || "N/A"}`, 10, y);
+      y += 6;
+      doc.text(`Roll: ${result.roll || "N/A"}`, 10, y);
+      y += 6;
+      doc.text(`Topic: ${result.topic || "N/A"}`, 10, y);
+      y += 6;
+      doc.text(`Score: ${result.score ?? 0}`, 10, y);
+      y += 6;
+      doc.text(`Total: ${result.total ?? 0}`, 10, y);
+      y += 6;
+      doc.text(`Percentage: ${result.percentage ?? 0}%`, 10, y);
+      y += 6;
+      doc.text(`Time Spent: ${result.timeSpent || "0"}`, 10, y);
       y += 10;
-      return;
-    }
 
-    if (userAnswer === q.answer) {
-      doc.setTextColor(0, 150, 0);
-      doc.text(`Correct ✔  Your Ans: ${userAnswer}`, 10, y);
-    } else {
-      doc.setTextColor(200, 0, 0);
-      doc.text(`Wrong ✘  Your Ans: ${userAnswer}`, 10, y);
-      y += 6;
-      doc.setTextColor(0, 150, 0);
-      doc.text(`Correct Ans: ${q.answer}`, 10, y);
-    }
+      const ans = Array.isArray(result.answers) ? result.answers : [];
 
-    y += 10;
-  });
+      if (ans.length === 0) {
+        doc.setTextColor(255, 0, 0);
+        doc.text("No answers available in database", 10, y);
+        y += 8;
+      } else {
+        ans.forEach((q, i) => {
+          if (y > 280) {
+            doc.addPage();
+            y = 10;
+          }
+          doc.setTextColor(0, 0, 0);
+          doc.text(`${i + 1}. ${q.question}`, 10, y);
+          y += 5;
 
-  doc.save(`${user.name}_Result.pdf`);
-};
+          doc.setTextColor(q.isCorrect ? 0 : 200, q.isCorrect ? 150 : 0, 0);
+          doc.text(`Your Ans: ${q.selected}`, 14, y);
+          y += 5;
 
+          doc.setTextColor(0, 0, 255);
+          doc.text(`Correct Ans: ${q.correct}`, 14, y);
+          y += 7;
+        });
+      }
 
+      y += 5;
+    });
+
+    doc.save(`${user.roll}_Quiz_Result.pdf`);
+  };
 
   if (loading) {
     return (
@@ -217,7 +262,7 @@ const downloadResultPDF = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4 py-10">
-      {/* ✅ Tabs Added Back */}
+      {/*  Tabs Added Back */}
       <div className="flex space-x-4 mb-6 border-b-2 border-green-200">
         <button
           onClick={() => handleTabChange("GK")}
@@ -247,14 +292,18 @@ const downloadResultPDF = () => {
             Question {current + 1} of {filteredQuestions.length}
           </h2>
 
-          <p className="text-gray-700 mb-6">{filteredQuestions[current].question}</p>
+          <p className="text-gray-700 mb-6">
+            {filteredQuestions[current].question}
+          </p>
 
           <div className="space-y-3">
             {filteredQuestions[current].options.map((opt, index) => (
               <label
                 key={index}
                 className={`flex items-center p-3 border rounded-lg cursor-pointer ${
-                  selected === opt ? "border-green-500 bg-green-50" : "border-gray-200"
+                  selected === opt
+                    ? "border-green-500 bg-green-50"
+                    : "border-gray-200"
                 }`}
               >
                 <input
@@ -269,7 +318,7 @@ const downloadResultPDF = () => {
             ))}
           </div>
 
-            <div className="flex justify-between items-center mt-6">
+          <div className="flex justify-between items-center mt-6">
             <button
               onClick={handlePrevious}
               disabled={current === 0}
@@ -302,7 +351,7 @@ const downloadResultPDF = () => {
           </div>
         </div>
       ) : (
-        // ✅ FINAL COMBINED RESULT SCREEN
+        //  FINAL COMBINED RESULT SCREEN
         <div className="w-full max-w-lg bg-white rounded-2xl shadow-lg p-8 text-center">
           <h1 className="text-3xl font-bold mb-6">Final Result</h1>
 

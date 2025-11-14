@@ -80,7 +80,11 @@ const NavigationDashboard = () => {
                 open={sidebarOpen}
             >
                 <ul className="space-y-4">
-                    <li><Link to="/dashboard" className="text-lg font-medium">Dashboard</Link></li>
+
+                    
+                    <li><Link to="/CompetitorsManagement" className="text-lg font-medium">Competitors Management</Link></li>
+                    <li><Link to="/questionsEntry" className="text-lg font-medium">Questions Entry</Link></li>
+                    <li><Link to="/studentsDetails" className="text-lg font-medium">Students Details</Link></li>
                     <li><Link to="/manage-users" className="text-lg font-medium">Manage Users</Link></li>
                     <li><Link to="/settings" className="text-lg font-medium">Settings</Link></li>
                 </ul>
