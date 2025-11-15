@@ -1,11 +1,28 @@
 import axios from "axios";
 
 const API = axios.create({
-  // baseURL: "http://localhost:5000/api",
   baseURL: "https://quiz-backend-aixd.onrender.com/api",
   headers: { "Content-Type": "application/json" },
 });
 
-export const registerUser = (userData) => API.post("/auth/register", userData);
+// STUDENT REGISTER
+export const registerStudent = (data) =>
+  API.post("/auth/register", { ...data, userType: "STUDENT" });
+
+// ADMIN REGISTER (secret code required)
+export const createAdmin = (data) =>
+  API.post("/auth/register", {
+    ...data,
+    userType: "ADMIN",
+    adminSecretCode: data.adminSecretCode,
+  });
+
+// SUPER ADMIN REGISTER (secret code required)
+export const createSuperAdmin = (data) =>
+  API.post("/auth/register", {
+    ...data,
+    userType: "SUPER_ADMIN",
+    adminSecretCode: data.adminSecretCode,
+  });
 
 export default API;

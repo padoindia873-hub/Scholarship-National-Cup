@@ -50,7 +50,9 @@ const StudentsDetails = lazy(() => import("./pages/admin/StudentsDetails"));
 const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard"));
 const CompetitorsManagement = lazy(() => import("./pages/admin/CompetitorsManagement"));
 const CompetitorsInputSection = lazy(() => import("./pages/admin/CompetitorsInputSection"));
+const SuperAdmin = lazy(() => import("./pages/superAdmin/SuperAdmin"));
 
+const ManageAdmins = lazy(() => import("./pages/superAdmin/ManageAdmins"));
 
 
 const AppContent = () => {
@@ -92,6 +94,9 @@ const AppContent = () => {
 
 
           <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+          <Route path="/super-admin" element={<ProtectedRoute><SuperAdmin/></ProtectedRoute>} />
+          <Route path="/manage-admins" element={<ProtectedRoute><ManageAdmins/></ProtectedRoute>} />
+
           <Route path="/competitorsManagement" element={<ProtectedRoute><CompetitorsManagement /></ProtectedRoute>} />
           <Route path="/competitorsInputSection" element={<ProtectedRoute><CompetitorsInputSection /></ProtectedRoute>} />
 

@@ -24,17 +24,43 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  const login = async (credentials) => {
-    try {
-      const res = await API.post("/auth/login", credentials);
-      localStorage.setItem("token", res.data.token);
-      setUser(res.data.user);
-      toast.success("Login Successful");
-      navigate(res.data.user.userType === "ADMIN" ? "/admin" : "/dashboard");
-    } catch (error) {
-      toast.error(error.response?.data?.message || "Login Failed");
+  // const login = async (credentials) => {
+  //   try {
+  //     const res = await API.post("/auth/login", credentials);
+  //     localStorage.setItem("token", res.data.token);
+  //     console.log(res.data.token)
+  //     setUser(res.data.user);
+  //     toast.success("Login Successful");
+  //     navigate(res.data.user.userType === "ADMIN" ? "/admin" : "/dashboard");
+  //   } catch (error) {
+  //     toast.error(error.response?.data?.message || "Login Failed");
+  //   }
+  // };
+const login = async (credentials) => {
+  try {
+    const res = await API.post("/auth/login", credentials);
+
+    const token = res.data.token;
+    const user = res.data.user;
+
+    localStorage.setItem("token", token);
+    setUser(user);
+
+    toast.success("Login Successful");
+
+    // Redirect based on userType
+    if (user.userType === "SUPER_ADMIN") {
+      navigate("/super-admin");
+    } else if (user.userType === "ADMIN") {
+      navigate("/admin");
+    } else {
+      navigate("/dashboard"); // STUDENT
     }
-  };
+
+  } catch (error) {
+    toast.error(error.response?.data?.message || "Login Failed");
+  }
+};
 
   const logout = () => {
     localStorage.removeItem("token");
