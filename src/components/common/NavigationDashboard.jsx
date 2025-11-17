@@ -24,6 +24,7 @@ const NavigationDashboard = () => {
     const formData = new FormData();
     formData.append("photo", file);
     formData.append("userId", user._id);
+
     try {
       const res = await fetch("http://localhost:5000/api/upload-student-photo", {
         method: "POST",
@@ -35,7 +36,7 @@ const NavigationDashboard = () => {
       if (data.success) {
         message.success("Photo updated successfully!");
 
-        // 🔄 update global context user photo so UI refreshes immediately
+        // update global context user photo so UI refreshes immediately
         updateUser({ ...user, photo: data.photoUrl });
       } else {
         message.error("Upload failed");
@@ -77,6 +78,8 @@ const NavigationDashboard = () => {
       {/* TOP NAVIGATION BAR */}
       <nav className="bg-gradient-to-r from-teal-600 via-blue-500 to-indigo-700 text-white py-3 px-6 flex justify-between items-center shadow-md h-14">
         <div className="flex items-center space-x-3">
+
+          {/* ADMIN / SUPER ADMIN SIDEBAR TOGGLE */}
           {(user.userType === "ADMIN" || user.userType === "SUPER_ADMIN") && (
             <MenuOutlined
               className="text-white text-lg cursor-pointer"
@@ -84,7 +87,7 @@ const NavigationDashboard = () => {
             />
           )}
 
-          {/* Student menu */}
+          {/* STUDENT MOBILE MENU */}
           {user.userType === "STUDENT" && (
             <MenuOutlined
               className="text-white text-lg cursor-pointer"
@@ -92,11 +95,10 @@ const NavigationDashboard = () => {
             />
           )}
 
-          <div className="flex items-center">
-            <Link to="/">
-              <img src={logo} alt="Logo" className="h-14 w-auto" />
-            </Link>
-          </div>
+          {/* LOGO */}
+          <Link to="/">
+            <img src={logo} alt="Logo" className="h-14 w-auto" />
+          </Link>
         </div>
 
         {/* DESKTOP STUDENT NAVIGATION */}
@@ -110,13 +112,19 @@ const NavigationDashboard = () => {
 
         {/* USER AVATAR */}
         <Dropdown overlay={menu} placement="bottomRight">
-          <Avatar className="cursor-pointer bg-indigo-500 border-2 border-white shadow-lg" size={32}>
+          <Avatar
+            className="cursor-pointer bg-indigo-500 border-2 border-white shadow-lg"
+            size={32}
+            src={user.photo}
+          >
             {user.firstName[0]}
           </Avatar>
         </Dropdown>
       </nav>
 
-      {/* STUDENT SIDEBAR DRAWER */}
+      {/* ================================
+             STUDENT SIDEBAR DRAWER
+      ================================= */}
       {user.userType === "STUDENT" && (
         <Drawer
           placement="left"
@@ -144,7 +152,12 @@ const NavigationDashboard = () => {
               {/* UPLOAD BUTTON */}
               <label className="mt-2 text-sm bg-white text-blue-700 px-3 py-1 rounded cursor-pointer font-semibold">
                 Upload
-                <input type="file" accept="image/*" onChange={handlePhotoUpload} className="hidden" />
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handlePhotoUpload}
+                  className="hidden"
+                />
               </label>
             </div>
           }
@@ -164,15 +177,72 @@ const NavigationDashboard = () => {
               <Link to="/features" className="flex items-center gap-3 text-white w-full">
                 🧩 Features
               </Link>
-              <span className="text-xs bg-white text-blue-600 px-2 py-1 rounded-lg font-bold">NEW</span>
+              <span className="text-xs bg-white text-blue-600 px-2 py-1 rounded-lg font-bold">
+                NEW
+              </span>
             </li>
 
           </ul>
         </Drawer>
       )}
 
-      {/* PROFILE DRAWER */}
-      <DrawerComponent open={openDrawer} onClose={() => setOpenDrawer(false)} user={user} />
+      {/* ================================
+            ADMIN SIDEBAR (UNCHANGED)
+      ================================= */}
+      {user.userType === "ADMIN" && (
+        <Drawer
+          title="Admin Menu"
+          placement="left"
+          closable={true}
+          onClose={() => setSidebarOpen(false)}
+          open={sidebarOpen}
+        >
+          <ul className="space-y-4">
+            <li><Link to="/CompetitorsManagement" className="text-lg font-medium">Competitors Management</Link></li>
+            <li><Link to="/questionsEntry" className="text-lg font-medium">Questions Entry</Link></li>
+            <li><Link to="/studentsDetails" className="text-lg font-medium">Students Details</Link></li>
+            <li><Link to="/manage-users" className="text-lg font-medium">Manage Users</Link></li>
+            <li><Link to="/settings" className="text-lg font-medium">Settings</Link></li>
+          </ul>
+        </Drawer>
+      )}
+
+      {/* =================================
+        SUPER ADMIN SIDEBAR (UNCHANGED)
+      ================================== */}
+      {user.userType === "SUPER_ADMIN" && (
+        <Drawer
+          title={
+            <div className="flex items-center gap-2 text-xl font-bold">
+              ⚡ Super Admin Panel
+            </div>
+          }
+          placement="left"
+          closable={true}
+          onClose={() => setSidebarOpen(false)}
+          open={sidebarOpen}
+        >
+          <ul className="space-y-4">
+            <li className="text-gray-500 text-sm font-semibold mt-4">ADMIN MANAGEMENT</li>
+            <li><Link to="/manage-admins" className="text-lg flex items-center gap-2">👨‍💼 Manage Admins</Link></li>
+            <li><Link to="/create-admin" className="text-lg flex items-center gap-2">➕ Create New Admin</Link></li>
+
+            <li className="text-gray-500 text-sm font-semibold mt-4">SUPER ADMIN CONTROLS</li>
+            <li><Link to="/create-super-admin" className="text-lg flex items-center gap-2">🛡️ Create Super Admin</Link></li>
+            <li><Link to="/system-settings" className="text-lg flex items-center gap-2">⚙️ System Settings</Link></li>
+
+            <li className="text-gray-500 text-sm font-semibold mt-4">USER MANAGEMENT</li>
+            <li><Link to="/all-users" className="text-lg flex items-center gap-2">👥 All Registered Users</Link></li>
+          </ul>
+        </Drawer>
+      )}
+
+      {/* USER PROFILE DRAWER */}
+      <DrawerComponent
+        open={openDrawer}
+        onClose={() => setOpenDrawer(false)}
+        user={user}
+      />
     </>
   );
 };
