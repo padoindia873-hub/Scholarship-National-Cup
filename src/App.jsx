@@ -38,7 +38,7 @@ import Questions from "./pages/Question";
 import QuestionPopUp from "./components/common/QuestionPopUp";
 import SuperAdminLogin from "./pages/superAdmin/SuperAdminLogin";
 import LiveStream from "./pages/LiveStream";
-import ResultDetails from "./pages/student/Resultdetails";
+import ResultDetails from "./pages/student/ResultDetails";
 import SubjectDetails from "./pages/student/SubjectDetails";
 import PaymentDetails from "./pages/student/PaymentDetails";
 import WinningPrize from "./pages/student/WinningPrize";
