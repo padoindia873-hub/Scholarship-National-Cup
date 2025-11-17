@@ -36,7 +36,13 @@ import DemoQuestions from "./pages/DemoQuestions";
 import WelcomePopup from "./components/common/WelcomePopup";
 import Questions from "./pages/Question";
 import QuestionPopUp from "./components/common/QuestionPopUp";
-
+import SuperAdminLogin from "./pages/superAdmin/SuperAdminLogin";
+import LiveStream from "./pages/LiveStream";
+import ResultDetails from "./pages/student/Resultdetails";
+import SubjectDetails from "./pages/student/SubjectDetails";
+import PaymentDetails from "./pages/student/PaymentDetails";
+import WinningPrize from "./pages/student/WinningPrize";
+ 
 const Home = lazy(() => import("./pages/Home"));
 
 const Login = lazy(() => import("./components/auth/Login"));
@@ -91,6 +97,13 @@ const AppContent = () => {
           
           <Route path="/prize-list" element={<PrizeList/>} />
           <Route path="/PrizeLists" element={<PrizeLists/>} />
+          <Route path="/SuperAdminLogin" element={<SuperAdminLogin/>} />
+          <Route path="/LiveStream" element={<LiveStream/>} />
+          <Route path="/result-details" element={<ResultDetails/>} />
+          <Route path="/subject-details" element={<SubjectDetails/>} />
+          <Route path="/payment-details" element={<PaymentDetails/>} />
+          <Route path="/winning-prize" element={<WinningPrize/>} />
+
 
 
           <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />

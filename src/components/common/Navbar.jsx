@@ -42,7 +42,8 @@ const Navbar = () => {
             </button>
             {isServicesOpen && (
               <div className="absolute top-full left-0 mt-2 w-64 bg-white border rounded shadow-lg z-20">
-                <Link to="/services/live-stream" className="block px-4 py-2 hover:bg-gray-100">Live Stream</Link>
+                <Link to="/SuperAdminLogin" className="block px-4 py-2 hover:bg-gray-100">Super Admin</Link>
+                <Link to="/LiveStream" className="block px-4 py-2 hover:bg-gray-100">Live Stream</Link>
                 <Link to="/services/prize-list" className="block px-4 py-2 hover:bg-gray-100">Prize List</Link>
                 <Link to="/services/exam-system" className="block px-4 py-2 hover:bg-gray-100">Scholarship Exam System</Link>
                 <Link to="/services/qar" className="block px-4 py-2 hover:bg-gray-100">QAR</Link>
@@ -94,7 +95,8 @@ const Navbar = () => {
           </button>
           {isMobileServicesOpen && (
             <div className="ml-4 space-y-2">
-              <Link to="/services/live-stream" className="block px-4 py-1 hover:bg-gray-100" onClick={() => setIsOpen(false)}>Live Stream</Link>
+              <Link to="/SuperAdminLogin" className="block px-4 py-1 hover:bg-gray-100" onClick={() => setIsOpen(false)}>Supper Admin</Link>
+              <Link to="/LiveStream" className="block px-4 py-1 hover:bg-gray-100" onClick={() => setIsOpen(false)}>Live Stream</Link>
               <Link to="/services/prize-list" className="block px-4 py-1 hover:bg-gray-100" onClick={() => setIsOpen(false)}>Prize List</Link>
               <Link to="/services/exam-system" className="block px-4 py-1 hover:bg-gray-100" onClick={() => setIsOpen(false)}>Scholarship Exam System</Link>
               <Link to="/services/qar" className="block px-4 py-1 hover:bg-gray-100" onClick={() => setIsOpen(false)}>QAR</Link>

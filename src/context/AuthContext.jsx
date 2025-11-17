@@ -61,7 +61,31 @@ const login = async (credentials) => {
     toast.error(error.response?.data?.message || "Login Failed");
   }
 };
+const loginSuperAdmin = async (credentials) => {
+  try {
+    const res = await API.post("/auth/login", credentials);
 
+    const token = res.data.token;
+    const user = res.data.user;
+
+    localStorage.setItem("token", token);
+    setUser(user);
+
+    toast.success("Login Successful");
+
+    // Redirect based on userType
+    if (user.userType === "SUPER_ADMIN") {
+      navigate("/super-admin");
+    } else if (user.userType === "ADMIN") {
+      toast.success("Login For Only Super Admin");
+    } else {
+      toast.success("Login For Only Super Admin");
+    }
+
+  } catch (error) {
+    toast.error(error.response?.data?.message || "Login Failed");
+  }
+};
   const logout = () => {
     localStorage.removeItem("token");
     setUser(null);
@@ -70,7 +94,7 @@ const login = async (credentials) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, loginSuperAdmin ,logout }}>
       {!loading && children}
     </AuthContext.Provider>
   );

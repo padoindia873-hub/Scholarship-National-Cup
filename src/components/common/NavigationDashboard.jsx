@@ -1,13 +1,13 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { Avatar, Dropdown, Menu, Drawer } from "antd";
+import { Avatar, Dropdown, Menu, Drawer, message } from "antd";
 import { LogoutOutlined, UserOutlined, MenuOutlined } from "@ant-design/icons";
 import DrawerComponent from "../../utils/DrawerComponent";
 import logo from "../../assets/tp_logo.png";
 
 const NavigationDashboard = () => {
-  const { user, logout } = useContext(AuthContext);
+  const { user, logout, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const [openDrawer, setOpenDrawer] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -15,11 +15,47 @@ const NavigationDashboard = () => {
 
   if (!user) return null;
 
+  /* -----------------------------
+        STUDENT PHOTO UPLOAD
+  ------------------------------*/
+  const handlePhotoUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const formData = new FormData();
+    formData.append("photo", file);
+    formData.append("userId", user._id);
+    try {
+      const res = await fetch("http://localhost:5000/api/upload-student-photo", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        message.success("Photo updated successfully!");
+
+        // 🔄 update global context user photo so UI refreshes immediately
+        updateUser({ ...user, photo: data.photoUrl });
+      } else {
+        message.error("Upload failed");
+      }
+    } catch (error) {
+      message.error("Server error");
+    }
+  };
+
+  /* -----------------------------
+           LOGOUT
+  ------------------------------*/
   const handleLogout = () => {
     logout();
     navigate("/login");
   };
 
+  /* -----------------------------
+           PROFILE MENU
+  ------------------------------*/
   const menu = (
     <Menu>
       <Menu.Item
@@ -29,6 +65,7 @@ const NavigationDashboard = () => {
       >
         Profile
       </Menu.Item>
+
       <Menu.Item key="logout" icon={<LogoutOutlined />} onClick={handleLogout}>
         Logout
       </Menu.Item>
@@ -37,34 +74,24 @@ const NavigationDashboard = () => {
 
   return (
     <>
-      {/* Navigation Bar */}
+      {/* TOP NAVIGATION BAR */}
       <nav className="bg-gradient-to-r from-teal-600 via-blue-500 to-indigo-700 text-white py-3 px-6 flex justify-between items-center shadow-md h-14">
         <div className="flex items-center space-x-3">
-          {/* Admin Sidebar Toggle */}
-          {user.userType === "ADMIN" && (
+          {(user.userType === "ADMIN" || user.userType === "SUPER_ADMIN") && (
             <MenuOutlined
               className="text-white text-lg cursor-pointer"
               onClick={() => setSidebarOpen(true)}
             />
           )}
 
-          {/* Super Admin Sidebar Toggle */}
-          {user.userType === "SUPER_ADMIN" && (
-            <MenuOutlined
-              className="text-white text-lg cursor-pointer"
-              onClick={() => setSidebarOpen(true)}
-            />
-          )}
-
-          {/* Student Mobile Menu Toggle */}
+          {/* Student menu */}
           {user.userType === "STUDENT" && (
             <MenuOutlined
-            className="text-white text-lg cursor-pointer"
-                onClick={() => setMobileMenuOpen(true)}
+              className="text-white text-lg cursor-pointer"
+              onClick={() => setMobileMenuOpen(true)}
             />
           )}
 
-          {/* Logo */}
           <div className="flex items-center">
             <Link to="/">
               <img src={logo} alt="Logo" className="h-14 w-auto" />
@@ -72,192 +99,80 @@ const NavigationDashboard = () => {
           </div>
         </div>
 
-        {/* Student Navigation (Desktop) */}
+        {/* DESKTOP STUDENT NAVIGATION */}
         {user.userType === "STUDENT" && (
           <div className="hidden md:flex space-x-6 text-lg font-semibold">
-            <Link to="/registration" className="hover:text-gray-300 transition">
-              Your Registration
-            </Link>
-            <Link
-              to="/registered-details"
-              className="hover:text-gray-300 transition"
-            >
-              Registered Details
-            </Link>
-            <Link to="/events" className="hover:text-gray-300 transition">
-              Events
-            </Link>
+            <Link to="/registration">Your Registration</Link>
+            <Link to="/registered-details">Registered Details</Link>
+            <Link to="/events">Events</Link>
           </div>
         )}
 
-        {/* User Avatar */}
+        {/* USER AVATAR */}
         <Dropdown overlay={menu} placement="bottomRight">
-          <Avatar
-            className="cursor-pointer bg-indigo-500 border-2 border-white shadow-lg"
-            size={32}
-          >
+          <Avatar className="cursor-pointer bg-indigo-500 border-2 border-white shadow-lg" size={32}>
             {user.firstName[0]}
           </Avatar>
         </Dropdown>
       </nav>
 
-      {/* Admin Sidebar */}
-      {user.userType === "ADMIN" && (
-        <Drawer
-          title="Admin Menu"
-          placement="left"
-          closable={true}
-          onClose={() => setSidebarOpen(false)}
-          open={sidebarOpen}
-        >
-          <ul className="space-y-4">
-            <li>
-              <Link to="/CompetitorsManagement" className="text-lg font-medium">
-                Competitors Management
-              </Link>
-            </li>
-            <li>
-              <Link to="/questionsEntry" className="text-lg font-medium">
-                Questions Entry
-              </Link>
-            </li>
-            <li>
-              <Link to="/studentsDetails" className="text-lg font-medium">
-                Students Details
-              </Link>
-            </li>
-            <li>
-              <Link to="/manage-users" className="text-lg font-medium">
-                Manage Users
-              </Link>
-            </li>
-            <li>
-              <Link to="/settings" className="text-lg font-medium">
-                Settings
-              </Link>
-            </li>
-          </ul>
-        </Drawer>
-      )}
-
-      {/* Super Admin Sidebar */}
-      {/* {user.userType === "SUPER_ADMIN" && (
-                <Drawer
-                    title="Super Admin Menu"
-                    placement="left"
-                    closable={true}
-                    onClose={() => setSidebarOpen(false)}
-                    open={sidebarOpen}
-                >
-                    <ul className="space-y-4">
-                        <li><Link to="/manage-admins" className="text-lg font-medium">Manage Admins</Link></li>
-                        <li><Link to="/create-admin" className="text-lg font-medium">Create New Admin</Link></li>
-                        <li><Link to="/create-super-admin" className="text-lg font-medium">Create Super Admin</Link></li>
-                        <li><Link to="/all-users" className="text-lg font-medium">All Registered Users</Link></li>
-                        <li><Link to="/system-settings" className="text-lg font-medium">System Settings</Link></li>
-                    </ul>
-                </Drawer>
-            )} */}
-      {user.userType === "SUPER_ADMIN" && (
-        <Drawer
-          title={
-            <div className="flex items-center gap-2 text-xl font-bold">
-              <span>⚡ Super Admin Panel</span>
-            </div>
-          }
-          placement="left"
-          closable={true}
-          onClose={() => setSidebarOpen(false)}
-          open={sidebarOpen}
-        >
-          <ul className="space-y-4">
-            <li className="text-gray-500 text-sm font-semibold mt-4">
-              ADMIN MANAGEMENT
-            </li>
-            <li>
-              <Link
-                to="/manage-admins"
-                className="text-lg flex items-center gap-2"
-              >
-                👨‍💼 <span>Manage Admins</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/create-admin"
-                className="text-lg flex items-center gap-2"
-              >
-                ➕ <span>Create New Admin</span>
-              </Link>
-            </li>
-
-            <li className="text-gray-500 text-sm font-semibold mt-4">
-              SUPER ADMIN CONTROLS
-            </li>
-            <li>
-              <Link
-                to="/create-super-admin"
-                className="text-lg flex items-center gap-2"
-              >
-                🛡️ <span>Create Super Admin</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/system-settings"
-                className="text-lg flex items-center gap-2"
-              >
-                ⚙️ <span>System Settings</span>
-              </Link>
-            </li>
-
-            <li className="text-gray-500 text-sm font-semibold mt-4">
-              USER MANAGEMENT
-            </li>
-            <li>
-              <Link to="/all-users" className="text-lg flex items-center gap-2">
-                👥 <span>All Registered Users</span>
-              </Link>
-            </li>
-          </ul>
-        </Drawer>
-      )}
-
-      {/* Student Mobile Menu */}
+      {/* STUDENT SIDEBAR DRAWER */}
       {user.userType === "STUDENT" && (
         <Drawer
-          title="Student Menu"
           placement="left"
           closable={true}
           onClose={() => setMobileMenuOpen(false)}
           open={mobileMenuOpen}
+          style={{ backgroundColor: "#0A2A6B", padding: 0 }}
+          bodyStyle={{ backgroundColor: "#0A2A6B", padding: 20, color: "white" }}
+          headerStyle={{
+            backgroundColor: "#0A2A6B",
+            color: "white",
+            textAlign: "center",
+            borderBottom: "1px solid rgba(255,255,255,0.2)",
+          }}
+          title={
+            <div className="flex flex-col items-center text-white">
+              <Avatar
+                src={user.photo}
+                size={80}
+                className="border-2 border-blue-300 shadow-md"
+              />
+
+              <p className="mt-2 font-semibold">Student Photo</p>
+
+              {/* UPLOAD BUTTON */}
+              <label className="mt-2 text-sm bg-white text-blue-700 px-3 py-1 rounded cursor-pointer font-semibold">
+                Upload
+                <input type="file" accept="image/*" onChange={handlePhotoUpload} className="hidden" />
+              </label>
+            </div>
+          }
         >
-          <ul className="space-y-4">
-            <li>
-              <Link to="/registration" className="text-lg font-medium">
-                Your Registration
+          <ul className="space-y-6 text-base font-medium">
+
+            <li><Link to="/WelcomePopup" className="flex items-center gap-3 text-white">🏠 Exam</Link></li>
+            <li><Link to="/result-details" className="flex items-center gap-3 text-white">📄 Result Details</Link></li>
+            <li><Link to="/subject-details" className="flex items-center gap-3 text-white">💡 Subject Details</Link></li>
+            <li><Link to="/payment-details" className="flex items-center gap-3 text-white">💳 Payment Details</Link></li>
+            <li><Link to="/prize-list" className="flex items-center gap-3 text-white">🏆 Winning Prize Checking</Link></li>
+            <li><Link to="/LiveStream" className="flex items-center gap-3 text-white">🎉 Event Details</Link></li>
+            <li><Link to="/next-exam" className="flex items-center gap-3 text-white">📘 Next Exam Details</Link></li>
+            <li><Link to="/participant" className="flex items-center gap-3 text-white">🧑‍🎓 Participant</Link></li>
+
+            <li className="flex items-center gap-2">
+              <Link to="/features" className="flex items-center gap-3 text-white w-full">
+                🧩 Features
               </Link>
+              <span className="text-xs bg-white text-blue-600 px-2 py-1 rounded-lg font-bold">NEW</span>
             </li>
-            <li>
-              <Link to="/registered-details" className="text-lg font-medium">
-                Registered Details
-              </Link>
-            </li>
-            <li>
-              <Link to="/events" className="text-lg font-medium">
-                Events
-              </Link>
-            </li>
+
           </ul>
         </Drawer>
       )}
 
-      {/* Profile Drawer (User Details) */}
-      <DrawerComponent
-        open={openDrawer}
-        onClose={() => setOpenDrawer(false)}
-        user={user}
-      />
+      {/* PROFILE DRAWER */}
+      <DrawerComponent open={openDrawer} onClose={() => setOpenDrawer(false)} user={user} />
     </>
   );
 };
