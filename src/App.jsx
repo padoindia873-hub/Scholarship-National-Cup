@@ -42,7 +42,7 @@ import ResultDetails from "./pages/student/ResultDetails";
 import SubjectDetails from "./pages/student/SubjectDetails";
 import PaymentDetails from "./pages/student/PaymentDetails";
 import WinningPrize from "./pages/student/WinningPrize";
- 
+import ExamDashboardManagement from "./pages/superAdmin/ExamDashboardManagement";
 const Home = lazy(() => import("./pages/Home"));
 
 const Login = lazy(() => import("./components/auth/Login"));
@@ -103,6 +103,7 @@ const AppContent = () => {
           <Route path="/subject-details" element={<SubjectDetails/>} />
           <Route path="/payment-details" element={<PaymentDetails/>} />
           <Route path="/winning-prize" element={<WinningPrize/>} />
+          <Route path="/ExamDashboardManagement" element={<ExamDashboardManagement/>} />
 
 
 
