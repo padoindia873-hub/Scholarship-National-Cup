@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import TermsAndConditionsPage from "../../pages/TermsAndConditionsPage";
-import AllStudentsList from "../../pages/AllStudentsList";
 
 const WelcomePopup = () => {
-  const [showStudents, setShowStudents] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
 
   useEffect(() => {
+    // Step 1: Welcome message
     Swal.fire({
       title: "Welcome To Scholarship National Cup Competition!",
       text: "BEST OF LUCK 🎉",
@@ -15,6 +15,7 @@ const WelcomePopup = () => {
       confirmButtonColor: "#22c55e",
     }).then((result) => {
       if (result.isConfirmed) {
+        // Step 2: 10-digit PIN entry
         Swal.fire({
           title: "Enter Your 10-Digit PIN",
           input: "password",
@@ -33,14 +34,14 @@ const WelcomePopup = () => {
               Swal.showValidationMessage("Please enter your PIN");
             } else if (pin.length !== 10) {
               Swal.showValidationMessage("PIN must be exactly 10 digits");
-            } else if (pin !== "1234567890") {
+            } else if (pin !== "1234567890") { // ✅ Replace with your actual PIN
               Swal.showValidationMessage("Incorrect PIN. Try again!");
             }
             return pin;
           },
         }).then((pinResult) => {
           if (pinResult.isConfirmed && pinResult.value === "1234567890") {
-            setShowStudents(true); // ← SHOW STUDENT LIST
+            setShowTerms(true);
           }
         });
       }
@@ -48,14 +49,12 @@ const WelcomePopup = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      {showStudents ? (
-        <AllStudentsList />   // ← DISPLAY STUDENT LIST PAGE
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      {showTerms ? (
+        <TermsAndConditionsPage />
       ) : (
-        <div className="flex items-center justify-center min-h-screen">
-          <div className="text-lg text-gray-600 animate-pulse">
-            Verifying access...
-          </div>
+        <div className="text-lg text-gray-600 animate-pulse">
+          Verifying access...
         </div>
       )}
     </div>

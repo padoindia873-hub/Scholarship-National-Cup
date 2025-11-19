@@ -22,11 +22,11 @@ export default function TermsAndConditionsPage() {
       alert("Please accept the Terms & Conditions first.");
       return;
     }
-
+//AllStudentsList
     //  Navigate to your next page after accepting
-    navigate("/QuestionPopUp"); // <-- change this to your desired route
+    navigate("/AllStudentsList"); // <-- change this to your desired route
   }
-
+//QuestionPopUp
   return (
     <div className="min-h-screen bg-gray-50 p-6 flex items-center justify-center">
       <div className="max-w-4xl w-full bg-white shadow-2xl rounded-2xl overflow-hidden">

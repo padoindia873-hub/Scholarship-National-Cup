@@ -1,10 +1,28 @@
 import React, { useState } from "react";
-import { Search, Pencil, Trash2 } from "lucide-react";
+import { Search, Pencil, Trash2, KeyRound, HelpCircle } from "lucide-react";
 
 const dummyAdmins = [
-  { id: 1, name: "John Doe", email: "john@admin.com", role: "ADMIN", status: "Active" },
-  { id: 2, name: "Sarah Khan", email: "sarah@admin.com", role: "ADMIN", status: "Active" },
-  { id: 3, name: "Ravi Kumar", email: "ravi@admin.com", role: "SUPER_ADMIN", status: "Inactive" },
+  {
+    id: 1,
+    name: "John Doe",
+    email: "john@admin.com",
+    role: "ADMIN",
+    status: "Active",
+  },
+  {
+    id: 2,
+    name: "Sarah Khan",
+    email: "sarah@admin.com",
+    role: "ADMIN",
+    status: "Active",
+  },
+  {
+    id: 3,
+    name: "Ravi Kumar",
+    email: "ravi@admin.com",
+    role: "SUPER_ADMIN",
+    status: "Inactive",
+  },
 ];
 
 const ManageAdmins = () => {
@@ -16,7 +34,6 @@ const ManageAdmins = () => {
 
   return (
     <div className="p-10 bg-gray-100 min-h-screen space-y-8">
-
       {/* Header */}
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold">Manage Admins</h1>
@@ -79,11 +96,37 @@ const ManageAdmins = () => {
                     </span>
                   </td>
 
-                  <td className="p-3 flex justify-center gap-3">
-                    <button className="p-2 bg-blue-100 rounded-lg hover:bg-blue-200 transition">
+                  {/* Actions */}
+                  <td className="p-3 flex justify-center gap-3 flex-wrap">
+                    {/* Change Password */}
+                    <button
+                      className="p-2 bg-yellow-100 rounded-lg hover:bg-yellow-200 transition"
+                      title="Change Password"
+                    >
+                      <KeyRound size={18} className="text-yellow-700" />
+                    </button>
+
+                    {/* Forgot Password */}
+                    <button
+                      className="p-2 bg-purple-100 rounded-lg hover:bg-purple-200 transition"
+                      title="Forgot Password"
+                    >
+                      <HelpCircle size={18} className="text-purple-700" />
+                    </button>
+
+                    {/* Edit */}
+                    <button
+                      className="p-2 bg-blue-100 rounded-lg hover:bg-blue-200 transition"
+                      title="Edit"
+                    >
                       <Pencil size={18} className="text-blue-600" />
                     </button>
-                    <button className="p-2 bg-red-100 rounded-lg hover:bg-red-200 transition">
+
+                    {/* Delete */}
+                    <button
+                      className="p-2 bg-red-100 rounded-lg hover:bg-red-200 transition"
+                      title="Delete"
+                    >
                       <Trash2 size={18} className="text-red-600" />
                     </button>
                   </td>
@@ -93,7 +136,6 @@ const ManageAdmins = () => {
           </tbody>
         </table>
       </div>
-
     </div>
   );
 };

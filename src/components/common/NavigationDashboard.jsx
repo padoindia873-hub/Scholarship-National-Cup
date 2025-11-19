@@ -402,7 +402,7 @@ const NavigationDashboard = () => {
                   </li>
                   <li>
                     <Link
-                      to="/manage-admins"
+                      to="/PaymentManagement"
                       className="text-lg flex items-center gap-2"
                     >
                       💳 Payment Management

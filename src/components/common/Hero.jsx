@@ -5,7 +5,7 @@ import cupImage from "../../assets/cups.png";
 const Hero = () => {
   return (
     <div
-      className="relative min-h-screen sm:h-[120vh] md:h-[140vh] lg:h-[160vh] bg-no-repeat bg-cover bg-center"
+      className="relative min-h-screen sm:h-[120vh] md:h-[140vh] lg:h-[180vh] bg-no-repeat bg-cover bg-center"
       style={{
         backgroundImage: `url(${heroImage})`,
       }}
@@ -23,7 +23,7 @@ const Hero = () => {
 
           {/* Description */}
           <p className="text-gray-300 text-xs sm:text-sm md:text-lg lg:text-xl mb-6 leading-relaxed font-medium">
-            159 Candidates Will Become{" "}
+            368 Candidates Will Become{" "}
             <span className="text-yellow-400 font-semibold">Crorepatis</span>.
             <br className="hidden sm:block" />
             Over 2 Lakh Students will get{" "}
@@ -48,10 +48,16 @@ const Hero = () => {
               className="text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold text-yellow-300 mb-6 animate-blink"
               style={{ fontSize: "45px" }}
             >
-              159 Crorepatis
+              368 Crorepatis
             </h1>
             {/* Call to Action Buttons */}
             <div className="mt-10 text-[100px] flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
+             <Link
+                to="/BuyRollNumber"
+                className="text-black bg-yellow-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkYellow w-[80%] sm:w-auto text-center"
+              >
+                Buy Roll Number
+              </Link>
               <Link
                 to="/DemoQuestions"
                 className="text-black bg-yellow-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkYellow w-[80%] sm:w-auto text-center"
@@ -79,6 +85,8 @@ const Hero = () => {
               >
                 Get Exam
               </Link>
+
+              
             </div>
           </div>
         </div>

@@ -43,6 +43,9 @@ import SubjectDetails from "./pages/student/SubjectDetails";
 import PaymentDetails from "./pages/student/PaymentDetails";
 import WinningPrize from "./pages/student/WinningPrize";
 import ExamDashboardManagement from "./pages/superAdmin/ExamDashboardManagement";
+import AllStudentsList from "./pages/AllStudentsList";
+import PaymentManagement from "./pages/superAdmin/PaymentManagement";
+import BuyRollNumber from "./pages/BuyRollNumber";
 const Home = lazy(() => import("./pages/Home"));
 
 const Login = lazy(() => import("./components/auth/Login"));
@@ -85,8 +88,8 @@ const AppContent = () => {
 
           <Route path="/scholarship" element={<Scholarship />} />
           <Route path="/scholarship/:id" element={<ScholarshipDetails />} />
-
           <Route path="/about" element={<About />} />
+
 
           
          
@@ -104,6 +107,8 @@ const AppContent = () => {
           <Route path="/payment-details" element={<PaymentDetails/>} />
           <Route path="/winning-prize" element={<WinningPrize/>} />
           <Route path="/ExamDashboardManagement" element={<ExamDashboardManagement/>} />
+          <Route path="/AllStudentsList" element={<AllStudentsList/>} />
+          <Route path="/PaymentManagement" element={<PaymentManagement />} />
 
 
 
@@ -128,6 +133,7 @@ const AppContent = () => {
           <Route path="/GetMemberShipCard" element={<GetMemberShipCard />} />
                     <Route path="/GetCompetitionExam" element={<GetCompetitionExam />} />
                     <Route path="/DemoQuestions" element={<DemoQuestions/>} />
+                    <Route path="/BuyRollNumber" element={<BuyRollNumber />} />
                     <Route path="/Questions" element={<Questions/>} />
 
 
