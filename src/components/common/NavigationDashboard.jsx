@@ -410,7 +410,7 @@ const NavigationDashboard = () => {
                   </li>
                   <li>
                     <Link
-                      to="/manage-admins"
+                      to="/EventManagement"
                       className="text-lg flex items-center gap-2"
                     >
                       📅 Event Management
@@ -418,7 +418,7 @@ const NavigationDashboard = () => {
                   </li>
                   <li>
                     <Link
-                      to="/manage-admins"
+                      to="/AdvertisementManagement"
                       className="text-lg flex items-center gap-2"
                     >
                       📢 Advertisement Management{" "}
@@ -426,7 +426,7 @@ const NavigationDashboard = () => {
                   </li>
                   <li>
                     <Link
-                      to="/manage-admins"
+                      to="/TopWinnersList"
                       className="text-lg flex items-center gap-2"
                     >
                       🏆 Top Winner List
@@ -434,7 +434,7 @@ const NavigationDashboard = () => {
                   </li>
                   <li>
                     <Link
-                      to="/manage-admins"
+                      to="/TopSchoolList"
                       className="text-lg flex items-center gap-2"
                     >
                       🎓 Top School List
@@ -442,7 +442,7 @@ const NavigationDashboard = () => {
                   </li>
                   <li>
                     <Link
-                      to="/manage-admins"
+                      to="/SponsorAndSupporterList"
                       className="text-lg flex items-center gap-2"
                     >
                       🎓 Sponsor and Supporter List

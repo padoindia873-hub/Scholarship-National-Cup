@@ -46,6 +46,12 @@ import ExamDashboardManagement from "./pages/superAdmin/ExamDashboardManagement"
 import AllStudentsList from "./pages/AllStudentsList";
 import PaymentManagement from "./pages/superAdmin/PaymentManagement";
 import BuyRollNumber from "./pages/BuyRollNumber";
+import TopWinnersList from "./pages/superAdmin/TopWinnersList";
+import TopSchoolList from "./pages/superAdmin/TopSchoolList";
+import SponsorAndSupporterList from "./pages/superAdmin/SponsorandSupporterList";
+import AdvertisementManagement from "./pages/superAdmin/AdvertisementManagement";
+import EventManagement from "./pages/superAdmin/EventManagement";
+
 const Home = lazy(() => import("./pages/Home"));
 
 const Login = lazy(() => import("./components/auth/Login"));
@@ -90,8 +96,13 @@ const AppContent = () => {
           <Route path="/scholarship/:id" element={<ScholarshipDetails />} />
           <Route path="/about" element={<About />} />
 
+          <Route path="/TopWinnersList" element={<TopWinnersList />} />
+          <Route path="/TopSchoolList" element={<TopSchoolList />} />
+          <Route path="/SponsorAndSupporterList" element={<SponsorAndSupporterList />} />
+          <Route path="/AdvertisementManagement" element={<AdvertisementManagement />} />
+          <Route path="/EventManagement" element={<EventManagement />} />
 
-          
+
          
 
           <Route path="/events" element={<Events />} />
