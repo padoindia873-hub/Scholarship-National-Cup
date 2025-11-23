@@ -51,6 +51,8 @@ import TopSchoolList from "./pages/superAdmin/TopSchoolList";
 import SponsorAndSupporterList from "./pages/superAdmin/SponsorandSupporterList";
 import AdvertisementManagement from "./pages/superAdmin/AdvertisementManagement";
 import EventManagement from "./pages/superAdmin/EventManagement";
+import ShowAllQuestion from "./pages/admin/ShowAllQuestion";
+import BulkQuestionUploader from "./pages/superAdmin/BulkQuestionUploader";
 
 const Home = lazy(() => import("./pages/Home"));
 
@@ -101,6 +103,8 @@ const AppContent = () => {
           <Route path="/SponsorAndSupporterList" element={<SponsorAndSupporterList />} />
           <Route path="/AdvertisementManagement" element={<AdvertisementManagement />} />
           <Route path="/EventManagement" element={<EventManagement />} />
+          <Route path="/ShowAllQuestion" element={<ShowAllQuestion />} />
+          <Route path="/BulkQuestionUploader" element={<BulkQuestionUploader />} />
 
 
          
@@ -182,3 +186,4 @@ const App = () => {
 };
 
 export default App;
+//app_id_s1jvamvvsj9x5g8zky59h69p
