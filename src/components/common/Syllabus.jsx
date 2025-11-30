@@ -5,14 +5,17 @@ const syllabusData = [
    {
     level: 'Qualifying Exam',
     mode: 'Online Based',
-    subjects: [
-      'National Flag',
-      'National Bird',
-      'National Animal',
-      'National Anthem',
-      'Government Projects For Public',
-      'Phrasal Verbs',
-      'Human Body',
+   subjects: [
+      'Flower',
+      'Vegetable',
+      'Fish',
+      "Math's",
+      'Synonym',
+      'Words',
+      'First Women India',
+      'First India',
+      'First Bengal',
+      'GK'
     ],
   },
   {
@@ -26,25 +29,11 @@ const syllabusData = [
       'Government Projects For Public',
       'Phrasal Verbs',
       'Human Body',
+      'GK'
     ],
   },
   {
     level: '2nd Level (Block Level)',
-    mode: 'Online Based',
-    subjects: [
-      'Flower',
-      'Vegetable',
-      'Fish',
-      "Math's",
-      'Synonym',
-      'Words',
-      'First Women India',
-      'First India',
-      'First Bengal',
-    ],
-  },
-  {
-    level: '3rd Level (District Level)',
     mode: 'Online Based',
     subjects: [
       'All Prime Minister',
@@ -58,7 +47,13 @@ const syllabusData = [
       'Awards And Famous Person',
       'Name of World Famous News Agencies',
       'Game Innovated Country',
+      'GK'
     ],
+  },
+  {
+    level: '3rd Level (District Level)',
+    mode: 'Offline Competition',
+    subjects: ['GK',"Academy"],
   },
   {
     level: '4th Level (State Level)',
