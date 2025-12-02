@@ -193,3 +193,4 @@ const App = () => {
 
 export default App;
 //app_id_s1jvamvvsj9x5g8zky59h69p
+//VITE_OPENAI_API_KEY=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
