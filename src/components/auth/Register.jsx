@@ -36,7 +36,7 @@ const Register = () => {
     studentClass: "",
     schoolAddress: "",
     aadharCardNumber: "",
-
+    bankTransaction : "",
     // Admin Secret Code
     adminSecretCode: "",
 

@@ -384,6 +384,14 @@ const NavigationDashboard = () => {
                       👨‍💼 Students Admin
                     </Link>
                   </li>
+                   <li>
+                    <Link
+                      to="/student-list"
+                      className="text-lg flex items-center gap-2"
+                    >
+                      👨‍💼 Students List
+                    </Link>
+                  </li>
                   <li>
                     <Link
                       to="/questionsEntry"

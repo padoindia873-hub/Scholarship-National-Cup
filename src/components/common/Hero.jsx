@@ -85,7 +85,13 @@ const Hero = () => {
               >
                 Get Exam
               </Link>
-
+             <Link
+                to="/BuyRoll"
+                className="text-black bg-blue-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 w-[80%] sm:w-auto text-center animate-blink"
+                style={{ fontSize: "40px" }}
+              >
+                Buy Roll
+              </Link>
               
             </div>
           </div>

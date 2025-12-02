@@ -53,7 +53,9 @@ import AdvertisementManagement from "./pages/superAdmin/AdvertisementManagement"
 import EventManagement from "./pages/superAdmin/EventManagement";
 import ShowAllQuestion from "./pages/admin/ShowAllQuestion";
 import BulkQuestionUploader from "./pages/superAdmin/BulkQuestionUploader";
-
+import BuyRoll from "./pages/BuyRoll";
+import StudentPayments from "./pages/StudentPayments";
+import StudentList from "./pages/superAdmin/StudentList";
 const Home = lazy(() => import("./pages/Home"));
 
 const Login = lazy(() => import("./components/auth/Login"));
@@ -105,6 +107,9 @@ const AppContent = () => {
           <Route path="/EventManagement" element={<EventManagement />} />
           <Route path="/ShowAllQuestion" element={<ShowAllQuestion />} />
           <Route path="/BulkQuestionUploader" element={<BulkQuestionUploader />} />
+          <Route path="/BuyRoll" element={<BuyRoll />} />
+          <Route path="/StudentPayments" element={<StudentPayments />} />
+
 
 
          
@@ -130,6 +135,7 @@ const AppContent = () => {
           <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
           <Route path="/super-admin" element={<ProtectedRoute><SuperAdmin/></ProtectedRoute>} />
           <Route path="/manage-admins" element={<ProtectedRoute><ManageAdmins/></ProtectedRoute>} />
+          <Route path="/student-list" element={<ProtectedRoute><StudentList/></ProtectedRoute>} />
 
           <Route path="/competitorsManagement" element={<ProtectedRoute><CompetitorsManagement /></ProtectedRoute>} />
           <Route path="/competitorsInputSection" element={<ProtectedRoute><CompetitorsInputSection /></ProtectedRoute>} />
