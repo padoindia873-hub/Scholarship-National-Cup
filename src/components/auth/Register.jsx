@@ -15,6 +15,21 @@ const Register = () => {
   const navigate = useNavigate();
 
   const [mode, setMode] = useState("date");
+const [errors, setErrors] = useState({});
+
+const handleChangePin = (e) => {
+  const { name, value } = e.target;
+
+  if (name === "pin" && !/^\d{0,10}$/.test(value)) return; // prevent non-numeric
+
+  setFormData({ ...formData, [name]: value });
+
+  if (name === "pin" && value.length !== 10) {
+    setErrors({ ...errors, pin: "PIN must be exactly 10 digits." });
+  } else {
+    setErrors({ ...errors, pin: "" });
+  }
+};
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -37,6 +52,9 @@ const Register = () => {
     schoolAddress: "",
     aadharCardNumber: "",
     bankTransaction : "",
+    section: "",
+    schoolRoll: "",
+    buyRoll:"",
     // Admin Secret Code
     adminSecretCode: "",
 
@@ -175,6 +193,37 @@ const Register = () => {
                   <Input name="pin" placeholder="PIN" size="large" className="mb-3 w-full" onChange={handleChange} required />
                   <Input name="schoolName" placeholder="School Name" size="large" className="mb-3 w-full" onChange={handleChange} required />
                   <Input name="studentClass" placeholder="Class" size="large" className="mb-3 w-full" onChange={handleChange} required />
+                 
+                 {/* New Added Fields */}
+    <Input
+      name="schoolRoll"
+      placeholder="School Roll"
+      size="large"
+      className="mb-3 w-full"
+      onChange={handleChange}
+      required
+    />
+
+    <Input
+      name="section"
+      placeholder="Section"
+      size="large"
+      className="mb-3 w-full"
+      onChange={handleChange}
+      required
+    />
+    <Input
+  name="pin"
+  placeholder="PIN"
+  size="large"
+  className="mb-3 w-full"
+  onChange={handleChangePin}
+  required
+  maxLength={10}
+  minLength={10}
+  pattern="[0-9]{10}"
+  inputMode="numeric"
+/>
                   <Input name="schoolAddress" placeholder="School Address" size="large" className="mb-3 w-full" onChange={handleChange} required />
                   <Input name="aadharCardNumber" placeholder="Aadhar Card Number" size="large" className="mb-3 w-full" onChange={handleChange} required />
                 </>
