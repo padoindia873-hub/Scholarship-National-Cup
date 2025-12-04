@@ -5,7 +5,7 @@ import cupImage from "../../assets/cups.png";
 const Hero = () => {
   return (
     <div
-      className="relative min-h-screen sm:h-[120vh] md:h-[140vh] lg:h-[180vh] bg-no-repeat bg-cover bg-center"
+  className="relative h-[1000px] bg-no-repeat bg-cover bg-center"
       style={{
         backgroundImage: `url(${heroImage})`,
       }}
@@ -23,15 +23,15 @@ const Hero = () => {
 
           {/* Description */}
           <p className="text-gray-300 text-xs sm:text-sm md:text-lg lg:text-xl mb-6 leading-relaxed font-medium">
-            368 Candidates Will Become{" "}
-            <span className="text-yellow-400 font-semibold">Crorepatis</span>.
-            <br className="hidden sm:block" />
+            636 Candidates Will Become{" "}
+            <span className="text-yellow-400 font-semibold">Crorepatis in this competion</span>.
+            {/* <br className="hidden sm:block" />
             Over 2 Lakh Students will get{" "}
             <span className="text-blue-400 font-semibold">Scholarships</span>...
             <br className="hidden sm:block" />
             And Millions will build their careers through{" "}
             <span className="text-green-400 font-semibold">Higher Studies</span>
-            .
+            . */}
           </p>
 
           {/* Cup Image + Text */}
@@ -48,17 +48,21 @@ const Hero = () => {
               className="text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold text-yellow-300 mb-6 animate-blink"
               style={{ fontSize: "45px" }}
             >
-              368 Crorepatis
+              636 Crorepatis
+            </h1>
+            <h1 className="text-base sm:text-lg md:text-5xl lg:text-5xl font-semibold text-green-300 mb-6">
+              Recognition By Govt. Of India
             </h1>
             {/* Call to Action Buttons */}
             <div className="mt-10 text-[100px] flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
-             <Link
+            
+             {/* <Link
                 to="/BuyRollNumber"
                 className="text-black bg-yellow-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkYellow w-[80%] sm:w-auto text-center"
               >
                 Buy Roll Number
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 to="/DemoQuestions"
                 className="text-black bg-yellow-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkYellow w-[80%] sm:w-auto text-center"
               >
@@ -77,20 +81,20 @@ const Hero = () => {
                 className="text-black bg-yellow-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkYellow w-full sm:w-[310px] text-center"
               >
                 Competition System
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 to="/GetCompetitionExam"
                 className="text-black bg-blue-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 w-[80%] sm:w-auto text-center animate-blink"
                 style={{ fontSize: "40px" }}
               >
                 Get Exam
-              </Link>
+              </Link> */}
              <Link
                 to="/BuyRoll"
                 className="text-black bg-blue-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 w-[80%] sm:w-auto text-center animate-blink"
                 style={{ fontSize: "40px" }}
               >
-                Buy Roll
+                 Get Exam
               </Link>
               
             </div>

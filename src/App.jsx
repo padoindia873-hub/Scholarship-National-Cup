@@ -56,6 +56,7 @@ import BulkQuestionUploader from "./pages/superAdmin/BulkQuestionUploader";
 import BuyRoll from "./pages/BuyRoll";
 import StudentPayments from "./pages/StudentPayments";
 import StudentList from "./pages/superAdmin/StudentList";
+import StateLevelCandidatesBenefits from "./components/common/StateLevelCandidatesBenifits";
 const Home = lazy(() => import("./pages/Home"));
 
 const Login = lazy(() => import("./components/auth/Login"));
@@ -129,6 +130,8 @@ const AppContent = () => {
           <Route path="/ExamDashboardManagement" element={<ExamDashboardManagement/>} />
           <Route path="/AllStudentsList" element={<AllStudentsList/>} />
           <Route path="/PaymentManagement" element={<PaymentManagement />} />
+          <Route path="/StateLevelCandidatesBenefits" element={<StateLevelCandidatesBenefits />} />
+
 
 
 

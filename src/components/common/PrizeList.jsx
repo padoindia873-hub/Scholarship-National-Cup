@@ -153,7 +153,7 @@ const prizeData = [
         title: '1st Prize',
         rewards: [
           '1 Kg Gold Trophy',
-          '5 Crore Cash',
+          '10 Crore Cash',
           'Jaguar Car',
           '5 BHK Flat',
           'Scholarship For Abroad Study',
@@ -163,7 +163,7 @@ const prizeData = [
         title: '2nd Prize',
         rewards: [
           '500 gm Gold Trophy',
-          '3 Crore Cash',
+          '8 Crore Cash',
           'Jaguar Car',
           '5 BHK Flat',
           'Scholarship For Abroad Study',
@@ -173,20 +173,30 @@ const prizeData = [
         title: '3rd Prize',
         rewards: [
           '250 gm Gold Trophy',
-          '2 Crore Cash',
+          '6 Crore Cash',
           'Jaguar Car',
           '5 BHK Flat',
           'Scholarship For Abroad Study',
         ],
       },
       {
-        title: '4th to 159th Rankers Will Get',
+        title: '4th to 36th Rankers Will Get',
+        rewards: [
+          
+          '1,00,00,000/-  Cash',
+          '4 BHK Flat',
+          'Thar Car ',
+          '50 Gram Pure Gold Medal',          
+        ],
+      },
+      {
+        title: '37th to 636th Rankers Will Get',
         rewards: [
           
           '50,00,000/-  Cash',
           '3 BHK Flat',
-          'Honda City Car ',
-          '50 Gram Pure Gold Medal',          
+          'Hyundai Exter Car ',
+          '20 Gram Pure Gold Medal',          
         ],
       },
       // {

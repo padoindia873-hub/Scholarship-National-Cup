@@ -7,7 +7,7 @@ const images1 = [
     { src: "/Assets/wp16.jpg", alt: "Product 1", desc: "Others top ten winners will get Rs.5000" },
 ];
 const Blocklevel = [
-    { src: "/Assets/wp4.jpg", alt: "Product 1", desc: "PRIZE : 1st winner Rs. 1,00000/- Scholarship " },
+    { src: "/Assets/wp4.jpg", alt: "Product 1", desc: "PRIZE : 1st winner Rs. 50,000/- Scholarship " },
 ];
 const Blocklevel1 = [
 
@@ -18,10 +18,10 @@ const Blocklevel2 = [
 ];
 
 const Districtlevel = [
-    { src: "/Assets/wp17.jpg", alt: "Product 1", desc: "1st BMW Bike + 1,000000" },
-    { src: "/Assets/wp15.jpg", alt: "Product 2", desc: "2nd KTM Bike + 1,000000" },
-    { src: "/Assets/wp14.jpg", alt: "Product 3", desc: "3rd Pulsar Bike + 1,000000" },
-    { src: "/Assets/wp3.jpg", alt: "Product 3", desc: "4th Scooty + 5,00000 Remaining All Candidate will get 5,00000 cash with each and every one" },
+    { src: "/Assets/wp17.jpg", alt: "Product 1", desc: "1st BMW Bike + 5,00,000" },
+    { src: "/Assets/wp15.jpg", alt: "Product 2", desc: "2nd KTM Bike + 3,00,000" },
+    { src: "/Assets/wp14.jpg", alt: "Product 3", desc: "3rd Pulsar Bike + 2,00,000" },
+    { src: "/Assets/wp3.jpg", alt: "Product 3", desc: "4th Scooty + 1,00,000 Remaining All Candidates." },
     // { src: "/Assets/wp13.jpg", alt: "Product 3", desc: "5th Laptop + 1,000000" },
 
 ];
@@ -45,8 +45,8 @@ const STATElevel2 = [
 ];
 
 const Allevel = [
-    { src: "/Assets/k1.jpg", alt: "Product 1", desc: "1ST ROUND 100 LOSERS WILL GET 1 CRORE CASH FOR HIGHER STUDY " },
-    { src: "/Assets/wp4.jpg", alt: "Product 2", desc: "2nd Round 56 LOSERS WILL GET 2 CRORE CASH " },
+    { src: "/Assets/k1.jpg", alt: "Product 1", desc: "Final ROUND 33 LOSERS WILL GET 1 CRORE CASH FOR HIGHER STUDY " },
+    { src: "/Assets/wp4.jpg", alt: "Product 2", desc: "1St Round 600 LOSERS WILL GET 2 CRORE CASH " },
     // { src: "/Assets/wp4.jpg", alt: "Product 2", desc: "2nd Round 40 LOSER WILL GET  3BHK FLAT" },
     // { src: "/Assets/k2.jpg", alt: "Product 3", desc: "FINAL ROUND 9 LOSER WILL GET 4 CRORE CASH " },
     // { src: "/Assets/k3.jpg", alt: "Product 3", desc: "FINAL ROUND 9 LOSER WILL GET 4 BHK FLAT " },

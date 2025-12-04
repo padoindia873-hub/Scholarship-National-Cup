@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const ScholarshipCupFlow = () => {
   return (
@@ -16,17 +16,26 @@ const ScholarshipCupFlow = () => {
       >
         Registration Now Open
       </Link>
-    <div className="w-0.5 h-10 bg-gray-400" />
+      <div className="w-0.5 h-10 bg-gray-400" />
       <Link
         to="/register"
-        className="mt-4 mb-8 inline-block text-black text-sm xs:text-base font-semibold px-6 py-3 shadow-lg transition duration-300 bg-orange-400 "
+        className="mt-4 mb-8 inline-block text-black text-sm xs:text-base font-semibold px-6 py-3 shadow-lg transition duration-300 bg-green-400 "
       >
-        Categories
+        3 Categories
+      </Link>
+      <div className="w-0.5 h-10 bg-gray-400" />
+
+      <Link
+        to="/"
+        className="mt-4 mb-8 inline-block text-black text-sm xs:text-base font-semibold px-6 py-3 shadow-lg transition duration-300 bg-green-400 "
+      >
+        Any One Can Take The Exam here.{" "}
       </Link>
 
       {/* Flow structure */}
       <div className="relative w-full max-w-5xl flex flex-col items-center">
         {/* Vertical line down from the button */}
+
         <div className="w-0.5 h-10 bg-gray-400" />
 
         {/* Horizontal split */}
@@ -37,156 +46,169 @@ const ScholarshipCupFlow = () => {
           {/* Govt student Option */}
           <div className="flex flex-col items-center w-1/2 px-2 sm:px-4 z-10">
             <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center">
-              <p className="text-base sm:text-lg font-semibold text-blue-800">Goverment Student</p>
+              <p className="text-base sm:text-lg font-semibold text-blue-800">
+                First Category Examination will be till 13th District Champions.
+              </p>
               {/* <p className="font-bold text-gray-800">Direct Gold Card</p> */}
             </div>
 
             <div className="w-0.5 h-10 bg-gray-400 my-1" />
 
             <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              Goverment School Students will win from one side to the National Cup competation.
+              Only Rupees 121 is being charged for Online & Offline Examination
+              Maintenance Charges, Lodging, Fooding and Traveling Expenses of
+              Examiners and Guardians.{" "}
             </div>
 
             <div className="w-0.5 h-10 bg-gray-400 my-1" />
 
             <div className="bg-green-100 text-green-700 font-semibold px-4 py-2 rounded shadow">
-             Entry Rs.100/-
+              Maintains Fees.121/-
             </div>
             <div className="w-0.5 h-10 bg-gray-400 my-1" />
-             <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             For Qualifying Exam & get Membership Card 
+            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+              First you have to get qualified then you will get chance in
+              school college level{" "}
             </div>
-              <div className="w-0.5 h-10 bg-gray-400 my-1" />
-           <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             Qualify Exam (Online)
+            <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+              Qualify Exam (Online)
             </div>
-             <div className="w-0.5 h-10 bg-gray-400 my-1" />
-           <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             School & College Level (Online)
+            <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+              School & College Level (Online)
             </div>
             <div className="w-0.5 h-10 bg-gray-400 my-1" />
 
             <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             Block Level (Online)
+              Block Level (Online)
             </div>
-                        <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            <div className="w-0.5 h-10 bg-gray-400 my-1" />
 
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+            {/* <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
              State Level (Offline)
-            </div>
+            </div> */}
 
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
-           <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             District or State Level (Offline)
+            {/* <div className="w-0.5 h-10 bg-gray-400 my-1" /> */}
+            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+              District or State Level (Offline)
             </div>
             <div className="w-0.5 h-10 bg-gray-400 my-1" />
-           <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             National Level
+            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+              National Level
             </div>
           </div>
 
           {/* Private Student Option */}
-           <div className="flex flex-col items-center w-1/2 px-2 sm:px-4 z-10">
+          <div className="flex flex-col items-center w-1/2 px-2 sm:px-4 z-10">
             <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center">
-              <p className="text-base sm:text-lg font-semibold text-blue-800">Private Student</p>
+              <p className="text-base sm:text-lg font-semibold text-blue-800">
+                Second Category Examination will be till Next 20th
+                District Champions.
+              </p>
               {/* <p className="font-bold text-gray-800">Direct Gold Card</p> */}
             </div>
 
             <div className="w-0.5 h-10 bg-gray-400 my-1" />
 
             <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              Private  School & College Students with Second side to the National Cup Competition.
+              Only Rupees 171 is being charged for Online & Offline Examination
+              Maintenance Charges, Lodging, Fooding and Traveling Expenses of
+              Examiners and Guardians.
             </div>
 
             <div className="w-0.5 h-10 bg-gray-400 my-1" />
 
             <div className="bg-green-100 text-green-700 font-semibold px-4 py-2 rounded shadow">
-             Entry Rs.200/-
+              Maintains Fees.171/-
             </div>
             <div className="w-0.5 h-10 bg-gray-400 my-1" />
-             <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             For Qualifying Exam & get Membership Card
+            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+              First you have to get qualified then you will get chance in school college level
             </div>
-             <div className="w-0.5 h-10 bg-gray-400 my-1" />
-           <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             Qualify Exam (Online)
+            <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+              Qualify Exam (Online)
             </div>
-             <div className="w-0.5 h-10 bg-gray-400 my-1" />
-           <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             School & College Level (Online)
+            <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+              School & College Level (Online)
             </div>
-             <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            <div className="w-0.5 h-10 bg-gray-400 my-1" />
 
             <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             Block Level (Online)
-            </div> 
-                    <div className="w-0.5 h-10 bg-gray-400 my-1" />
-
+              Block Level (Online)
+            </div>
+            <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            {/* 
             <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
              State Level (Offline)
             </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
-           <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             District or State Level (Offline)
+            <div className="w-0.5 h-10 bg-gray-400 my-1" /> */}
+            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+              District or State Level (Offline)
             </div>
             <div className="w-0.5 h-10 bg-gray-400 my-1" />
-           <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             National Level
+            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+              National Level
             </div>
           </div>
 
           {/* Public */}
-            
-             <div className="flex flex-col items-center w-1/2 px-2 sm:px-4 z-10">
+
+          <div className="flex flex-col items-center w-1/2 px-2 sm:px-4 z-10">
             <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center">
-              <p className="text-base sm:text-lg font-semibold text-blue-800">Public & Guardian's</p>
+              <p className="text-base sm:text-lg font-semibold text-blue-800">
+                Third Category Examination will be till Next 20th
+                District Champions.
+              </p>
               {/* <p className="font-bold text-gray-800">Direct Gold Card</p> */}
             </div>
 
             <div className="w-0.5 h-10 bg-gray-400 my-1" />
 
             <div className="bg-white border border-blue-600 p-2 rounded text-sm sm:text-base w-full text-center">
-              Private  School & College Students with
-              Public or Student Parents with from other side to the National Cup Competation.
+              Only Rupees 221 is being charged for Online & Offline Examination
+              Maintenance Charges, Lodging, Fooding and Traveling Expenses of
+              Examiners and Guardians.
             </div>
 
             <div className="w-0.5 h-10 bg-gray-400 my-1" />
 
             <div className="bg-green-100 text-green-700 font-semibold px-4 py-2 rounded shadow">
-             Entry Rs.300/-
+              Maintains Fees.221/-
             </div>
             <div className="w-0.5 h-10 bg-gray-400 my-1" />
-             <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             For Qualifying Exam & get Membership Card
+            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+              First you have to get qualified then you will get chance in school college level
             </div>
-             <div className="w-0.5 h-10 bg-gray-400 my-1" />
-           <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             Qualify Exam (Online)
+            <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+              Qualify Exam (Online)
             </div>
-             <div className="w-0.5 h-10 bg-gray-400 my-1" />
-           <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             School & College Level (Online)
+            <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+              School & College Level (Online)
             </div>
-             <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            <div className="w-0.5 h-10 bg-gray-400 my-1" />
 
             <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             Block Level (Online)
+              Block Level (Online)
             </div>
-                    <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            <div className="w-0.5 h-10 bg-gray-400 my-1" />
 
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+            {/* <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
              State Level (Offline)
             </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
-           <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             District or State Level (Offline)
+            <div className="w-0.5 h-10 bg-gray-400 my-1" /> */}
+            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+              District or State Level (Offline)
             </div>
             <div className="w-0.5 h-10 bg-gray-400 my-1" />
-           <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             National Level
+            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+              National Level
             </div>
           </div>
-
         </div>
       </div>
     </div>
