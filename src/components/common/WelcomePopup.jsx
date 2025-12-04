@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import TermsAndConditionsPage from "../../pages/TermsAndConditionsPage";
+import axios from "axios";
 
 const WelcomePopup = () => {
   const [showTerms, setShowTerms] = useState(false);
 
   useEffect(() => {
-    // Step 1: Welcome message
     Swal.fire({
       title: "Welcome To Scholarship National Cup Competition!",
       text: "BEST OF LUCK 🎉",
@@ -15,38 +15,63 @@ const WelcomePopup = () => {
       confirmButtonColor: "#22c55e",
     }).then((result) => {
       if (result.isConfirmed) {
-        // Step 2: 10-digit PIN entry
-        Swal.fire({
-          title: "Enter Your 10-Digit PIN",
-          input: "password",
-          inputPlaceholder: "Enter your 10-digit PIN",
-          inputAttributes: {
-            maxlength: 10,
-            autocapitalize: "off",
-            autocorrect: "off",
-          },
-          showCancelButton: true,
-          confirmButtonText: "Submit",
-          confirmButtonColor: "#22c55e",
-          cancelButtonText: "Cancel",
-          preConfirm: (pin) => {
-            if (!pin) {
-              Swal.showValidationMessage("Please enter your PIN");
-            } else if (pin.length !== 10) {
-              Swal.showValidationMessage("PIN must be exactly 10 digits");
-            } else if (pin !== "1234567890") { // ✅ Replace with your actual PIN
-              Swal.showValidationMessage("Incorrect PIN. Try again!");
-            }
-            return pin;
-          },
-        }).then((pinResult) => {
-          if (pinResult.isConfirmed && pinResult.value === "1234567890") {
-            setShowTerms(true);
-          }
-        });
+        openPinDistrictStateForm();
       }
     });
   }, []);
+
+  // 🔥 Step 2 → Show Form for PIN + District + State
+  const openPinDistrictStateForm = () => {
+    Swal.fire({
+      title: "Enter Details",
+      html: `
+        <input id="pin" class="swal2-input" placeholder="Enter 6-digit PIN" maxlength="6" />
+        <input id="district" class="swal2-input" placeholder="Enter District" />
+        <input id="state" class="swal2-input" placeholder="Enter State" />
+      `,
+      showCancelButton: true,
+      confirmButtonText: "Verify",
+      confirmButtonColor: "#22c55e",
+      preConfirm: async () => {
+        const pin = document.getElementById("pin").value;
+        const district = document.getElementById("district").value;
+        const state = document.getElementById("state").value;
+
+        if (!pin || !district || !state) {
+          Swal.showValidationMessage("All fields are required!");
+          return;
+        }
+        if (pin.length !== 6) {
+          Swal.showValidationMessage("PIN must be exactly 6 digits!");
+          return;
+        }
+
+        // 🔥 API CALL
+        try {
+          const res = await axios.post(
+            "https://quiz-backend-aixd.onrender.com/api/auth/verify-pin-details",
+            { pin, district, state }
+          );
+
+          return res.data;
+        } catch (error) {
+          Swal.showValidationMessage(
+            error?.response?.data?.message || "Verification failed!"
+          );
+        }
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          icon: "success",
+          title: "Verification Successful!",
+          text: "Access granted ✔",
+        }).then(() => {
+          setShowTerms(true);
+        });
+      }
+    });
+  };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
