@@ -3,6 +3,9 @@ import { Input, Button, DatePicker } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import registerImage from "../../assets/login_image.png";
 import logo from "../../assets/CGL.png";
+import { Upload } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
+
 import {
   registerStudent,
   createAdmin,
@@ -16,20 +19,21 @@ const Register = () => {
 
   const [mode, setMode] = useState("date");
   const [errors, setErrors] = useState({});
+  const [previewUrl, setPreviewUrl] = useState("");
 
-  const handleChangePin = (e) => {
-    const { name, value } = e.target;
+  // const handleChangePin = (e) => {
+  //   const { name, value } = e.target;
 
-    if (name === "pin" && !/^\d{0,10}$/.test(value)) return; // prevent non-numeric
+  //   if (name === "pin" && !/^\d{0,6}$/.test(value)) return; // prevent non-numeric
 
-    setFormData({ ...formData, [name]: value });
+  //   setFormData({ ...formData, [name]: value });
 
-    if (name === "pin" && value.length !== 10) {
-      setErrors({ ...errors, pin: "PIN must be exactly 10 digits." });
-    } else {
-      setErrors({ ...errors, pin: "" });
-    }
-  };
+  //   if (name === "pin" && value.length !== 6) {
+  //     setErrors({ ...errors, pin: "PIN must be exactly 6 digits." });
+  //   } else {
+  //     setErrors({ ...errors, pin: "" });
+  //   }
+  // };
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -55,6 +59,18 @@ const Register = () => {
     section: "",
     schoolRoll: "",
     buyRoll: "",
+    profileImage: "",
+    startTime: "",
+    endTime: "",
+    rollActive: "",
+    rollInactive: "",
+    rank: "",
+    academyMarks: "",
+    gkMarks: "",
+    fistLevel: "",
+    secLevel: "",
+    thirdLevel: "",
+    winnerDetails: "",
     // Admin Secret Code
     adminSecretCode: "",
 
@@ -90,37 +106,89 @@ const Register = () => {
   const handleToggleUserType = (type) => {
     setFormData({ ...formData, userType: type });
   };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      let response;
-
-      if (formData.userType === "STUDENT") {
-        response = await registerStudent(formData);
-      }
-
-      if (formData.userType === "ADMIN") {
-        response = await createAdmin({
-          ...formData,
-          adminSecretCode: formData.adminSecretCode,
-        });
-      }
-
-      if (formData.userType === "SUPER_ADMIN") {
-        response = await createSuperAdmin({
-          ...formData,
-          adminSecretCode: formData.superAdminCode,
-        });
-      }
-
-      toast.success(response.data.message || "Registration Successful");
-      navigate("/login");
-    } catch (error) {
-      toast.error(error.response?.data?.message || "Registration failed");
-    }
+  const handleProfileImageUpload = ({ file }) => {
+    setFormData({ ...formData, profileImage: file });
   };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const fd = new FormData();
+
+    Object.keys(formData).forEach((key) => {
+      if (key === "profileImage") {
+        if (formData.profileImage) {
+          fd.append("profileImage", formData.profileImage);
+        }
+      } else {
+        fd.append(key, formData[key]);
+      }
+    });
+
+    let response;
+
+    if (formData.userType === "STUDENT") {
+      response = await registerStudent(fd);
+    }
+
+    if (formData.userType === "ADMIN") {
+      fd.set("adminSecretCode", formData.adminSecretCode);
+      response = await createAdmin(fd);
+    }
+
+    if (formData.userType === "SUPER_ADMIN") {
+      fd.set("adminSecretCode", formData.superAdminCode); // IMPORTANT
+      fd.delete("superAdminCode");
+      response = await createSuperAdmin(fd);
+    }
+
+    toast.success(response.data.message || "Registration Successful");
+    navigate("/login");
+  } catch (error) {
+    toast.error(error.response?.data?.message || "Registration failed");
+  }
+};
+  const handlePreview = async (file) => {
+    if (!file.url && !file.preview) {
+      file.preview = await new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file.originFileObj);
+        reader.onload = () => resolve(reader.result);
+      });
+    }
+    setPreviewUrl(file.url || file.preview);
+  };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   try {
+  //     let response;
+
+  //     if (formData.userType === "STUDENT") {
+  //       response = await registerStudent(formData);
+  //     }
+
+  //     if (formData.userType === "ADMIN") {
+  //       response = await createAdmin({
+  //         ...formData,
+  //         adminSecretCode: formData.adminSecretCode,
+  //       });
+  //     }
+
+  //     if (formData.userType === "SUPER_ADMIN") {
+  //       response = await createSuperAdmin({
+  //         ...formData,
+  //         adminSecretCode: formData.superAdminCode,
+  //       });
+  //     }
+
+  //     toast.success(response.data.message || "Registration Successful");
+  //     navigate("/login");
+  //   } catch (error) {
+  //     toast.error(error.response?.data?.message || "Registration failed");
+  //   }
+  // };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100 w-full h-screen md:p-4">
@@ -186,6 +254,50 @@ const Register = () => {
               </div>
 
               {/* Common Fields */}
+              {/* Profile Image Upload */}
+              <div className="flex justify-center mb-4">
+                {/* <Upload
+                  listType="picture-card"
+                  maxCount={1}
+                  accept="image/png, image/jpeg"
+                  beforeUpload={() => false} // prevent auto upload
+                  onPreview={handlePreview}
+                  onChange={({ file }) =>
+                    handleProfileImageUpload({ file: file.originFileObj })
+                  }
+                > */}
+                <Upload
+                  listType="picture-card"
+                  maxCount={1}
+                  accept="image/png, image/jpeg"
+                  beforeUpload={() => false}
+                  onPreview={handlePreview}
+                  onChange={({ fileList }) =>
+                    setFormData({
+                      ...formData,
+                      profileImage: fileList[0]?.originFileObj || null,
+                    })
+                  }
+                >
+                  {!formData.profileImage && (
+                    <div>
+                      <PlusOutlined />
+                      <div style={{ marginTop: 8 }}>Upload</div>
+                    </div>
+                  )}
+                </Upload>
+              </div>
+
+              {previewUrl && (
+                <div className="text-center mb-3">
+                  <img
+                    src={previewUrl}
+                    alt="preview"
+                    className="h-24 w-24 rounded-full object-cover mx-auto"
+                  />
+                </div>
+              )}
+
               <Input
                 name="firstName"
                 placeholder="First Name"
@@ -326,18 +438,18 @@ const Register = () => {
                     onChange={handleChange}
                     required
                   />
-                  <Input
+                  {/* <Input
                     name="pin"
                     placeholder="PIN"
                     size="large"
                     className="mb-3 w-full"
                     onChange={handleChangePin}
                     required
-                    maxLength={10}
-                    minLength={10}
-                    pattern="[0-9]{10}"
+                    maxLength={6}
+                    minLength={6}
+                    pattern="[0-9]{6}"
                     inputMode="numeric"
-                  />
+                  /> */}
                   <Input
                     name="schoolAddress"
                     placeholder="School Address"
