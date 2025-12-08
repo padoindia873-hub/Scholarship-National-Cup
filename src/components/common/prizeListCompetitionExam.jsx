@@ -55,8 +55,18 @@ export default function PrizeListCompetitionExam({ prizes }) {
     }
   };
 
+  // 🔥 Background colors pattern (repeats every 4 cards)
+  const bgColors = [
+    "bg-[#339CFFFF]/80", // saffron
+    "bg-[#138808]/80",
+    "bg-[#339CFFFF]/80",
+    "bg-[#138808]/80",
+
+  ];
+
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+
       {/* Header */}
       <header className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
         <Link
@@ -67,62 +77,47 @@ export default function PrizeListCompetitionExam({ prizes }) {
         </Link>
       </header>
 
-      {/* Grid */}
+      {/* Prize Grid */}
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
-        {list.map((p) => (
+        {list.map((p, i) => (
           <li key={p.id}>
             <Link
               to={`/prize/${p.id}`}
-              className="block rounded-2xl p-5 sm:p-6 bg-blue-900/60 hover:bg-blue-900/80 focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-lg transition-colors"
+              className={`block rounded-2xl p-5 sm:p-6 shadow-lg hover:scale-[1.02] transition-all ${bgColors[i % bgColors.length]}`}
             >
-              {/* Rank + Details */}
               <div className="flex items-start gap-4">
+                
+                {/* Rank Badge */}
                 <div
-                  className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 
-                  rounded-xl bg-gradient-to-br from-yellow-400/70 to-blue-500/90 
-                  flex items-center justify-center leading-none
-                  text-blue-900 font-extrabold text-sm sm:text-base md:text-lg text-center"
+                  className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-yellow-400/70 to-blue-500/90 flex items-center justify-center font-extrabold text-blue-900 text-sm sm:text-base md:text-lg"
                 >
                   {p.rank}
                 </div>
 
+                {/* Content */}
                 <div className="flex-1">
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-yellow-100">
-                    {p.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-blue-200 mt-1">
-                    {p.description}
-                  </p>
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold">{p.title}</h3>
+                  <p className="text-xs sm:text-sm opacity-80 mt-1">{p.description}</p>
 
                   <div className="mt-3 flex items-center justify-between">
                     <div>
-                      <div className="text-xs sm:text-sm text-blue-300">
-                        {p.type}
-                      </div>
-                      <div className="text-base sm:text-lg font-bold text-yellow-100">
-                        {formatCurrency(p.amount)}
-                      </div>
+                      <div className="text-xs sm:text-sm opacity-75">{p.type}</div>
+                      <div className="text-base sm:text-lg font-bold">{formatCurrency(p.amount)}</div>
                     </div>
-                    <div className="text-right">
-                      <span className="inline-block px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-medium rounded-full bg-blue-800 text-yellow-200">
-                        #{p.rank.replace(" ", "")}
-                      </span>
-                    </div>
+
+                    <span className="px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-medium rounded-full bg-black/20">
+                      #{p.rank.replace(" ", "")}
+                    </span>
                   </div>
 
                   {/* Buttons */}
                   <div className="mt-4 flex flex-col sm:flex-row gap-2">
-                    <button
-                      type="button"
-                      className="flex-1 px-3 py-2 bg-transparent border border-blue-700 rounded-lg text-xs sm:text-sm text-yellow-100 hover:border-yellow-400 hover:text-yellow-400 transition"
-                    >
+                    <button className="flex-1 px-3 py-2 bg-transparent border border-black/30 rounded-lg text-xs sm:text-sm hover:border-black hover:text-black transition">
                       {p.Details}
                     </button>
+
                     <Link to="/PrizeLists" className="flex-1">
-                      <button
-                        type="button"
-                        className="w-full px-3 py-2 sm:px-4 sm:py-2 rounded-lg bg-yellow-400 text-blue-900 font-semibold text-xs sm:text-sm shadow-sm hover:scale-105 transition-transform"
-                      >
+                      <button className="w-full px-3 py-2 sm:px-4 sm:py-2 rounded-lg bg-yellow-400 text-black font-semibold text-xs sm:text-sm shadow-sm hover:scale-105 transition-transform">
                         All Prize
                       </button>
                     </Link>

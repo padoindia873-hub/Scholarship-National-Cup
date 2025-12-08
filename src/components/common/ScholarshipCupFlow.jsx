@@ -12,202 +12,197 @@ const ScholarshipCupFlow = () => {
       {/* Blinking Registration Button */}
       <Link
         to="/register"
-        className="mt-4 mb-8 inline-block text-black text-sm sm:text-base font-semibold px-6 py-3 shadow-lg transition duration-300 animate-blinkYellow"
+        className="mt-4 mb-4 inline-block text-black text-sm sm:text-base font-semibold px-6 py-3 shadow-lg animate-blinkYellow"
       >
         Registration Now Open
       </Link>
-      <div className="w-0.5 h-10 bg-gray-400" />
+      <div className="my-3 w-px h-8 bg-gray-400" />
+
       <Link
         to="/register"
-        className="mt-4 mb-8 inline-block text-black text-sm xs:text-base font-semibold px-6 py-3 shadow-lg transition duration-300 bg-green-400 "
+        className="mt-2 mb-2 inline-block text-black text-sm sm:text-base font-semibold px-6 py-3 shadow-lg bg-green-400"
       >
         3 Categories
       </Link>
-      <div className="w-0.5 h-10 bg-gray-400" />
+      <div className="my-3 w-px h-8 bg-gray-400" />
 
       <Link
         to="/"
-        className="mt-4 mb-8 inline-block text-black text-sm xs:text-base font-semibold px-6 py-3 shadow-lg transition duration-300 bg-green-400 "
+        className="mt-2 mb-8 inline-block text-black text-sm sm:text-base font-semibold px-6 py-3 shadow-lg bg-green-400"
       >
-        Any One Can Take The Exam here.{" "}
+        Any One Can Take The Exam Here
       </Link>
 
-      {/* Flow structure */}
-      <div className="relative w-full max-w-5xl flex flex-col items-center">
-        {/* Vertical line down from the button */}
-
-        <div className="w-0.5 h-10 bg-gray-400" />
-
-        {/* Horizontal split */}
-        <div className="w-full flex justify-between items-start relative">
-          {/* Horizontal connecting line */}
-          <div className="absolute top-4 left-0 right-0 h-0.5 bg-gray-300 z-0" />
-
-          {/* Govt student Option */}
-          <div className="flex flex-col items-center w-1/2 px-2 sm:px-4 z-10">
-            <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center">
+      {/* FLOW STRUCTURE */}
+      <div className="w-full max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row lg:flex-row justify-between gap-8">
+          {/* ===== CATEGORY 1 ===== */}
+          <div className="flex flex-col items-center w-full md:w-1/2 lg:w-1/3">
+            <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center w-full">
               <p className="text-base sm:text-lg font-semibold text-blue-800">
-                First Category Examination will be till 13th District Champions.
+                First Category Examination will
               </p>
-              {/* <p className="font-bold text-gray-800">Direct Gold Card</p> */}
+              <p className="text-base sm:text-lg font-semibold text-blue-800">
+                be till 13th District Champions.
+              </p>
             </div>
 
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            <div className="my-3 w-px h-8 bg-gray-400" />
 
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              Only Rupees 121 is being charged for Online & Offline Examination
-              Maintenance Charges, Lodging, Fooding and Traveling Expenses of
-              Examiners and Guardians.{" "}
+            <div className="bg-purple-200 border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
+              Only Rupees 121 is being charged for exam maintenance, lodging,
+              fooding & travel of examiners.
             </div>
 
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            <div className="my-3 w-px h-8 bg-gray-400" />
 
             <div className="bg-green-100 text-green-700 font-semibold px-4 py-2 rounded shadow">
-              Maintains Fees.121/-
+              Maintains Fees: 121/-
             </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              First you have to get qualified then you will get chance in
-              school college level{" "}
-            </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              Qualify Exam (Online)
-            </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              School & College Level (Online)
-            </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
 
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              Block Level (Online)
-            </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            <div className="my-3 w-px h-8 bg-gray-400" />
 
-            {/* <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             State Level (Offline)
-            </div> */}
+            <div className="bg-blue-200  border border-blue-500 p-3 rounded w-full text-center">
+              First you must qualify to go to school or college level.
+            </div>
 
-            {/* <div className="w-0.5 h-10 bg-gray-400 my-1" /> */}
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              District or State Level (Offline)
+            <div className="my-3 w-px h-8 bg-gray-400" />
+
+            {[
+              "Qualify Exam (Online)",
+              "School & College Level (Online)",
+              "Block Level (Online)",
+              "District or State Level (Offline)",
+              "National Level",
+            ].map((item, index) => {
+              const colors = [
+                "bg-green-200",
+                "bg-blue-200",
+                "bg-yellow-200",
+                "bg-purple-200",
+                "bg-pink-200",
+              ];
+
+              return (
+                <div
+                  key={item}
+                  className={`${colors[index]} border border-blue-500 p-3 rounded w-full text-center text-sm sm:text-base my-2`}
+                >
+                  {item}
+                </div>
+              );
+            })}
+          </div>
+          {/* ===== CATEGORY 2 ===== */}
+          <div className="flex flex-col items-center w-full md:w-1/2 lg:w-1/3">
+            <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center w-full">
+              <p className="text-base sm:text-lg font-semibold text-blue-800">
+                Second Category Examination will be till Next 20th District
+                Champions.
+              </p>
             </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              National Level
+
+            <div className="my-3 w-px h-8 bg-gray-400" />
+
+            <div className="bg-yellow-200 border border-blue-500 p-3 rounded w-full text-center">
+              Only Rupees 171 is being charged for exam maintenance, lodging,
+              fooding & travel of examiners.
             </div>
+
+            <div className="my-3 w-px h-8 bg-gray-400" />
+
+            <div className="bg-green-100 text-green-700 font-semibold px-4 py-2 rounded shadow">
+              Maintains Fees: 171/-
+            </div>
+
+            <div className="my-3 w-px h-8 bg-gray-400" />
+
+            <div className="bg-orange-400 border border-blue-500 p-3 rounded w-full text-center">
+              First you must qualify to go to school or college level.
+            </div>
+
+            <div className="my-3 w-px h-8 bg-gray-400" />
+
+            {[
+              "Qualify Exam (Online)",
+              "School & College Level (Online)",
+              "Block Level (Online)",
+              "District or State Level (Offline)",
+              "National Level",
+            ].map((item, index) => {
+              const levelColors = [
+                "bg-red-200", // Level 1
+                "bg-yellow-200", // Level 2
+                "bg-green-200", // Level 3
+                "bg-blue-200", // Level 4
+                "bg-purple-200", // Level 5
+              ];
+
+              return (
+                <div
+                  key={item}
+                  className={`${levelColors[index]} border border-blue-500 p-3 rounded w-full text-center text-sm sm:text-base my-2`}
+                >
+                  {item}
+                </div>
+              );
+            })}
           </div>
 
-          {/* Private Student Option */}
-          <div className="flex flex-col items-center w-1/2 px-2 sm:px-4 z-10">
-            <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center">
+          {/* ===== CATEGORY 3 ===== */}
+          <div className="flex flex-col items-center w-full md:w-full lg:w-1/3">
+            <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center w-full">
               <p className="text-base sm:text-lg font-semibold text-blue-800">
-                Second Category Examination will be till Next 20th
-                District Champions.
+                Third Category Examination will be till Next 20th District
+                Champions.
               </p>
-              {/* <p className="font-bold text-gray-800">Direct Gold Card</p> */}
             </div>
 
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            <div className="my-3 w-px h-8 bg-gray-400" />
 
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              Only Rupees 171 is being charged for Online & Offline Examination
-              Maintenance Charges, Lodging, Fooding and Traveling Expenses of
-              Examiners and Guardians.
+            <div className="bg-pink-100 border border-blue-600 p-3 rounded w-full text-center">
+              Only Rupees 221 is being charged for exam maintenance, lodging,
+              fooding & travel of examiners.
             </div>
 
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            <div className="my-3 w-px h-8 bg-gray-400" />
 
             <div className="bg-green-100 text-green-700 font-semibold px-4 py-2 rounded shadow">
-              Maintains Fees.171/-
-            </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              First you have to get qualified then you will get chance in school college level
-            </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              Qualify Exam (Online)
-            </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              School & College Level (Online)
-            </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
-
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              Block Level (Online)
-            </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
-            {/* 
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             State Level (Offline)
-            </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" /> */}
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              District or State Level (Offline)
-            </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              National Level
-            </div>
-          </div>
-
-          {/* Public */}
-
-          <div className="flex flex-col items-center w-1/2 px-2 sm:px-4 z-10">
-            <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center">
-              <p className="text-base sm:text-lg font-semibold text-blue-800">
-                Third Category Examination will be till Next 20th
-                District Champions.
-              </p>
-              {/* <p className="font-bold text-gray-800">Direct Gold Card</p> */}
+              Maintains Fees: 221/-
             </div>
 
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            <div className="my-3 w-px h-8 bg-gray-400" />
 
-            <div className="bg-white border border-blue-600 p-2 rounded text-sm sm:text-base w-full text-center">
-              Only Rupees 221 is being charged for Online & Offline Examination
-              Maintenance Charges, Lodging, Fooding and Traveling Expenses of
-              Examiners and Guardians.
+            <div className="bg-sky-500 border border-blue-500 p-3 rounded w-full text-center">
+              First you must qualify to go to school or college level.
             </div>
 
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            <div className="my-3 w-px h-8 bg-gray-400" />
 
-            <div className="bg-green-100 text-green-700 font-semibold px-4 py-2 rounded shadow">
-              Maintains Fees.221/-
-            </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              First you have to get qualified then you will get chance in school college level
-            </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              Qualify Exam (Online)
-            </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              School & College Level (Online)
-            </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
+            {[
+              "Qualify Exam (Online)",
+              "School & College Level (Online)",
+              "Block Level (Online)",
+              "District or State Level (Offline)",
+              "National Level",
+            ].map((item, index) => {
+              const bgColors = [
+                "bg-red-200", // Level 1
+                "bg-yellow-200", // Level 2
+                "bg-green-200", // Level 3
+                "bg-blue-200", // Level 4
+                "bg-purple-200", // Level 5
+              ];
 
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              Block Level (Online)
-            </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
-
-            {/* <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-             State Level (Offline)
-            </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" /> */}
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              District or State Level (Offline)
-            </div>
-            <div className="w-0.5 h-10 bg-gray-400 my-1" />
-            <div className="bg-white border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-              National Level
-            </div>
+              return (
+                <div
+                  key={item}
+                  className={`${bgColors[index]} border border-blue-500 p-3 rounded w-full text-center text-sm sm:text-base my-2`}
+                >
+                  {item}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

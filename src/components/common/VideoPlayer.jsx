@@ -1,7 +1,8 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import { Link } from "react-router-dom"; // <-- FIXED
+import { Link } from "react-router-dom";
+import FlyingFlag from "./FlyingFlag"; // <-- IMPORT FLAG COMPONENT
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -22,9 +23,32 @@ const VideoPlayer = () => {
 
   return (
     <div className="flex flex-col justify-center items-center p-6 w-full">
+      {/* 🇮🇳 Flying Flag Component */}
+      <FlyingFlag
+        src="https://wallpapercave.com/wp/wp9678253.jpg"
+        width={400}
+        height={260}
+        speed={5}
+        amplitude={20}
+      />
+  <div className="bg-blue-400 p-6 rounded-xl shadow-lg text-center mt-[20px]">
+  <h1
+    className="
+      text-[40px] sm:text-[45px] md:text-[50px]
+      font-extrabold leading-tight
+      bg-[linear-gradient(90deg,#FF7F00_10%,#28A146FF_33%,#FFFFFF_66%,#008000_100%)]
+      bg-clip-text text-transparent
+    "
+  >
+    SCHOLARSHIP NATIONAL CUP RECOGNITION BY GOVT. OF INDIA
+  </h1>
+</div>
+
+
+
 
       {/* Buttons Section */}
-      <div className="flex flex-col gap-4 w-full items-center">
+      <div className="flex flex-col gap-4 w-full items-center mt-6">
         <Link
           to="/DemoQuestions"
           className="text-black bg-green-400 text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg hover:scale-105 w-[80%] sm:w-auto text-center"
@@ -46,7 +70,7 @@ const VideoPlayer = () => {
           Competition System
         </Link>
 
-         <Link
+        <Link
           to="/StateLevelCandidatesBenefits"
           className="text-black bg-blue-400 text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg hover:scale-105 w-full sm:w-[310px] text-center"
         >

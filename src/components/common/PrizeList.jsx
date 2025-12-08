@@ -218,109 +218,137 @@ const PrizeList = () => {
   return (
     <div className="p-5 md:p-8 bg-gray-50">
       <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center mb-2 text-gray-800">
-        Kk Padho India National Cup
+        KK Padho India's National Cup
       </h2>
       <p className="text-center text-sm sm:text-base text-gray-600 mb-10 italic">
-        <span className="font-semibold text-yellow-600">Unleash Your Potential</span>, Rise Through Every <span className="font-semibold text-yellow-600">Level</span>!
+        <span className="font-semibold text-green-600">636 Candidates  </span> Will Be Come<span className="font-semibold text-green-600"> Cororepaties</span>
       </p>
 
 
-      <Collapse accordion className='bg-gray-50 p-5'>
-        {prizeData.map((section, index) => (
-          <Panel
-            header={<span className="font-bold text-lg text-gray-700">{section.level}</span>}
-            key={index}
-          >
-            {section.winner && (
-              <p className="text-base md:text-lg font-semibold text-yellow-700 mb-2">
-                {section.winner}
-              </p>
-            )}
+      <Collapse accordion className="bg-gray-50 p-5">
+  {prizeData.map((section, index) => (
+    <Panel
+      key={index}
+      header={
+        <span
+                 className="mt-4 mb-4 inline-block text-black text-sm sm:text-base font-semibold px-6 py-3 shadow-lg animate-blinkYellow">
 
-            {section.winnerone && (
-              <p className="text-base md:text-lg font-semibold text-yellow-700 mb-2">
-                {section.winnerone}
-              </p>
-            )}
+          {section.level}
+        </span>
+      }
+    >
+      {section.winner && (
+        <p className="text-base md:text-lg font-semibold text-yellow-700 mb-2">
+          {section.winner}
+        </p>
+      )}
 
-            {section.images && (
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 my-4">
-                {section.images.map((imgSrc, i) => (
-                  <img
-                    key={i}
-                    src={imgSrc}
-                    alt={`prize-img-${i}`}
-                    className="w-full h-auto object-contain rounded-xl"
-                  />
-                ))}
-              </div>
-            )}
+      {section.winnerone && (
+        <p className="text-base md:text-lg font-semibold text-yellow-700 mb-2">
+          {section.winnerone}
+        </p>
+      )}
 
-            {section.diamondCard && (
+      {section.images && (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 my-4">
+          {section.images.map((imgSrc, i) => (
+            <img
+              key={i}
+              src={imgSrc}
+              alt={`prize-img-${i}`}
+              className="w-full h-auto object-contain rounded-xl"
+            />
+          ))}
+        </div>
+      )}
+
+      {section.diamondCard && (
+        <Card
+          title={
+            <span className="font-bold text-gray-800 text-base md:text-lg">
+              {section.diamondCard.title}
+            </span>
+          }
+          className="my-4 bg-yellow-50 border border-gray-300"
+          bordered={false}
+        >
+          <List
+            dataSource={section.diamondCard.facilities}
+            renderItem={(item) => (
+              <List.Item className="text-sm md:text-base font-medium">
+                {item}
+              </List.Item>
+            )}
+          />
+        </Card>
+      )}
+
+      {section.prizes && (
+        <List
+          dataSource={section.prizes}
+          renderItem={(item) => (
+            <List.Item className="text-sm md:text-base font-medium text-gray-700">
+              {item}
+            </List.Item>
+          )}
+          bordered
+          className="mb-4"
+        />
+      )}
+
+      {section.rounds && (
+        <>
+          <h4 className="text-lg font-semibold mt-4 text-yellow-800">
+            Losers Rounds
+          </h4>
+          <List
+            dataSource={section.rounds}
+            renderItem={(item) => (
+              <List.Item className="text-sm md:text-base font-medium">
+                {item}
+              </List.Item>
+            )}
+            bordered
+            className="mb-4"
+          />
+        </>
+      )}
+
+      {section.winners && (
+        <>
+          <h4 className="text-lg font-semibold mt-4 text-yellow-800">
+            {section.TopWinners}
+          </h4>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
+            {section.winners.map((winner, idx) => (
               <Card
-                title={<span className="font-bold text-gray-800 text-base md:text-lg">{section.diamondCard.title}</span>}
-                className="my-4 bg-yellow-50 border border-gray-300"
+                key={idx}
+                title={
+                  <span className="font-bold text-base md:text-lg">
+                    {winner.title}
+                  </span>
+                }
+                className="bg-blue-50 border border-blue-600"
                 bordered={false}
               >
                 <List
-                  dataSource={section.diamondCard.facilities}
+                  dataSource={winner.rewards}
                   renderItem={(item) => (
-                    <List.Item className="text-sm md:text-base font-medium">{item}</List.Item>
+                    <List.Item className="text-sm md:text-base font-medium">
+                      {item}
+                    </List.Item>
                   )}
                 />
               </Card>
-            )}
+            ))}
+          </div>
+        </>
+      )}
+    </Panel>
+  ))}
+</Collapse>
 
-            {section.prizes && (
-              <List
-                dataSource={section.prizes}
-                renderItem={(item) => (
-                  <List.Item className="text-sm md:text-base font-medium text-gray-700">{item}</List.Item>
-                )}
-                bordered
-                className="mb-4"
-              />
-            )}
-
-            {section.rounds && (
-              <>
-                <h4 className="text-lg font-semibold mt-4 text-yellow-800">Losers Rounds</h4>
-                <List
-                  dataSource={section.rounds}
-                  renderItem={(item) => (
-                    <List.Item className="text-sm md:text-base font-medium">{item}</List.Item>
-                  )}
-                  bordered
-                  className="mb-4"
-                />
-              </>
-            )}
-
-            {section.winners && (
-              <>
-                <h4 className="text-lg font-semibold mt-4 text-yellow-800">{section.TopWinners}</h4>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
-                  {section.winners.map((winner, idx) => (
-                    <Card
-                      title={<span className="font-bold text-base md:text-lg">{winner.title}</span>}
-                      key={idx}
-                      className="bg-blue-50 border border-blue-600"
-                      bordered={false}
-                    >
-                      <List
-                        dataSource={winner.rewards}
-                        renderItem={(item) => (
-                          <List.Item className="text-sm md:text-base font-medium">{item}</List.Item>
-                        )}
-                      />
-                    </Card>
-                  ))}
-                </div>
-              </>
-            )}
-          </Panel>
-        ))}
-      </Collapse>
     </div>
   )
 }
