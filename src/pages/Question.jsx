@@ -4,7 +4,8 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import jsPDF from "jspdf";
 import axios from "axios";
-const Questions = ({ user }) => {
+const Questions = ({ user, transactionId }) => {
+  console.log("Transaction ID:", transactionId);
   const [activeTab, setActiveTab] = useState("GK");
   const [questions, setQuestions] = useState([]);
   const [current, setCurrent] = useState(0);

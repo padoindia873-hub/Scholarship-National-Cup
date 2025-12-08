@@ -1,7 +1,12 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate from React Router
+import { useLocation } from "react-router-dom";
 
 export default function TermsAndConditionsPage() {
+   const location = useLocation();
+    const transactionId = location.state?.transactionId;
+  
+    console.log("Transaction ID1:", transactionId);
   const [accepted, setAccepted] = useState(false);
   const contentRef = useRef(null);
   const navigate = useNavigate(); // Navigation hook
@@ -24,7 +29,9 @@ export default function TermsAndConditionsPage() {
     }
 //AllStudentsList
     //  Navigate to your next page after accepting
-    navigate("/AllStudentsList"); // <-- change this to your desired route
+    // navigate("/AllStudentsList"); // <-- change this to your desired route
+          navigate("/AllStudentsList", { state: { transactionId } }); 
+
   }
 //QuestionPopUp
   return (

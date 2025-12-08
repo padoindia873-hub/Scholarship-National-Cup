@@ -2,8 +2,13 @@ import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import Questions from "../../pages/Question";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 const QuestionPopUp = () => {
+   const location = useLocation();
+    const transactionId = location.state?.transactionId;
+  
+    console.log("Transaction ID4:", transactionId);
   const [showTerms, setShowTerms] = useState(false);
   const [userData, setUserData] = useState({ name: "", roll: "" });
 
@@ -35,7 +40,7 @@ const QuestionPopUp = () => {
       if (infoResult.isConfirmed) {
         const { name, roll } = infoResult.value;
 
-        // 🔥 STEP 1 API → check-details
+        //  STEP 1 API → check-details
         try {
           const response = await axios.post(
             "https://quiz-backend-aixd.onrender.com/api/auth/check-details",
@@ -112,7 +117,8 @@ const QuestionPopUp = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       {showTerms ? (
-        <Questions user={userData} />
+        // <Questions user={userData} transactionId />
+        <Questions user={userData} transactionId={transactionId} />
       ) : (
         <div className="text-lg text-gray-600 animate-pulse">
           Verifying access...

@@ -27,78 +27,92 @@ const StudentPayments = () => {
     console.log("Bank Payment Submitted:", paymentData);
     setOpenBankPopup(false);
   };
-const generate10DigitNumber = () => {
-  return Math.floor(1000000000 + Math.random() * 9000000000);
-};
- const checkPayment = async () => {
-  if (!transactionId) {
-    alert("Please enter Transaction ID");
-    return;
-  }
+  const generate10DigitNumber = () => {
+    return Math.floor(1000000000 + Math.random() * 9000000000);
+  };
+  const checkPayment = async () => {
+    if (!transactionId) {
+      alert("Please enter Transaction ID");
+      return;
+    }
 
-  try {
-    const res = await fetch(
-      `https://quiz-backend-aixd.onrender.com/api/auth/transaction/${transactionId}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      alert(data.message || "Transaction not found");
-      setTimeout(() => {
-        navigate("/BuyRoll");
-      }, 1000);
-    } else {
-      const randomRoll = generate10DigitNumber();
-      console.log("Generated Roll:", randomRoll);
-
-      alert(
-        `Payment Found for: Name ${data.user.firstName} ${data.user.lastName} | Roll Number: ${randomRoll}`
+    try {
+      const res = await fetch(
+        `https://quiz-backend-aixd.onrender.com/api/auth/transaction/${transactionId}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
 
-      //  Corrected function call
-      await updateBuyRoll(transactionId, randomRoll);
+      const data = await res.json();
 
-      
-    }
-  } catch (error) {
-    console.error(error);
-    alert("Server Error");
-  }
+      if (!res.ok) {
+        alert(data.message || "Transaction not found");
+        setTimeout(() => {
+          navigate("/BuyRoll");
+        }, 1000);
+      } else {
+        const randomRoll = generate10DigitNumber();
+        console.log("Generated Roll:", randomRoll);
+        const now = new Date();
+        const currentDateTime =
+          now.getFullYear() +
+          "-" +
+          String(now.getMonth() + 1).padStart(2, "0") +
+          "-" +
+          String(now.getDate()).padStart(2, "0") +
+          " " +
+          String(now.getHours()).padStart(2, "0") +
+          ":" +
+          String(now.getMinutes()).padStart(2, "0") +
+          ":" +
+          String(now.getSeconds()).padStart(2, "0");
 
-  setOpenCheckPopup(false);
-};
+        console.log(currentDateTime);
+        alert(
+          `Payment Found for: Name ${data.user.firstName} ${data.user.lastName} | Start Date Time: ${currentDateTime}`
+        );
 
-
-//  Correct API call
-const updateBuyRoll = async (transactionId, buyRollValue) => {
-  try {
-    const response = await fetch(
-      `https://quiz-backend-aixd.onrender.com/api/auth/update-buyRoll-by-transaction/${transactionId}`,
-      {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ buyRoll: buyRollValue }),
+        //  Corrected function call
+        await updateBuyRoll(transactionId, randomRoll,currentDateTime);
       }
-    );
+    } catch (error) {
+      console.error(error);
+      alert("Server Error");
+    }
 
-    const data = await response.json();
-    console.log("Updated:", data);
-    setTimeout(() => {
-        navigate("/WelcomePopup");
-      }, 1000);
-    return data;
+    setOpenCheckPopup(false);
+  };
 
-  } catch (error) {
-    console.log("Error:", error);
-  }
-};
+  //  Correct API call
+  const updateBuyRoll = async (transactionId, buyRollValue,currentDateTime) => {
+    try {
+      const response = await fetch(
+        `https://quiz-backend-aixd.onrender.com/api/auth/update-start-buyroll/${transactionId}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ buyRoll: buyRollValue , startTime :currentDateTime}),
+        }
+      );
+
+      const data = await response.json();
+      console.log("Updated:", data.user.buyRoll);
+       alert(
+          `BuyRoll Number: BuyRoll ${data.user.buyRoll}`
+        );
+      setTimeout(() => {
+        // navigate("/WelcomePopup");
+      navigate("/WelcomePopup", { state: { transactionId } }); 
+         }, 1000);
+      return data;
+    } catch (error) {
+      console.log("Error:", error);
+    }
+  };
 
   return (
     <div className="p-6 grid gap-6 max-w-xl mx-auto">
@@ -118,7 +132,6 @@ const updateBuyRoll = async (transactionId, buyRollValue) => {
               alt="QR Code"
               className="w-80 h-80 border rounded-xl"
             />
-            
           </div>
 
           {/* Buttons */}

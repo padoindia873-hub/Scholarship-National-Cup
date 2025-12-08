@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 import TermsAndConditionsPage from "../../pages/TermsAndConditionsPage";
 import axios from "axios";
 
 const WelcomePopup = () => {
+  const location = useLocation();
+  const transactionId = location.state?.transactionId;
+
+  console.log("Transaction ID:", transactionId);
+
   const [showTerms, setShowTerms] = useState(false);
 
   useEffect(() => {
@@ -20,7 +26,6 @@ const WelcomePopup = () => {
     });
   }, []);
 
-  // 🔥 Step 2 → Show Form for PIN + District + State
   const openPinDistrictStateForm = () => {
     Swal.fire({
       title: "Enter Details",
@@ -46,7 +51,6 @@ const WelcomePopup = () => {
           return;
         }
 
-        // 🔥 API CALL
         try {
           const res = await axios.post(
             "https://quiz-backend-aixd.onrender.com/api/auth/verify-pin-details",
@@ -76,7 +80,7 @@ const WelcomePopup = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       {showTerms ? (
-        <TermsAndConditionsPage />
+        <TermsAndConditionsPage transactionId={transactionId} />
       ) : (
         <div className="text-lg text-gray-600 animate-pulse">
           Verifying access...

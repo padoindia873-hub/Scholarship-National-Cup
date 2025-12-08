@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-
+import { Link, useLocation } from "react-router-dom";
 const API_URL = "https://quiz-backend-aixd.onrender.com/api/auth/students";
 
 const AllStudentsList = () => {
+  const location = useLocation();
+  const transactionId = location.state?.transactionId;
+
+  console.log("Transaction ID3:", transactionId);
   const [students, setStudents] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -42,7 +45,21 @@ const AllStudentsList = () => {
     }
   }, []);
 
-  // When student count reaches exactly 53 & no timer set => show popup
+  // useEffect(() => {
+  //   const storedTime = localStorage.getItem("examStartTime");
+
+  //   if (storedTime) {
+  //     // ⏳ END TIME = start time + 60 seconds
+  //     const endTime = parseInt(storedTime) + 60 * 1000;
+
+  //     updateCountdown(endTime);
+
+  //     const interval = setInterval(() => updateCountdown(endTime), 1000);
+  //     return () => clearInterval(interval);
+  //   }
+  // }, []);
+
+  // When student count reaches exactly 1 & no timer set => show popup
   useEffect(() => {
     if (students.length === 53 && !localStorage.getItem("examStartTime")) {
       setShowPopup(true);
@@ -69,13 +86,73 @@ const AllStudentsList = () => {
     setShowPopup(false);
     updateCountdown(now + 48 * 60 * 60 * 1000);
   };
+  // const startTimer = () => {
+  //   const now = Date.now();
+  //   localStorage.setItem("examStartTime", now.toString());
+  //   setShowPopup(false);
+  //   updateCountdown(now + 1 * 60 * 1000); // 1 minute
+  // };
 
   const totalPages = Math.ceil(students.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentStudents = students.slice(startIndex, startIndex + itemsPerPage);
 
-  // Exam button enabled only if student count 53 AND timer completed
+  // Exam button enabled only if student count 1 AND timer completed
   const isStartExamEnabled = students.length === 53 && timeLeft === 0;
+  useEffect(() => {
+    if (isStartExamEnabled) {
+      callStartExamAPI();
+    }
+  }, [isStartExamEnabled]);
+  const callStartExamAPI = async () => {
+    try {
+      // -------------------------------
+      // GET CURRENT DATE & TIME
+      // -------------------------------
+      const now = new Date();
+
+      // Format: YYYY-MM-DD HH:mm:ss
+      const formatDate = (date) => {
+        return date.toISOString().replace("T", " ").substring(0, 19);
+      };
+
+      const startTime = formatDate(now);
+
+      // -------------------------------
+      // ADD 48 HOURS FOR END TIME
+      // -------------------------------
+      const endDate = new Date(now.getTime() + 48 * 60 * 60 * 1000);
+      const endTime = formatDate(endDate);
+
+      console.log("Start Time:", startTime);
+      console.log("End Time (48hrs later):", endTime);
+
+      // -------------------------------
+      // API CALL
+      // -------------------------------
+      const response = await fetch(
+        `https://quiz-backend-aixd.onrender.com/api/auth/update-start-time-end-time/${transactionId}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            startTime, // auto-set current time
+            endTime, // auto-set 48 hours later
+            rollActive: "1",
+            rollInactive: "0",
+            fistLevel: "1",
+            secLevel: "0",
+            thirdLevel: "0",
+          }),
+        }
+      );
+
+      const result = await response.json();
+      console.log("Start Exam API Response:", result);
+    } catch (error) {
+      console.error("API error:", error);
+    }
+  };
 
   if (loading) {
     return (
@@ -85,6 +162,7 @@ const AllStudentsList = () => {
 
   // Format timer text
   const formatTime = () => {
+    localStorage.removeItem("examStartTime");
     if (timeLeft === null || timeLeft <= 0) return "00:00:00";
 
     const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 48);
@@ -96,16 +174,25 @@ const AllStudentsList = () => {
       .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
   };
 
+  // const formatTime = () => {
+  //   //  localStorage.removeItem("examStartTime");
+  //   if (timeLeft === null || timeLeft <= 0) return "00";
+
+  //   const seconds = Math.floor(timeLeft / 1000);
+
+  //   return seconds.toString().padStart(2, "0");
+  // };
+
   return (
     <div className="p-5">
-
       {/* Confirmation Popup */}
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-6 rounded shadow-lg text-center">
             <h2 className="text-xl font-bold mb-3">Confirm Exam Schedule</h2>
             <p className="mb-4">
-              Total 53 students registered. Do you want to start the 48-hour countdown?
+              Total 53 students registered. Do you want to start the 48-hour
+              countdown?
             </p>
             <button
               onClick={startTimer}
@@ -131,7 +218,10 @@ const AllStudentsList = () => {
 
           <tbody>
             {currentStudents.map((student, index) => (
-              <tr key={student._id} className={index % 2 === 0 ? "bg-blue-50" : ""}>
+              <tr
+                key={student._id}
+                className={index % 2 === 0 ? "bg-blue-50" : ""}
+              >
                 <td className="px-4 py-3">{startIndex + index + 1}</td>
                 <td className="px-4 py-3">
                   {student.firstName} {student.lastName}
@@ -140,7 +230,9 @@ const AllStudentsList = () => {
                 <td className="px-4 py-3">{student.district || "N/A"}</td>
                 <td className="px-4 py-3">
                   <img
-                    src={student.profileImage || "https://via.placeholder.com/50"}
+                    src={
+                      student.profileImage || "https://via.placeholder.com/50"
+                    }
                     className="w-10 h-10 rounded-full border"
                     alt="pic"
                   />
@@ -154,12 +246,16 @@ const AllStudentsList = () => {
       {/* Bottom Section */}
       <div className="flex justify-between items-center mt-5">
         <div className="flex gap-3">
-
-          <Link to={isStartExamEnabled ? "/QuestionPopUp" : "#"}>
+          <Link
+            to={isStartExamEnabled ? "/QuestionPopUp" : "#"}
+            state={{ transactionId }}
+          >
             <button
               disabled={!isStartExamEnabled}
               className={`px-5 py-2 rounded-lg shadow text-white ${
-                isStartExamEnabled ? "bg-green-500" : "bg-gray-400 cursor-not-allowed"
+                isStartExamEnabled
+                  ? "bg-green-500"
+                  : "bg-gray-400 cursor-not-allowed"
               }`}
             >
               Start Exam
