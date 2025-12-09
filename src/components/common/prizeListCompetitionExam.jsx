@@ -69,12 +69,37 @@ export default function PrizeListCompetitionExam({ prizes }) {
 
       {/* Header */}
       <header className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
-        <Link
-          to="/prize-list"
-          className="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white text-2xl sm:text-3xl md:text-4xl font-extrabold rounded-2xl shadow-md text-center hover:bg-blue-700 hover:scale-105 transition-transform"
-        >
-          Level Wise Prize List
-        </Link>
+    {/* <Link
+  to="/prize-list"
+  className="
+    w-full sm:w-auto px-6 py-3 
+    text-[30px] sm:text-3xl md:text-4xl 
+    font-extrabold rounded-2xl shadow-md text-center
+    bg-blue-700 
+    text-transparent bg-clip-text 
+    bg-gradient-to-r from-[#FF9933] via-[#FFFFFF] to-[#138808]
+    hover:scale-105 transition-transform hover:bg-blue-800
+  "
+>
+  Level Wise Prize List
+</Link> */}
+
+<Link to="/prize-list">
+  <div className="bg-blue-400 p-6 rounded-xl shadow-lg text-center mt-[20px] hover:scale-105 transition-transform cursor-pointer">
+    <h1
+      className="
+        text-[30px] sm:text-[45px] md:text-[50px]
+        font-extrabold leading-tight
+        bg-[linear-gradient(90deg,#FF7F00_10%,#FFFFFF_50%,#008000_100%)]
+        bg-clip-text text-transparent
+      "
+    >
+      Level Wise Prize List
+    </h1>
+  </div>
+</Link>
+
+
       </header>
 
       {/* Prize Grid */}

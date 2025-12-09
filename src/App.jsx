@@ -57,6 +57,10 @@ import BuyRoll from "./pages/BuyRoll";
 import StudentPayments from "./pages/StudentPayments";
 import StudentList from "./pages/superAdmin/StudentList";
 import StateLevelCandidatesBenefits from "./components/common/StateLevelCandidatesBenifits";
+import FirstCategoryExamination from "./components/common/FirstCategoryExamination";
+import SecondCategoryExamination from "./components/common/SecondCategoryExamination";
+import ThirdCategoryExamination from "./components/common/ThirdCategoryExamination";
+
 const Home = lazy(() => import("./pages/Home"));
 
 const Login = lazy(() => import("./components/auth/Login"));
@@ -110,6 +114,10 @@ const AppContent = () => {
           <Route path="/BulkQuestionUploader" element={<BulkQuestionUploader />} />
           <Route path="/BuyRoll" element={<BuyRoll />} />
           <Route path="/StudentPayments" element={<StudentPayments />} />
+          <Route path="/FirstCategoryExamination" element={<FirstCategoryExamination />} />
+          <Route path="/SecondCategoryExamination" element={<SecondCategoryExamination />} />
+          <Route path="/ThirdCategoryExamination" element={<ThirdCategoryExamination />} />
+
 
 
 

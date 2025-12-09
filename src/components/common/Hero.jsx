@@ -7,7 +7,7 @@ import FlyingFlag from "./FlyingFlag"; // <-- IMPORT FLAG COMPONENT
 const Hero = () => {
   return (
     <div
-  className="relative h-[1000px] bg-no-repeat bg-cover bg-center"
+  className="relative h-[1050px] bg-no-repeat bg-cover bg-center"
       style={{
         backgroundImage: `url(${heroImage})`,
       }}
@@ -25,13 +25,17 @@ const Hero = () => {
           {/* Headings */}
          <h1
   className="
-    text-[40px] 
+    text-[20px] 
     sm:text-[45px] 
     md:text-[50px] 
     lg:text-[35px] 
     font-semibold 
-    text-green-300 
     mb-2 sm:mb-3
+
+      sm:text-[45px] md:text-[50px]
+      font-extrabold leading-tight
+      bg-[linear-gradient(90deg,#FF7F00_10%,#FFFFFF_66%,#4CBD0BFF_66%,#008000_100%)]
+      bg-clip-text text-transparent
   "
 >
   KK PADHO INDIA PRESENTS

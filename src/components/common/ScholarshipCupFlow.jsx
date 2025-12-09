@@ -38,16 +38,21 @@ const ScholarshipCupFlow = () => {
         <div className="flex flex-col md:flex-row lg:flex-row justify-between gap-8">
           {/* ===== CATEGORY 1 ===== */}
           <div className="flex flex-col items-center w-full md:w-1/2 lg:w-1/3">
-            <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center w-full">
-              <p className="text-base sm:text-lg font-semibold text-blue-800">
-                First Category Examination will
-              </p>
-              <p className="text-base sm:text-lg font-semibold text-blue-800">
-                be till 13th District Champions.
-              </p>
-            </div>
+            <Link
+              to="/FirstCategoryExamination"
+              className="block" // ensures it behaves like a full div
+            >
+              <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center w-full hover:scale-[1.02] transition ">
+                <p className="mt-4 mb-4 inline-block text-black text-sm sm:text-base font-semibold px-6 py-3 shadow-lg animate-blinkYellow">
+                 First Category ₹121/-
+                </p>
+                {/* <p className="text-base sm:text-lg font-semibold text-blue-800">
+                  be till 13th District Champions.
+                </p> */}
+              </div>
+            </Link>
 
-            <div className="my-3 w-px h-8 bg-gray-400" />
+            {/* <div className="my-3 w-px h-8 bg-gray-400" />
 
             <div className="bg-purple-200 border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
               Only Rupees 121 is being charged for exam maintenance, lodging,
@@ -91,18 +96,22 @@ const ScholarshipCupFlow = () => {
                   {item}
                 </div>
               );
-            })}
+            })} */}
           </div>
           {/* ===== CATEGORY 2 ===== */}
           <div className="flex flex-col items-center w-full md:w-1/2 lg:w-1/3">
+           <Link
+              to="/SecondCategoryExamination"
+              className="block" // ensures it behaves like a full div
+            >
             <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center w-full">
-              <p className="text-base sm:text-lg font-semibold text-blue-800">
-                Second Category Examination will be till Next 20th District
-                Champions.
+              <p className="mt-4 mb-4 inline-block text-black text-sm sm:text-base font-semibold px-6 py-3 shadow-lg animate-blinkYellow">
+                Second Category ₹171/-
               </p>
             </div>
+            </Link>
 
-            <div className="my-3 w-px h-8 bg-gray-400" />
+            {/* <div className="my-3 w-px h-8 bg-gray-400" />
 
             <div className="bg-yellow-200 border border-blue-500 p-3 rounded w-full text-center">
               Only Rupees 171 is being charged for exam maintenance, lodging,
@@ -146,19 +155,24 @@ const ScholarshipCupFlow = () => {
                   {item}
                 </div>
               );
-            })}
+            })} */}
           </div>
 
           {/* ===== CATEGORY 3 ===== */}
           <div className="flex flex-col items-center w-full md:w-full lg:w-1/3">
+          <Link
+              to="/ThirdCategoryExamination"
+              className="block" // ensures it behaves like a full div
+            >
             <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center w-full">
-              <p className="text-base sm:text-lg font-semibold text-blue-800">
-                Third Category Examination will be till Next 20th District
-                Champions.
+              <p className="mt-4 mb-4 inline-block text-black text-sm sm:text-base font-semibold px-6 py-3 shadow-lg animate-blinkYellow">
+                Third Category ₹221/-
+
               </p>
             </div>
+            </Link>
 
-            <div className="my-3 w-px h-8 bg-gray-400" />
+            {/* <div className="my-3 w-px h-8 bg-gray-400" />
 
             <div className="bg-pink-100 border border-blue-600 p-3 rounded w-full text-center">
               Only Rupees 221 is being charged for exam maintenance, lodging,
@@ -202,7 +216,7 @@ const ScholarshipCupFlow = () => {
                   {item}
                 </div>
               );
-            })}
+            })} */}
           </div>
         </div>
       </div>
