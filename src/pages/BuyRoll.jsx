@@ -29,8 +29,7 @@ const BuyRoll = () => {
       if (response.ok) {
         setResult(data);
         setTimeout(() => {
-          navigate("/StudentPayments");
-        }, 1000);
+    navigate("/StudentPayments", { state: { email } });        }, 1000);
       } else {
         setError(data.message || "User not found");
 

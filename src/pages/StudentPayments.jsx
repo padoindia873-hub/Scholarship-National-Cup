@@ -5,8 +5,12 @@ import creditCardImg from "../assets/creditCard.png";
 import debitCardImg from "../assets/debitCard.jpg";
 import bankAccountImg from "../assets/bank_acc.jpg";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const StudentPayments = () => {
+  const location = useLocation();
+  const email = location.state?.email;
+    console.log("email:", email);
   const [openBankPopup, setOpenBankPopup] = useState(false);
   const [openCheckPopup, setOpenCheckPopup] = useState(false);
   const navigate = useNavigate();
@@ -50,10 +54,15 @@ const StudentPayments = () => {
       const data = await res.json();
 
       if (!res.ok) {
-        alert(data.message || "Transaction not found");
-        setTimeout(() => {
-          navigate("/BuyRoll");
-        }, 1000);
+        // alert(data.message || "Transaction not found");
+        // setTimeout(() => {
+        //   navigate("/BuyRoll");
+        // }, 1000);
+      alert("Transaction Not Found — Updating manually…");
+      setOpenCheckPopup(true); // popup open
+      // Call update-by-transaction API
+      await updateByEmail(email,transactionId);
+
       } else {
         const randomRoll = generate10DigitNumber();
         console.log("Generated Roll:", randomRoll);
@@ -86,6 +95,35 @@ const StudentPayments = () => {
 
     setOpenCheckPopup(false);
   };
+const updateByEmail = async (email,transactionId) => {
+  try {
+    const res = await fetch(
+      `https://quiz-backend-aixd.onrender.com/api/auth/update-by-email/${email}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          bankTransaction: transactionId,
+        })
+      }
+    );
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      alert(data.message || "Update Failed");
+      return;
+    }
+
+    alert("User Updated Successfully Using Email!");
+
+  } catch (error) {
+    console.error(error);
+    alert("Server Error");
+  }
+};
+
+
 
   //  Correct API call
   const updateBuyRoll = async (transactionId, buyRollValue,currentDateTime) => {

@@ -72,11 +72,10 @@ const Register = () => {
     thirdLevel: "",
     winnerDetails: "",
     oneUserBuyRoll: "",
-    oneUserWinner:"",
+    oneUserWinner: "",
     bankTransactionStudent: "",
     // Admin Secret Code
     adminSecretCode: "",
-
 
     // Super Admin fields
     superAdminCode: "",
@@ -87,6 +86,25 @@ const Register = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+  const handleChangeAadhar = (e) => {
+  const { name, value } = e.target;
+
+  // Allow only numeric input up to 12 digits
+  if (name === "aadharCardNumber" && !/^\d{0,12}$/.test(value)) return;
+
+  setFormData({ ...formData, [name]: value });
+
+  // Validation message
+  if (name === "aadharCardNumber" && value.length !== 12) {
+    setErrors({
+      ...errors,
+      aadharCardNumber: "Aadhar number must be exactly 12 digits.",
+    });
+  } else {
+    setErrors({ ...errors, aadharCardNumber: "" });
+  }
+};
+
 
   const handleDateChange = (date) => {
     setFormData({
@@ -113,45 +131,45 @@ const Register = () => {
   const handleProfileImageUpload = ({ file }) => {
     setFormData({ ...formData, profileImage: file });
   };
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  try {
-    const fd = new FormData();
+    try {
+      const fd = new FormData();
 
-    Object.keys(formData).forEach((key) => {
-      if (key === "profileImage") {
-        if (formData.profileImage) {
-          fd.append("profileImage", formData.profileImage);
+      Object.keys(formData).forEach((key) => {
+        if (key === "profileImage") {
+          if (formData.profileImage) {
+            fd.append("profileImage", formData.profileImage);
+          }
+        } else {
+          fd.append(key, formData[key]);
         }
-      } else {
-        fd.append(key, formData[key]);
+      });
+
+      let response;
+
+      if (formData.userType === "STUDENT") {
+        response = await registerStudent(fd);
       }
-    });
 
-    let response;
+      if (formData.userType === "ADMIN") {
+        fd.set("adminSecretCode", formData.adminSecretCode);
+        response = await createAdmin(fd);
+      }
 
-    if (formData.userType === "STUDENT") {
-      response = await registerStudent(fd);
+      if (formData.userType === "SUPER_ADMIN") {
+        fd.set("adminSecretCode", formData.superAdminCode); // IMPORTANT
+        fd.delete("superAdminCode");
+        response = await createSuperAdmin(fd);
+      }
+
+      toast.success(response.data.message || "Registration Successful");
+      navigate("/login");
+    } catch (error) {
+      toast.error(error.response?.data?.message || "Registration failed");
     }
-
-    if (formData.userType === "ADMIN") {
-      fd.set("adminSecretCode", formData.adminSecretCode);
-      response = await createAdmin(fd);
-    }
-
-    if (formData.userType === "SUPER_ADMIN") {
-      fd.set("adminSecretCode", formData.superAdminCode); // IMPORTANT
-      fd.delete("superAdminCode");
-      response = await createSuperAdmin(fd);
-    }
-
-    toast.success(response.data.message || "Registration Successful");
-    navigate("/login");
-  } catch (error) {
-    toast.error(error.response?.data?.message || "Registration failed");
-  }
-};
+  };
   const handlePreview = async (file) => {
     if (!file.url && !file.preview) {
       file.preview = await new Promise((resolve) => {
@@ -462,14 +480,32 @@ const handleSubmit = async (e) => {
                     onChange={handleChange}
                     required
                   />
-                  <Input
+                  {/* <Input
                     name="aadharCardNumber"
                     placeholder="Aadhar Card Number"
                     size="large"
                     className="mb-3 w-full"
                     onChange={handleChange}
                     required
+                  /> */}
+                  <Input
+                    name="aadharCardNumber"
+                    placeholder="Aadhar Card Number"
+                    size="large"
+                    className="mb-1 w-full"
+                    onChange={handleChangeAadhar}
+                    required
+                    maxLength={12}
+                    minLength={12}
+                    pattern="\d{12}"
+                    inputMode="numeric"
                   />
+
+                  {errors.aadharCardNumber && (
+                    <p className="text-red-500 text-xs mb-3">
+                      {errors.aadharCardNumber}
+                    </p>
+                  )}
                 </>
               )}
 
