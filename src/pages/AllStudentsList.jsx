@@ -246,7 +246,7 @@ const AllStudentsList = () => {
       {/* Bottom Section */}
       <div className="flex justify-between items-center mt-5">
         <div className="flex gap-3">
-          <Link
+          {/* <Link
             to={isStartExamEnabled ? "/QuestionPopUp" : "#"}
             state={{ transactionId }}
           >
@@ -260,8 +260,19 @@ const AllStudentsList = () => {
             >
               Start Exam
             </button>
+          </Link> */}
+ <Link
+            to= "/QuestionPopUp" 
+            state={{ transactionId }}
+          >
+            <button
+              className={`px-5 py-2 rounded-lg shadow text-white ${
+                  "bg-green-500"
+              }`}
+            >
+              Start Exam
+            </button>
           </Link>
-
           <div className="px-5 py-2 bg-yellow-500 text-white rounded-lg shadow">
             Exam starts in: {formatTime()}
           </div>

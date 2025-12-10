@@ -60,7 +60,7 @@ import StateLevelCandidatesBenefits from "./components/common/StateLevelCandidat
 import FirstCategoryExamination from "./components/common/FirstCategoryExamination";
 import SecondCategoryExamination from "./components/common/SecondCategoryExamination";
 import ThirdCategoryExamination from "./components/common/ThirdCategoryExamination";
-
+import StudentDetails from "./pages/student/StudentDetails";
 const Home = lazy(() => import("./pages/Home"));
 
 const Login = lazy(() => import("./components/auth/Login"));
@@ -117,6 +117,7 @@ const AppContent = () => {
           <Route path="/FirstCategoryExamination" element={<FirstCategoryExamination />} />
           <Route path="/SecondCategoryExamination" element={<SecondCategoryExamination />} />
           <Route path="/ThirdCategoryExamination" element={<ThirdCategoryExamination />} />
+          <Route path="/StudentDetails" element={<StudentDetails />} />
 
 
 

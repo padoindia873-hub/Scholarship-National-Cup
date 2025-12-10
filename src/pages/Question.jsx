@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import jsPDF from "jspdf";
 import axios from "axios";
 const Questions = ({ user, transactionId }) => {
-  console.log("Transaction ID:", transactionId);
+  console.log("Transaction ID5:", transactionId);
   const [activeTab, setActiveTab] = useState("GK");
   const [questions, setQuestions] = useState([]);
   const [current, setCurrent] = useState(0);
@@ -71,6 +71,51 @@ const Questions = ({ user, transactionId }) => {
 
   // Score calculation for section
   const calculateScore = async () => {
+  let total = 0;
+  const answerRecords = [];
+
+  filteredQuestions.forEach((q, index) => {
+    const userAns = answers[index];
+    const correct = userAns === q.answer;
+    if (correct) total += 1;
+
+    answerRecords.push({
+      question: q.question,
+      selected: userAns,
+      correct: q.answer,
+      isCorrect: correct,
+    });
+  });
+
+  const resultPayload = {
+    name: user.name,
+    roll: user.roll,
+    topic: activeTab,
+    score: total,
+    total: filteredQuestions.length,
+    percentage: Math.round((total / filteredQuestions.length) * 100),
+    timeSpent: `${minutes}:${seconds.toString().padStart(2, "0")}`,
+    answers: answerRecords,
+  };
+
+  await fetch("https://quiz-backend-aixd.onrender.com/api/result/save-result", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(resultPayload),
+  });
+
+  // FIXED STATE UPDATE FLOW
+  if (activeTab === "GK") {
+    setGkScore(total);
+  } else {
+    setAcademicScore(total);
+    setTimeout(() => {
+      updateUserFinal();
+    }, 400);
+  }
+};
+
+  const calculateScore1 = async () => {
     let total = 0;
     const answerRecords = [];
     filteredQuestions.forEach((q, index) => {
@@ -108,6 +153,7 @@ const Questions = ({ user, transactionId }) => {
         }
       );
       console.log("Result saved");
+      updateUser();
     } catch (err) {
       console.error(" Failed to save result", err);
     }
@@ -116,8 +162,58 @@ const Questions = ({ user, transactionId }) => {
       if (answers[index] === q.answer) total++;
     });
 
-    if (activeTab === "GK") setGkScore(total);
-    else setAcademicScore(total);
+    if (activeTab === "GK") {
+      setGkScore(total);
+    } else {
+      setAcademicScore(total);
+      setTimeout(() => {
+        updateUserFinal(); // call ONLY after academic score saved
+      }, 300);
+    }
+  };
+
+  const updateUserFinal = async () => {
+    const now = new Date();
+    const endDate = new Date(now.getTime() + 48 * 60 * 60 * 1000);
+
+    const formatDate = (date) =>
+      date.toISOString().replace("T", " ").split(".")[0];
+    console.log("GKSCORE:", gkScore);
+    console.log("GKSCORE1:", academicScore);
+
+    const payload = {
+      endTime: formatDate(endDate),
+      rollActive: "0",
+      rollInactive: "1",
+
+      //  real scores
+      gkMarks: gkScore,
+      academyMarks: academicScore,
+      fistLevel: "2",
+      secLevel: "0",
+      thirdLevel: "0",
+      rank: "",
+      winnerDetails: "",
+    };
+
+    try {
+      const res = await axios.put(
+        `https://quiz-backend-aixd.onrender.com/api/auth/update-user-after-exam/${transactionId}`,
+        payload,
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
+      if (res.data.success) {
+        console.log("User updated successfully", res.data.data);
+      }
+    } catch (error) {
+      console.error(
+        "Failed to update user:",
+        error?.response?.data?.message || error.message
+      );
+    }
   };
 
   const handleNext = () => {
@@ -140,12 +236,17 @@ const Questions = ({ user, transactionId }) => {
           confirmButtonColor: "#22c55e",
         }).then(() => handleTabChange("Academic"));
       } else {
+        // FINAL EXAM COMPLETED → UPDATE USER HERE
         Swal.fire({
           icon: "success",
           title: "Exam Completed!",
           text: "Final Result Ready",
           confirmButtonColor: "#22c55e",
-        }).then(() => setShowResult(true));
+        }).then(() => {
+          updateUserFinal(); // CALL API
+          setShowResult(true);
+          deleteTransaction(transactionId);
+        });
       }
     }
   };
@@ -179,13 +280,54 @@ const Questions = ({ user, transactionId }) => {
       const res = await axios.get(
         `https://quiz-backend-aixd.onrender.com/api/result/result/${user.roll}`
       );
-      console.log("API DATA:", res.data.results);
-      setResults(res.data.results);
+
+      const resultsData = res.data.results; // ✅ array
+
+      console.log("FULL RESULTS:", resultsData);
+
+      //  Print scores clearly
+      resultsData.forEach((item) => {
+        console.log(
+          `TOPIC: ${item.topic}, SCORE: ${item.score}/${item.total}, PERCENTAGE: ${item.percentage}%`
+        );
+      });
+
+      //  SET FULL RESULT LIST
+      setResults(resultsData);
+
+      // EXTRACT GK & ACADEMIC
+      const gk = resultsData.find((r) => r.topic === "GK");
+      const academic = resultsData.find((r) => r.topic === "Academic");
+
+      //  SET STATES
+      setGkScore(gk?.score || 0);
+      setAcademicScore(academic?.score || 0);
+
+      //  Call once after results are fetched
+      updateUserFinal();
+      downloadResultPDF(resultsData);
     } catch (err) {
-      console.log("API Error", err);
+      console.log(" API Error", err);
     }
   };
 
+  const deleteTransaction = async (transactionId) => {
+    try {
+      const payload = { transactionId };
+
+      const res = await axios.post(
+        `https://quiz-backend-aixd.onrender.com/api/auth/delete-transaction`,
+        payload,
+        { headers: { "Content-Type": "application/json" } }
+      );
+
+      console.log("Success:", res.data);
+      return res.data;
+    } catch (error) {
+      console.log("Error:", error.response?.data || error.message);
+      return null;
+    }
+  };
   const downloadResultPDF = () => {
     if (!results || results.length === 0) {
       return alert("No result data found!");
@@ -373,7 +515,7 @@ const Questions = ({ user, transactionId }) => {
           </div>
 
           <button
-            onClick={downloadResultPDF}
+            onClick={fetchResult}
             className="bg-green-500 text-white px-4 py-2 rounded-lg"
           >
             Download Result PDF

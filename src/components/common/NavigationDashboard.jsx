@@ -169,9 +169,25 @@ const NavigationDashboard = () => {
           }
         >
           <ul className="space-y-6 text-base font-medium">
+             <li>
+              <Link
+                to="/dashboard"
+                className="flex items-center gap-3 text-white"
+              >
+                🏠 Dashboard
+              </Link>
+            </li>
             <li>
               <Link
-                to="/WelcomePopup"
+                to="/StudentDetails"
+                className="flex items-center gap-3 text-white"
+              >
+                🏠 Student Details
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/BuyRoll"
                 className="flex items-center gap-3 text-white"
               >
                 🏠 Exam

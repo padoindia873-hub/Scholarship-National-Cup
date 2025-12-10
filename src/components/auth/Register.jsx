@@ -71,8 +71,12 @@ const Register = () => {
     secLevel: "",
     thirdLevel: "",
     winnerDetails: "",
+    oneUserBuyRoll: "",
+    oneUserWinner:"",
+    bankTransactionStudent: "",
     // Admin Secret Code
     adminSecretCode: "",
+
 
     // Super Admin fields
     superAdminCode: "",
