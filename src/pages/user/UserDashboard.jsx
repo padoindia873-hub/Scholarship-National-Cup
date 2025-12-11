@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const UserDashboard = () => {
   return (
@@ -9,37 +10,34 @@ const UserDashboard = () => {
         
         {/* Government Student */}
         <div className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-          <h2 className="text-xl font-bold mb-2">Government Student</h2>
+          <h2 className="text-xl font-bold mb-2">First Category </h2>
           <p className="text-gray-600 text-sm mb-4">
-            Government School/ executing from one side to the National(Q)
-            competitions...
+            Examination will be till 13th District Champions....
           </p>
           <button className="bg-green-100 text-green-700 px-4 py-2 rounded-lg font-medium">
-            Entry: Rs.100/-
+            Entry: Rs.121/-
           </button>
         </div>
 
         {/* Private Student */}
         <div className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-          <h2 className="text-xl font-bold mb-2">Private Student</h2>
+          <h2 className="text-xl font-bold mb-2">Second Category</h2>
           <p className="text-gray-600 text-sm mb-4">
-            Private School & College Student with Secondary to the National(Q)
-            competitions...
+           Examination will be till Next 20th District Champions.
           </p>
           <button className="bg-green-100 text-green-700 px-4 py-2 rounded-lg font-medium">
-            Entry: Rs.200/-
+            Entry: Rs.171/-
           </button>
         </div>
 
         {/* Public & Guardian's */}
         <div className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-          <h2 className="text-xl font-bold mb-2">Public & Guardian’s</h2>
+          <h2 className="text-xl font-bold mb-2">Third Category</h2>
           <p className="text-gray-600 text-sm mb-4">
-            Private School & College Student with Public School Faciles and from
-            one side to the National(Q) Competitions...
+            Examination will be till Next 20th District Champions.
           </p>
           <button className="bg-green-100 text-green-700 px-4 py-2 rounded-lg font-medium">
-            Entry: Rs.200/-
+            Entry: Rs.221/-
           </button>
         </div>
       </div>
@@ -48,17 +46,27 @@ const UserDashboard = () => {
       <h3 className="text-xl font-bold mb-4">Steps</h3>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        
+        <Link to="/BuyRoll">
         <button className="border rounded-xl py-3 px-5 text-sm font-medium hover:bg-gray-100 transition">
-          For Qualifying Exam & get Membership Card
+          Qualifying Exam (Online)
         </button>
+        </Link>
 
-        <button className="border rounded-xl py-3 px-5 text-sm font-medium hover:bg-gray-100 transition">
-          Qualify Exam (Offline)
+        <Link to="/">
+         <button className="border rounded-xl py-3 px-5 text-sm font-medium hover:bg-gray-100 transition">
+          School & College Level (Online)
         </button>
+        </Link>
 
-        <button className="border rounded-xl py-3 px-5 text-sm font-medium hover:bg-gray-100 transition">
-          School & College Level (Offline)
+        <Link to="/">
+          <button className="border rounded-xl py-3 px-5 text-sm font-medium hover:bg-gray-100 transition">
+          Block Level (Online)
         </button>
+        </Link>
+       
+
+      
       </div>
     </div>
   );

@@ -29,7 +29,8 @@ const BuyRoll = () => {
       if (response.ok) {
         setResult(data);
         setTimeout(() => {
-    navigate("/StudentPayments", { state: { email } });        }, 1000);
+          navigate("/StudentPayments", { state: { email } });
+        }, 1000);
       } else {
         setError(data.message || "User not found");
 
@@ -48,10 +49,14 @@ const BuyRoll = () => {
 
     setLoading(false);
   };
-
+  const handleCheckUsers = async () => {
+    setTimeout(() => {
+      navigate("/register");
+    }, 1000);
+  };
   return (
     <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-xl shadow">
-      <h1 className="text-2xl font-bold mb-4">Check User Details</h1>
+      <h1 className="text-2xl font-bold mb-4">User Login</h1>
 
       <div className="mb-4">
         <label className="block mb-1 font-medium">Email</label>
@@ -78,9 +83,16 @@ const BuyRoll = () => {
       <button
         onClick={handleCheckUser}
         disabled={loading}
-        className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700"
+        className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 mb-4"
       >
         {loading ? "Checking..." : "Check User"}
+      </button>
+
+      <button
+        onClick={handleCheckUsers}
+        className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700"
+      >
+        User Login
       </button>
     </div>
   );
