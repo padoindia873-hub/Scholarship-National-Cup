@@ -20,7 +20,7 @@ const ScholarshipCupFlow = () => {
 
       <Link
         to="/register"
-        className="mt-2 mb-2 inline-block text-black text-sm sm:text-base font-semibold px-6 py-3 shadow-lg bg-green-400"
+        className="mt-2 mb-2 inline-block text-black text-sm sm:text-base font-semibold px-6 py-3 shadow-lg bg-blue-400"
       >
         3 Categories
       </Link>
@@ -28,7 +28,7 @@ const ScholarshipCupFlow = () => {
 
       <Link
         to="/"
-        className="mt-2 mb-8 inline-block text-black text-sm sm:text-base font-semibold px-6 py-3 shadow-lg bg-green-400"
+        className="mt-2 mb-8 inline-block text-black text-sm sm:text-base font-semibold px-6 py-3 shadow-lg bg-blue-400"
       >
         Any One Can Take The Exam Here
       </Link>

@@ -8,7 +8,7 @@ const QuestionPopUp = () => {
    const location = useLocation();
     const transactionId = location.state?.transactionId;
   
-    console.log("Transaction ID4:", transactionId);
+  console.log("Transaction ID4:", transactionId);
   const [showTerms, setShowTerms] = useState(false);
   const [userData, setUserData] = useState({ name: "", roll: "" });
 

@@ -61,6 +61,17 @@ import FirstCategoryExamination from "./components/common/FirstCategoryExaminati
 import SecondCategoryExamination from "./components/common/SecondCategoryExamination";
 import ThirdCategoryExamination from "./components/common/ThirdCategoryExamination";
 import StudentDetails from "./pages/student/StudentDetails";
+import RankingsPage from "./components/common/RankingsPage";
+import Member from "./pages/Member";
+import Core from "./pages/Core";
+import Exam from "./pages/Exam";
+import Research from "./pages/Research";
+import Marketing from "./pages/Marketing";
+import Technical from "./pages/Technical";
+import Legal from "./pages/Legal";
+import Finance from "./pages/Finance";
+
+
 const Home = lazy(() => import("./pages/Home"));
 
 const Login = lazy(() => import("./components/auth/Login"));
@@ -118,11 +129,7 @@ const AppContent = () => {
           <Route path="/SecondCategoryExamination" element={<SecondCategoryExamination />} />
           <Route path="/ThirdCategoryExamination" element={<ThirdCategoryExamination />} />
           <Route path="/StudentDetails" element={<StudentDetails />} />
-
-
-
-
-         
+          <Route path="/RankingsPage" element={<RankingsPage />} />
 
           <Route path="/events" element={<Events />} />
 
@@ -141,6 +148,7 @@ const AppContent = () => {
           <Route path="/PaymentManagement" element={<PaymentManagement />} />
           <Route path="/StateLevelCandidatesBenefits" element={<StateLevelCandidatesBenefits />} />
 
+          <Route path="/Member" element={<Member />} />
 
 
 
@@ -160,6 +168,17 @@ const AppContent = () => {
           <Route path="/ScholarshipCupFlow" element={<ScholarshipCupFlow />} />
           <Route path="/WelcomePopup" element={<WelcomePopup />} />
           <Route path="/QuestionPopUp" element={<QuestionPopUp />} />
+          <Route path="/finance" element={<Finance />} />
+          <Route path="/marketing" element={<Marketing />} />
+          <Route path="/core" element={<Core />} />
+          <Route path="/exam" element={<Exam />} />
+          <Route path="/research" element={<Research />} />
+          <Route path="/technical" element={<Technical />} />
+          <Route path="/legal" element={<Legal />} />
+
+
+
+   
 
           
 

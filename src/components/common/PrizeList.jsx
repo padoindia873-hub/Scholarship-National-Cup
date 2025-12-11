@@ -223,6 +223,28 @@ const PrizeList = () => {
       <p className="text-center text-sm sm:text-base text-gray-600 mb-10 italic">
         <span className="font-semibold text-green-600">636 Candidates  </span> Will Be Come<span className="font-semibold text-green-600"> Cororepaties</span>
       </p>
+ {/* <p className="text-center text-sm sm:text-base text-gray-600 mb-10 italic">
+        <span className="font-semibold text-green-600">Level</span> Wise Prize <span className="font-semibold text-green-600"> List</span>
+      </p> */}
+
+    <div className="w-full flex justify-center mt-8">
+  <div className="bg-blue-900 px-6 py-5 rounded-xl shadow-lg text-center 
+                  hover:scale-105 transition-transform cursor-pointer 
+                  w-[90%] sm:w-[80%] md:w-[60%]">
+      
+    <h1
+      className="
+        text-[22px] sm:text-[40px] md:text-[45px]
+        font-extrabold leading-tight
+        bg-[linear-gradient(90deg,#FF7F00_10%,#FFFFFF_50%,#008000_100%)]
+        bg-clip-text text-transparent
+      "
+    >
+      Level Wise Prize List
+    </h1>
+
+  </div>
+</div>
 
 
       <Collapse accordion className="bg-gray-50 p-5">

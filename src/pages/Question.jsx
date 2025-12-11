@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import jsPDF from "jspdf";
 import axios from "axios";
+import RankingsPage from "../components/common/RankingsPage";
 const Questions = ({ user, transactionId }) => {
   console.log("Transaction ID5:", transactionId);
   const [activeTab, setActiveTab] = useState("GK");
@@ -19,6 +20,7 @@ const Questions = ({ user, transactionId }) => {
   const [gkScore, setGkScore] = useState(null);
   const [academicScore, setAcademicScore] = useState(null);
   const [results, setResults] = useState([]);
+  const [ranks, setRanks] = useState([]);
   const BASE_URL = "https://quiz-backend-aixd.onrender.com/api/questions";
 
   // Fetch all questions (GK + Academic)
@@ -111,6 +113,7 @@ const Questions = ({ user, transactionId }) => {
     setAcademicScore(total);
     setTimeout(() => {
       updateUserFinal();
+      fetchRankings();
     }, 400);
   }
 };
@@ -192,7 +195,7 @@ const Questions = ({ user, transactionId }) => {
       fistLevel: "2",
       secLevel: "0",
       thirdLevel: "0",
-      rank: "",
+      rank: ranks,
       winnerDetails: "",
     };
 
@@ -246,10 +249,34 @@ const Questions = ({ user, transactionId }) => {
           updateUserFinal(); // CALL API
           setShowResult(true);
           deleteTransaction(transactionId);
+          fetchRankings();
         });
       }
     }
   };
+
+  const fetchRankings = async () => {
+  try {
+    const res = await axios.get(
+      "https://quiz-backend-aixd.onrender.com/api/result/rankings"
+    );
+
+    const results = res.data?.rankedResults || [];
+
+    // Extract only rank numbers
+    const ranksOnly = results.map(item => item.rank);
+    setRanks(ranksOnly);   // <<< SET DATA HERE
+    console.log("Ranks Only:", ranksOnly);
+    console.log("Ranks Result:", results);
+
+    return ranksOnly;
+
+  } catch (error) {
+    console.error("Error fetching rankings:", error);
+    return [];
+  }
+};
+
 
   const handlePrevious = () => {
     if (current > 0) {
@@ -527,7 +554,9 @@ const Questions = ({ user, transactionId }) => {
           >
             Exit
           </Link>
+          <RankingsPage/>
         </div>
+
       )}
     </div>
   );

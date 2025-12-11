@@ -31,12 +31,12 @@ const VideoPlayer = () => {
         speed={5}
         amplitude={20}
       />
-      <div className="bg-blue-400 p-6 rounded-xl shadow-lg text-center mt-[20px]">
+      <div className="bg-blue-900 p-6 rounded-xl shadow-lg text-center mt-[20px]">
         <h1
           className="
       text-[15px] sm:text-[45px] md:text-[50px]
       font-extrabold leading-tight
-      bg-[linear-gradient(90deg,#FF7F00_10%,#28A146FF_33%,#FFFFFF_66%,#008000_100%)]
+      bg-[linear-gradient(90deg,#FF7F00_10%,#FFFFFF_66%,#FFFFFF_66%,#008000_100%)]
       bg-clip-text text-transparent
     "
         >
@@ -48,11 +48,11 @@ const VideoPlayer = () => {
       <div className="flex flex-col gap-4 w-full items-center mt-6">
         <Link
           to="/DemoQuestions"
-          className="bg-green-500 text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg hover:scale-105 w-[80%] sm:w-auto text-center flex justify-center"
+          className="bg-blue-900 text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg hover:scale-105 w-[80%] sm:w-auto text-center flex justify-center"
         >
           <span
             className="text-[20px] sm:text-[45px] md:text-[50px] font-extrabold leading-tight 
-    bg-[linear-gradient(90deg,#FF7F00_10%,#28A146_33%,#FFFFFF_66%,#008000_100%)]
+      bg-[linear-gradient(90deg,#FF7F00_10%,#FFFFFF_66%,#FFFFFF_66%,#008000_100%)]
     bg-clip-text text-transparent"
           >
             Demo Question
@@ -61,11 +61,11 @@ const VideoPlayer = () => {
 
         <Link
           to="/prize-list"
-          className="bg-blue-400 text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg hover:scale-105 w-[80%] sm:w-auto text-center flex justify-center"
+          className="bg-blue-900 text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg hover:scale-105 w-[80%] sm:w-auto text-center flex justify-center"
         >
           <span
             className="text-[20px] sm:text-[45px] md:text-[50px] font-extrabold leading-tight 
-    bg-[linear-gradient(90deg,#FF7F00_10%,#28A146_33%,#FFFFFF_66%,#008000_100%)]
+      bg-[linear-gradient(90deg,#FF7F00_10%,#FFFFFF_66%,#FFFFFF_66%,#008000_100%)]
     bg-clip-text text-transparent"
           >
             All Prize List
@@ -74,11 +74,11 @@ const VideoPlayer = () => {
 
         <Link
           to="/GetMemberShipCard"
-          className="bg-blue-400 text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg hover:scale-105 w-[80%] sm:w-auto text-center flex justify-center"
+          className="bg-blue-900 text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg hover:scale-105 w-[80%] sm:w-auto text-center flex justify-center"
         >
           <span
             className="text-[20px] sm:text-[45px] md:text-[50px] font-extrabold leading-tight 
-    bg-[linear-gradient(90deg,#FF7F00_10%,#28A146_33%,#FFFFFF_66%,#008000_100%)]
+      bg-[linear-gradient(90deg,#FF7F00_10%,#FFFFFF_66%,#FFFFFF_66%,#008000_100%)]
     bg-clip-text text-transparent"
           >
             Competition System
@@ -87,11 +87,11 @@ const VideoPlayer = () => {
 
         <Link
           to="/StateLevelCandidatesBenefits"
-          className="bg-blue-400 text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg hover:scale-105 w-[80%] sm:w-auto text-center flex justify-center"
+          className="bg-blue-900 text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg hover:scale-105 w-[80%] sm:w-auto text-center flex justify-center"
         >
           <span
             className="text-[20px] sm:text-[45px] md:text-[50px] font-extrabold leading-tight 
-    bg-[linear-gradient(90deg,#FF7F00_10%,#28A146_33%,#FFFFFF_66%,#008000_100%)]
+      bg-[linear-gradient(90deg,#FF7F00_10%,#FFFFFF_66%,#FFFFFF_66%,#008000_100%)]
     bg-clip-text text-transparent"
           >
             State Level Candidates Benefits

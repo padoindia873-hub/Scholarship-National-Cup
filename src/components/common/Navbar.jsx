@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "../../assets/logo.png";
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -25,8 +24,10 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-6 text-[17px] font-medium relative">
           <Link to="/" className="hover:text-blue-500 transition">Home</Link>
-          <Link to="/scholarship" className="hover:text-blue-500 transition">Scholarship</Link>
+          {/* <Link to="/scholarship" className="hover:text-blue-500 transition">Scholarship</Link> */}
           <Link to="/events" className="hover:text-blue-500 transition">Events</Link>
+          <Link to="/BuyRoll" className="block px-4 py-2 hover:bg-gray-100">Get Exam</Link>
+
           <Link to="/about" className="hover:text-blue-500 transition">About</Link>
           <Link to="/contact" className="hover:text-blue-500 transition">Contact Us</Link>
            <Link to="/Member" className="hover:text-blue-500 transition">Committee Members</Link>
