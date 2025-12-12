@@ -46,6 +46,7 @@ const Navbar = () => {
                 <Link to="/SuperAdminLogin" className="block px-4 py-2 hover:bg-gray-100">Super Admin</Link>
                 <Link to="/LiveStream" className="block px-4 py-2 hover:bg-gray-100">Live Stream</Link>
                 <Link to="/services/prize-list" className="block px-4 py-2 hover:bg-gray-100">Prize List</Link>
+                <Link to="/BuyRoll" className="block px-4 py-2 hover:bg-gray-100">Get Exam</Link>
                 <Link to="/services/exam-system" className="block px-4 py-2 hover:bg-gray-100">Scholarship Exam System</Link>
                 <Link to="/services/qar" className="block px-4 py-2 hover:bg-gray-100">QAR</Link>
                 <Link to="/Vision" className="block px-4 py-2 hover:bg-gray-100">Vision & Mission</Link>
@@ -80,7 +81,8 @@ const Navbar = () => {
 
         <div className="flex flex-col space-y-4 px-8 text-[17px] font-medium">
           <Link to="/" className="hover:bg-gray-100 px-4 py-2 rounded" onClick={() => setIsOpen(false)}>Home</Link>
-          <Link to="/scholarship" className="hover:bg-gray-100 px-4 py-2 rounded" onClick={() => setIsOpen(false)}>Scholarship</Link>
+          {/* <Link to="/scholarship" className="hover:bg-gray-100 px-4 py-2 rounded" onClick={() => setIsOpen(false)}>Scholarship</Link> */}
+          <Link to="/BuyRoll" className="block px-4 py-2 hover:bg-gray-100">Get Exam</Link>
           <Link to="/events" className="hover:bg-gray-100 px-4 py-2 rounded" onClick={() => setIsOpen(false)}>Events</Link>
           <Link to="/about" className="hover:bg-gray-100 px-4 py-2 rounded" onClick={() => setIsOpen(false)}>About</Link>
           <Link to="/contact" className="hover:bg-gray-100 px-4 py-2 rounded" onClick={() => setIsOpen(false)}>Contact Us</Link>
