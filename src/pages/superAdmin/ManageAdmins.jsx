@@ -1,34 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Search, Pencil, Trash2, KeyRound, HelpCircle } from "lucide-react";
-
-const dummyAdmins = [
-  {
-    id: 1,
-    name: "John Doe",
-    email: "john@admin.com",
-    role: "ADMIN",
-    status: "Active",
-  },
-  {
-    id: 2,
-    name: "Sarah Khan",
-    email: "sarah@admin.com",
-    role: "ADMIN",
-    status: "Active",
-  },
-  {
-    id: 3,
-    name: "Ravi Kumar",
-    email: "ravi@admin.com",
-    role: "SUPER_ADMIN",
-    status: "Inactive",
-  },
-];
 
 const ManageAdmins = () => {
   const [search, setSearch] = useState("");
+  const [admins, setAdmins] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const filteredAdmins = dummyAdmins.filter((admin) =>
+  useEffect(() => {
+    fetchAdmins();
+  }, []);
+
+  const fetchAdmins = async () => {
+    try {
+      const res = await fetch("https://quiz-backend-aixd.onrender.com/api/auth/admins");
+      const data = await res.json();
+      setAdmins(data);
+    } catch (error) {
+      console.error("Error fetching admins:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const filteredAdmins = admins.filter((admin) =>
     admin.name.toLowerCase().includes(search.toLowerCase())
   );
 
@@ -68,7 +62,13 @@ const ManageAdmins = () => {
           </thead>
 
           <tbody>
-            {filteredAdmins.length === 0 ? (
+            {loading ? (
+              <tr>
+                <td colSpan="5" className="text-center py-6">
+                  Loading...
+                </td>
+              </tr>
+            ) : filteredAdmins.length === 0 ? (
               <tr>
                 <td colSpan="5" className="text-center py-5 text-gray-500">
                   No admins found
@@ -98,33 +98,29 @@ const ManageAdmins = () => {
 
                   {/* Actions */}
                   <td className="p-3 flex justify-center gap-3 flex-wrap">
-                    {/* Change Password */}
                     <button
-                      className="p-2 bg-yellow-100 rounded-lg hover:bg-yellow-200 transition"
+                      className="p-2 bg-yellow-100 rounded-lg hover:bg-yellow-200"
                       title="Change Password"
                     >
                       <KeyRound size={18} className="text-yellow-700" />
                     </button>
 
-                    {/* Forgot Password */}
                     <button
-                      className="p-2 bg-purple-100 rounded-lg hover:bg-purple-200 transition"
+                      className="p-2 bg-purple-100 rounded-lg hover:bg-purple-200"
                       title="Forgot Password"
                     >
                       <HelpCircle size={18} className="text-purple-700" />
                     </button>
 
-                    {/* Edit */}
                     <button
-                      className="p-2 bg-blue-100 rounded-lg hover:bg-blue-200 transition"
+                      className="p-2 bg-blue-100 rounded-lg hover:bg-blue-200"
                       title="Edit"
                     >
                       <Pencil size={18} className="text-blue-600" />
                     </button>
 
-                    {/* Delete */}
                     <button
-                      className="p-2 bg-red-100 rounded-lg hover:bg-red-200 transition"
+                      className="p-2 bg-red-100 rounded-lg hover:bg-red-200"
                       title="Delete"
                     >
                       <Trash2 size={18} className="text-red-600" />
