@@ -4,6 +4,8 @@ import 'antd/dist/reset.css'
 
 // Import local images
 import schoolImg1 from '../../assets/school1.jpg'
+import schoolImg11 from '../../assets/school11.jpeg'
+
 import schoolImg2 from '../../assets/school2.jpg'
 import schoolImg3 from '../../assets/school3.jpg'
 import schoolImg4 from '../../assets/school4.jpg'
@@ -11,6 +13,8 @@ import schoolImg5 from '../../assets/school5.jpg'
 import schoolImg6 from '../../assets/school6.jpg'
 
 import blockImg1 from '../../assets/block1.jpg'
+import blockImg11 from '../../assets/block11.jpeg'
+
 
 import districtImg1 from '../../assets/district1.jpg'
 import districtImg2 from '../../assets/district2.jpg'
@@ -18,6 +22,7 @@ import districtImg3 from '../../assets/district3.jpg'
 import districtImg4 from '../../assets/district4.jpg'
 import districtImg5 from '../../assets/district5.jpg'
 import districtImg6 from '../../assets/district6.jpg'
+import districtImg7 from '../../assets/district7.jpeg'
 
 import stateImg1 from '../../assets/state1.jpg'
 import stateImg2 from '../../assets/state2.jpg'
@@ -48,7 +53,7 @@ const prizeData = [
     //   ],
     // },
     // images: [schoolImg1, schoolImg2, schoolImg3, schoolImg4, schoolImg5, schoolImg6],
-      images: [schoolImg1],
+      images: [schoolImg11],
   },
   {
     level: 'Block Level (Online)',
@@ -57,7 +62,7 @@ const prizeData = [
       'Consolation: 2nd Rank to 13th Top Rankers Will Get 10,000/- Rupees Each and Every One',
        '',
     ],
-    images: [blockImg1],
+    images: [blockImg11],
   },
   {
     level: 'District Level (Offline)',
@@ -67,7 +72,7 @@ const prizeData = [
       '3rd Prize > 2,00,000/- + Pulsar Bike',
       'Consolation Prize > 1,00,000/- + Scooty All Remaining Candidates ',     
     ],
-    images: [districtImg1, districtImg2, districtImg3, districtImg5],
+    images: [districtImg1, districtImg2, districtImg3, districtImg5, districtImg7],
   },
   // {
   //   level: 'State Level (Offline)',
