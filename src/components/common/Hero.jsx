@@ -42,12 +42,12 @@ const Hero = () => {
           </h1>
 
           <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-yellow-300 mb-4 leading-tight">
-            SCHOLARSHIP NATIONAL CUP
+            GlOBAL SCHOLARSHIP COMPETITION
           </h1>
 
           {/* Description */}
           <p className="text-gray-300 text-xs sm:text-sm md:text-lg lg:text-xl mb-6 leading-relaxed font-medium">
-            636 Candidates Will Become{" "}
+            1980 Candidates Will Become{" "}
             <span className="text-yellow-400 font-semibold">
               Crorepatis in this Competition
             </span>
