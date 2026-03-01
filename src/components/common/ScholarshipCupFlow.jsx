@@ -19,7 +19,7 @@ const ScholarshipCupFlow = () => {
       <div className="my-3 w-px h-8 bg-gray-400" />
 
       <Link
-        to="/register"
+        to=""
         className="mt-2 mb-2 inline-block text-black text-sm sm:text-base font-semibold px-6 py-3 shadow-lg bg-blue-400"
       >
         3 Categories
