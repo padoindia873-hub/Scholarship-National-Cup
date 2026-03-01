@@ -46,7 +46,7 @@ import { Link } from "react-router-dom";
             >
             <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center w-full">
               <p className="text-base sm:text-lg font-semibold text-blue-800">
-                Second Category Examination will be till Next 20th District
+                Second Category Examination will be till Next 23th District
                 Champions.
               </p>
             </div>
@@ -55,14 +55,14 @@ import { Link } from "react-router-dom";
             <div className="my-3 w-px h-8 bg-gray-400" />
 
             <div className="bg-yellow-200 border border-blue-500 p-3 rounded w-full text-center">
-              Only Rupees 171 is being charged for exam maintenance, lodging,
+              Only Rupees 421 is being charged for exam maintenance, lodging,
               fooding & travel of examiners.
             </div>
 
             <div className="my-3 w-px h-8 bg-gray-400" />
 
             <div className="bg-green-100 text-green-700 font-semibold px-4 py-2 rounded shadow">
-              Maintains Fees: 171/-
+              Maintains Fees: 421/-
             </div>
 
             <div className="my-3 w-px h-8 bg-gray-400" />

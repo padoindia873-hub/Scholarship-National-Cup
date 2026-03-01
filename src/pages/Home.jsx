@@ -16,7 +16,6 @@ import PrizeListCompetitionExam from "../components/common/prizeListCompetitionE
 
 import VideoPlayer from '../components/common/VideoPlayer'
 import DualCompetition from "../pages/DualCompetition";
-
 const Home = () => {
   return (
     <div>

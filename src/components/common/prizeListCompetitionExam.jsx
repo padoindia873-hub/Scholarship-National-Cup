@@ -7,7 +7,7 @@ export default function PrizeListCompetitionExam({ prizes }) {
       id: 1,
       rank: "1st Level",
       title: "Top Rank Prize",
-      amount: 5000,
+      amount: 100000,
       description: "School and Collage",
       Details: "Online",
       type: "cash",
@@ -15,8 +15,8 @@ export default function PrizeListCompetitionExam({ prizes }) {
     {
       id: 2,
       rank: "2nd Level",
-      title: "Top Rank Prize",
-      amount: 50000,
+      title: "Top 3 Rank Prize",
+      amount: 200000,
       description: "Block Level",
       Details: "Online",
       type: "cash",
@@ -24,8 +24,8 @@ export default function PrizeListCompetitionExam({ prizes }) {
     {
       id: 3,
       rank: "3rd Level",
-      title: "Top Rank Prize",
-      amount: 500000,
+      title: "All Failures Prize",
+      amount: 1000000,
       description: "District Level",
       Details: "Offline",
       type: "cash",
@@ -34,7 +34,7 @@ export default function PrizeListCompetitionExam({ prizes }) {
       id: 4,
       rank: "4th Level",
       title: "Top Rank Prize",
-      amount: 5000000,
+      amount: 150000000,
       description: "State Level",
       Details: "Offline",
       type: "cash",
@@ -61,15 +61,13 @@ export default function PrizeListCompetitionExam({ prizes }) {
     "bg-[#138808]/80",
     "bg-[#339CFFFF]/80",
     "bg-[#138808]/80",
-
   ];
 
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-
       {/* Header */}
       <header className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
-    {/* <Link
+        {/* <Link
   to="/prize-list"
   className="
     w-full sm:w-auto px-6 py-3 
@@ -84,22 +82,20 @@ export default function PrizeListCompetitionExam({ prizes }) {
   Level Wise Prize List
 </Link> */}
 
-<Link to="/prize-list">
-  <div className="bg-blue-400 p-6 rounded-xl shadow-lg text-center mt-[20px] hover:scale-105 transition-transform cursor-pointer">
-    <h1
-      className="
+        <Link to="/prize-list">
+          <div className="bg-blue-400 p-6 rounded-xl shadow-lg text-center mt-[20px] hover:scale-105 transition-transform cursor-pointer">
+            <h1
+              className="
         text-[30px] sm:text-[45px] md:text-[50px]
         font-extrabold leading-tight
         bg-[linear-gradient(90deg,#FF7F00_10%,#FFFFFF_50%,#008000_100%)]
         bg-clip-text text-transparent
       "
-    >
-      Level Wise Prize List
-    </h1>
-  </div>
-</Link>
-
-
+            >
+              Level Wise Prize List
+            </h1>
+          </div>
+        </Link>
       </header>
 
       {/* Prize Grid */}
@@ -111,23 +107,28 @@ export default function PrizeListCompetitionExam({ prizes }) {
               className={`block rounded-2xl p-5 sm:p-6 shadow-lg hover:scale-[1.02] transition-all ${bgColors[i % bgColors.length]}`}
             >
               <div className="flex items-start gap-4">
-                
                 {/* Rank Badge */}
-                <div
-                  className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-yellow-400/70 to-blue-500/90 flex items-center justify-center font-extrabold text-blue-900 text-sm sm:text-base md:text-lg"
-                >
+                <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-yellow-400/70 to-blue-500/90 flex items-center justify-center font-extrabold text-blue-900 text-sm sm:text-base md:text-lg">
                   {p.rank}
                 </div>
 
                 {/* Content */}
                 <div className="flex-1">
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold">{p.title}</h3>
-                  <p className="text-xs sm:text-sm opacity-80 mt-1">{p.description}</p>
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold">
+                    {p.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm opacity-80 mt-1">
+                    {p.description}
+                  </p>
 
                   <div className="mt-3 flex items-center justify-between">
                     <div>
-                      <div className="text-xs sm:text-sm opacity-75">{p.type}</div>
-                      <div className="text-base sm:text-lg font-bold">{formatCurrency(p.amount)}</div>
+                      <div className="text-xs sm:text-sm opacity-75">
+                        {p.type}
+                      </div>
+                      <div className="text-base sm:text-lg font-bold">
+                        {formatCurrency(p.amount)}
+                      </div>
                     </div>
 
                     <span className="px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-medium rounded-full bg-black/20">
@@ -140,8 +141,7 @@ export default function PrizeListCompetitionExam({ prizes }) {
                     <button className="flex-1 px-3 py-2 bg-transparent border border-black/30 rounded-lg text-xs sm:text-sm hover:border-black hover:text-black transition">
                       {p.Details}
                     </button>
-
-                    <Link to="/PrizeLists" className="flex-1">
+                    <Link to={`/PrizeListsDetails/${p.id}`} className="flex-1">
                       <button className="w-full px-3 py-2 sm:px-4 sm:py-2 rounded-lg bg-yellow-400 text-black font-semibold text-xs sm:text-sm shadow-sm hover:scale-105 transition-transform">
                         All Prize
                       </button>

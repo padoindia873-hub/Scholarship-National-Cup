@@ -44,7 +44,7 @@ const ScholarshipCupFlow = () => {
             >
               <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center w-full hover:scale-[1.02] transition ">
                 <p className="mt-4 mb-4 inline-block text-black text-sm sm:text-base font-semibold px-6 py-3 shadow-lg animate-blinkYellow">
-                 First Category ₹121/-
+                 First Category ₹321/-
                 </p>
                 {/* <p className="text-base sm:text-lg font-semibold text-blue-800">
                   be till 13th District Champions.
@@ -106,7 +106,7 @@ const ScholarshipCupFlow = () => {
             >
             <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center w-full">
               <p className="mt-4 mb-4 inline-block text-black text-sm sm:text-base font-semibold px-6 py-3 shadow-lg animate-blinkYellow">
-                Second Category ₹171/-
+                Second Category ₹421/-
               </p>
             </div>
             </Link>
@@ -166,7 +166,7 @@ const ScholarshipCupFlow = () => {
             >
             <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center w-full">
               <p className="mt-4 mb-4 inline-block text-black text-sm sm:text-base font-semibold px-6 py-3 shadow-lg animate-blinkYellow">
-                Third Category ₹221/-
+                Third Category ₹521/-
 
               </p>
             </div>

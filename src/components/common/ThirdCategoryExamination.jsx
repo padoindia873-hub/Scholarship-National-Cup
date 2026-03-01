@@ -50,7 +50,7 @@ const ThirdCategoryExamination =() =>{
             >
             <div className="bg-blue-100 p-4 rounded-lg shadow-md text-center w-full">
               <p className="text-base sm:text-lg font-semibold text-blue-800">
-                Third Category Examination will be till Next 20th District
+                Third Category Examination will be till Next 23th District
                 Champions.
               </p>
             </div>
@@ -59,14 +59,14 @@ const ThirdCategoryExamination =() =>{
             <div className="my-3 w-px h-8 bg-gray-400" />
 
             <div className="bg-pink-100 border border-blue-600 p-3 rounded w-full text-center">
-              Only Rupees 221 is being charged for exam maintenance, lodging,
+              Only Rupees 521 is being charged for exam maintenance, lodging,
               fooding & travel of examiners.
             </div>
 
             <div className="my-3 w-px h-8 bg-gray-400" />
 
             <div className="bg-green-100 text-green-700 font-semibold px-4 py-2 rounded shadow">
-              Maintains Fees: 221/-
+              Maintains Fees: 521/-
             </div>
 
             <div className="my-3 w-px h-8 bg-gray-400" />

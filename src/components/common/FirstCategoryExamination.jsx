@@ -10,7 +10,7 @@ const FirstCategoryExamination =() =>{
   
         {/* Blinking Registration Button */}
         <Link
-          to="/register"
+          to="/"
           className="mt-4 mb-4 inline-block text-black text-sm sm:text-base font-semibold px-6 py-3 shadow-lg animate-blinkYellow"
         >
           Registration Now Open
@@ -47,7 +47,7 @@ const FirstCategoryExamination =() =>{
                     First Category Examination will
                   </p>
                   <p className="text-base sm:text-lg font-semibold text-blue-800">
-                    be till 13th District Champions.
+                    be till 23th District Champions.
                   </p>
                 </div>
               </Link>
@@ -55,14 +55,14 @@ const FirstCategoryExamination =() =>{
               <div className="my-3 w-px h-8 bg-gray-400" />
   
               <div className="bg-purple-200 border border-blue-500 p-3 rounded text-sm sm:text-base w-full text-center">
-                Only Rupees 121 is being charged for exam maintenance, lodging,
+                Only Rupees 321 is being charged for exam maintenance, lodging,
                 fooding & travel of examiners.
               </div>
   
               <div className="my-3 w-px h-8 bg-gray-400" />
   
               <div className="bg-green-100 text-green-700 font-semibold px-4 py-2 rounded shadow">
-                Maintains Fees: 121/-
+                Maintains Fees: 321/-
               </div>
   
               <div className="my-3 w-px h-8 bg-gray-400" />

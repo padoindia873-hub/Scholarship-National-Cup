@@ -4,7 +4,7 @@ import 'antd/dist/reset.css'
 
 // Import local images
 import schoolImg1 from '../../assets/school1.jpg'
-import schoolImg11 from '../../assets/school11.jpeg'
+import schoolImg11 from '../../assets/school11.png'
 
 import schoolImg2 from '../../assets/school2.jpg'
 import schoolImg3 from '../../assets/school3.jpg'
@@ -13,7 +13,7 @@ import schoolImg5 from '../../assets/school5.jpg'
 import schoolImg6 from '../../assets/school6.jpg'
 
 import blockImg1 from '../../assets/block1.jpg'
-import blockImg11 from '../../assets/block11.jpeg'
+import blockImg11 from '../../assets/block11.png'
 
 
 import districtImg1 from '../../assets/district1.jpg'
@@ -22,7 +22,7 @@ import districtImg3 from '../../assets/district3.jpg'
 import districtImg4 from '../../assets/district4.jpg'
 import districtImg5 from '../../assets/district5.jpg'
 import districtImg6 from '../../assets/district6.jpg'
-import districtImg7 from '../../assets/district7.jpeg'
+import districtImg7 from '../../assets/district7.png'
 
 import stateImg1 from '../../assets/state1.jpg'
 import stateImg2 from '../../assets/state2.jpg'
@@ -40,7 +40,7 @@ const { Panel } = Collapse
 const prizeData = [
   {
     level: 'School and College Level (Online)',
-    winner: '1st Winner will get Rs. 5000',
+    winner: '1st Winner will get Rs. 10000',
      winnerone: '',
     // diamondCard: {
     //   title: 'Diamond Card Facilities (Top 11)',
@@ -58,8 +58,7 @@ const prizeData = [
   {
     level: 'Block Level (Online)',
     prizes: [
-      '1st Winner: Rs. 50000/- Scholarship',
-      'Consolation: 2nd Rank to 13th Top Rankers Will Get 10,000/- Rupees Each and Every One',
+      '1st, 2nd and 3rd Winners: Rs. 2,00,000/- Accommodation (traveling lodging and fooding) for  offline exam',
        '',
     ],
     images: [blockImg11],
@@ -67,12 +66,12 @@ const prizeData = [
   {
     level: 'District Level (Offline)',
     prizes: [
-      '1st Prize >  5,00,000/- + BMW Bike',
-      '2ed Prize >  3,00,000/- + KTM Bike',
-      '3rd Prize > 2,00,000/- + Pulsar Bike',
-      'Consolation Prize > 1,00,000/- + Scooty All Remaining Candidates ',     
+      // '1st Prize >  5,00,000/- + BMW Bike',
+      // '2ed Prize >  3,00,000/- + KTM Bike',
+      // '3rd Prize > 2,00,000/- + Pulsar Bike',
+      'Consolation Prize > 10,00,000/- + All failure candidates will get 10,00,000/-',     
     ],
-    images: [districtImg1, districtImg2, districtImg3, districtImg5, districtImg7],
+    images: [ districtImg7],
   },
   // {
   //   level: 'State Level (Offline)',
@@ -155,7 +154,7 @@ const prizeData = [
     // ],
     winners: [
       {
-        title: '1st Prize',
+        title: '1st Prize ---- 15Cores',
         rewards: [
           '1 Kg Gold Trophy',
           '10 Crore Cash',
@@ -165,7 +164,7 @@ const prizeData = [
         ],
       },
       {
-        title: '2nd Prize',
+        title: '2nd Prize ---- 12Cores',
         rewards: [
           '500 gm Gold Trophy',
           '8 Crore Cash',
@@ -175,7 +174,7 @@ const prizeData = [
         ],
       },
       {
-        title: '3rd Prize',
+        title: '3rd Prize ---- 10Cores',
         rewards: [
           '250 gm Gold Trophy',
           '6 Crore Cash',
@@ -185,20 +184,24 @@ const prizeData = [
         ],
       },
       {
-        title: '4th to 36th Rankers Will Get',
-        rewards: [
-          
-          '1,00,00,000/-  Cash',
-          '4 BHK Flat',
-          'Thar Car ',
-          '50 Gram Pure Gold Medal',          
-        ],
-      },
+  title: (
+    <>
+      4th to 32nd Rankers <br />
+      Will Get ---- 2 Crores
+    </>
+  ),
+  rewards: [
+    '1,00,00,000/- Cash',
+    '4 BHK Flat',
+    'Thar Car',
+    '50 Gram Pure Gold Medal',
+  ],
+},
       {
-        title: '37th to 636th Rankers Will Get',
+        title: '33th to 1932th Rankers Will Get',
         rewards: [
           
-          '50,00,000/-  Cash',
+          '1,00,00,000/-',
           '3 BHK Flat',
           'Hyundai Exter Car ',
           '20 Gram Pure Gold Medal',          

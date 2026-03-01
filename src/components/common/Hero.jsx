@@ -47,7 +47,7 @@ const Hero = () => {
 
           {/* Description */}
           <p className="text-gray-300 text-xs sm:text-sm md:text-lg lg:text-xl mb-6 leading-relaxed font-medium">
-            1980 Candidates Will Become{" "}
+            1932 Candidates Will Become{" "}
             <span className="text-yellow-400 font-semibold">
               Crorepatis in this Competition
             </span>
@@ -75,7 +75,7 @@ const Hero = () => {
               className="text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold text-yellow-300 mb-6 animate-blink"
               style={{ fontSize: "45px" }}
             >
-              1980 Crorepatis
+              1932 Crorepatis
             </h1>
             <h1
               className="font-semibold text-green-300 mb-6"

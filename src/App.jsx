@@ -70,6 +70,7 @@ import Marketing from "./pages/Marketing";
 import Technical from "./pages/Technical";
 import Legal from "./pages/Legal";
 import Finance from "./pages/Finance";
+import PrizeListsDetails from "./components/common/PrizeListsDetails";
 
 
 const Home = lazy(() => import("./pages/Home"));
@@ -175,6 +176,8 @@ const AppContent = () => {
           <Route path="/research" element={<Research />} />
           <Route path="/technical" element={<Technical />} />
           <Route path="/legal" element={<Legal />} />
+         <Route path="/PrizeListsDetails/:id" element={<PrizeListsDetails />} />
+
 
 
 
