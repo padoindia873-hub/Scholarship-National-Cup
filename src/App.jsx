@@ -71,7 +71,7 @@ import Technical from "./pages/Technical";
 import Legal from "./pages/Legal";
 import Finance from "./pages/Finance";
 import PrizeListsDetails from "./components/common/PrizeListsDetails";
-
+import AllPrizeListExam from "./components/common/AllprizeListExam";
 
 const Home = lazy(() => import("./pages/Home"));
 
@@ -177,6 +177,8 @@ const AppContent = () => {
           <Route path="/technical" element={<Technical />} />
           <Route path="/legal" element={<Legal />} />
          <Route path="/PrizeListsDetails/:id" element={<PrizeListsDetails />} />
+          <Route path="/AllPrizeListExam" element={<AllPrizeListExam />} />
+
 
 
 
