@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import heroImage from "../../assets/hero1.jpg";
+import heroImage from "../../assets/hero1.jpeg";
 import cupImage from "../../assets/cups.png";
 import FlyingFlag from "./FlyingFlag"; // <-- IMPORT FLAG COMPONENT
 
@@ -12,8 +12,8 @@ const Hero = () => {
         backgroundImage: `url(${heroImage})`,
       }}
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center">
+      {/* Overlay - Reduced opacity from 75% to 40% for brighter image */}
+      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
         <div className="text-center px-4 sm:px-6 md:px-12 lg:px-20 max-w-5xl mx-auto">
           <FlyingFlag
             src="https://wallpapercave.com/wp/wp9678253.jpg"
@@ -87,7 +87,7 @@ const Hero = () => {
               Recognition By Govt. Of India
             </h1> */}
             {/* Call to Action Buttons */}
-            <div className="mt-10 text-[100px] flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
+            <div className="mt text-[100px] flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
               {/* <Link
                 to="/BuyRollNumber"
                 className="text-black bg-yellow-400 text-base sm:text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg transition transform hover:scale-105 animate-blinkYellow w-[80%] sm:w-auto text-center"

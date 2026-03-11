@@ -24,13 +24,13 @@ const VideoPlayer = () => {
   return (
     <div className="flex flex-col justify-center items-center p-6 w-full">
       {/* 🇮🇳 Flying Flag Component */}
-      <FlyingFlag
+      {/* <FlyingFlag
         src="https://wallpapercave.com/wp/wp9678253.jpg"
         width={400}
         height={260}
         speed={5}
         amplitude={20}
-      />
+      /> */}
       <div className="bg-blue-900 p-6 rounded-xl shadow-lg text-center mt-[20px]">
         <h1
           className="

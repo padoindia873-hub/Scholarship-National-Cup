@@ -92,7 +92,7 @@ const prizeData = [
   },
 ];
 
-const AllPrizeListExam = () => {
+const AllprizeListExam = () => {
   return (
     <div className="p-5 md:p-8 bg-gray-50 space-y-10">
 
@@ -164,4 +164,4 @@ const AllPrizeListExam = () => {
   );
 };
 
-export default AllPrizeListExam;
+export default AllprizeListExam ;

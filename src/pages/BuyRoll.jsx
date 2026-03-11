@@ -25,25 +25,28 @@ const BuyRoll = () => {
       );
 
       const data = await response.json();
-
+      println(data);
       if (response.ok) {
         setResult(data);
         setTimeout(() => {
           navigate("/StudentPayments", { state: { email } });
+
         }, 1000);
       } else {
         setError(data.message || "User not found");
 
         //  Redirect to register page after 1 second
         setTimeout(() => {
-          navigate("/register");
+          // navigate("/register");
+                    navigate("/StudentPayments", { state: { email } });
+
         }, 1000);
       }
     } catch (err) {
       setError("Network error. Try again.");
 
       setTimeout(() => {
-        navigate("/register");
+        navigate("/StudentPayments");
       }, 1000);
     }
 
