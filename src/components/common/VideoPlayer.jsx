@@ -60,7 +60,7 @@ const VideoPlayer = () => {
         </Link>
 
         <Link
-          to="/AllPrizeListExam"
+          to="/AllPrizeExam"
           className="bg-blue-900 text-lg md:text-2xl font-semibold px-6 py-3 rounded-md shadow-lg hover:scale-105 w-[80%] sm:w-auto text-center flex justify-center"
         >
           <span
