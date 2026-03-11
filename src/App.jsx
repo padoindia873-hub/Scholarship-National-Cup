@@ -71,7 +71,7 @@ import Technical from "./pages/Technical";
 import Legal from "./pages/Legal";
 import Finance from "./pages/Finance";
 import PrizeListsDetails from "./components/common/PrizeListsDetails";
-import AllprizeListExam from "./components/common/AllprizeListExam";
+import AllPrizeExam from "./components/common/AllPrizeExam";
 const Home = lazy(() => import("./pages/Home"));
 
 const Login = lazy(() => import("./components/auth/Login"));
@@ -176,7 +176,7 @@ const AppContent = () => {
           <Route path="/technical" element={<Technical />} />
           <Route path="/legal" element={<Legal />} />
          <Route path="/PrizeListsDetails/:id" element={<PrizeListsDetails />} />
-          <Route path="/AllprizeListExam" element={<AllprizeListExam />} />
+          <Route path="/AllPrizeExam" element={<AllPrizeExam />} />
 
 
 
