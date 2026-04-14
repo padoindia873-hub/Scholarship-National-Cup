@@ -30,12 +30,13 @@ import {
   Diamond,
   ChefHat,
   Handshake,
-  HeartHandshake
+  HeartHandshake,
+  BookOpen
 } from "lucide-react";
 
 const DualCompetition = () => {
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: "linear-gradient(176deg, rgb(90 202 255), rgba(79, 69, 239, 0.59))" }}>
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -51,7 +52,7 @@ const DualCompetition = () => {
         }}></div>
       </div>
 
-      {/* Header Section */}
+      {/* Header Section - Desktop unchanged, mobile responsive */}
       <div className="relative max-w-7xl mx-auto mb-12 text-center">
         {/* Title badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg mb-4 border border-purple-200">
@@ -64,28 +65,29 @@ const DualCompetition = () => {
 
         {/* Main title */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mb-4">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600">
-            Dual Competition
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-blue-800">
+            Tripple Competition
           </span>
           <br />
           <span className="text-2xl sm:text-3xl text-gray-600 mt-2 block">
-            Students vs Public – One Ultimate Challenge
+            Govt. Students vs Private Students vs Public – One Ultimate Challenge
           </span>
         </h1>
 
         {/* Description */}
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Two paths, one destination. Watch how students and public participants 
-          compete through multiple levels to reach the National Championship.
+          Three paths, one destination. Watch how students and public participants 
+          compete through multiple levels to reach the Global Championship.
         </p>
 
-        {/* Stats */}
+        {/* Stats - Responsive wrap */}
         <div className="flex flex-wrap justify-center gap-4 mt-8">
           {[
-            { icon: <Users className="w-4 h-4" />, label: 'Students Track', color: 'blue' },
+            { icon: <Users className="w-4 h-4" />, label: 'Govt. Students Track', color: 'green' },
+            { icon: <Users className="w-4 h-4" />, label: 'Public Students Track', color: 'blue' },
             { icon: <HeartHandshake className="w-4 h-4" />, label: 'Public Track', color: 'purple' },
             { icon: <Trophy className="w-4 h-4" />, label: '4 Levels Each', color: 'pink' },
-            { icon: <Crown className="w-4 h-4" />, label: 'National Final', color: 'orange' },
+            { icon: <Crown className="w-4 h-4" />, label: 'Global Final', color: 'green' },
           ].map((stat, idx) => (
             <div key={idx} className={`flex items-center gap-2 px-4 py-2 bg-${stat.color}-100 rounded-full shadow-sm`}>
               <span className={`text-${stat.color}-600`}>{stat.icon}</span>
@@ -95,134 +97,121 @@ const DualCompetition = () => {
         </div>
       </div>
 
-      {/* Main Flowchart */}
+      {/* Main Flowchart - Desktop unchanged */}
       <div className="relative max-w-7xl mx-auto">
-        {/* Two Paths Section */}
-        <div className="relative flex flex-col lg:flex-row justify-center items-start gap-8 lg:gap-16">
-          
-          {/* Left Path - Students */}
-          <div className="flex-1 relative">
-            {/* Path label */}
-            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 lg:left-0 lg:translate-x-0">
-              <div className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-2 rounded-full shadow-lg inline-flex items-center gap-2">
-                <Users className="w-4 h-4" />
-                <span className="font-semibold">Student Path</span>
-              </div>
-            </div>
-            
-            <div className="mt-8 space-y-4">
+        {/* Three Paths Section - Centered */}
+        <div className="relative max-w-5xl mx-auto">
+          {/* Three parallel paths at the top - Stack on mobile, row on desktop */}
+          <div className="flex flex-col sm:flex-row justify-center items-center sm:items-stretch gap-6 mb-8">
+            {/* Left Path - Govt. Student */}
+            <div className="w-full sm:w-72">
               <PathCard 
-                title="One Side Student" 
-                icon={<Users className="w-6 h-6" />}
-                gradient="from-blue-400 to-cyan-400"
-                badge="Entry Point"
-                delay="0"
-              />
-              <ConnectorArrow direction="down" color="blue" />
-              <PathCard 
-                title="Qualifying Exam" 
+                title="Govt. Student Path" 
                 icon={<GraduationCap className="w-6 h-6" />}
-                gradient="from-blue-400 to-cyan-400"
-                badge="Level 1"
-                delay="100"
-              />
-              <ConnectorArrow direction="down" color="blue" />
-              <PathCard 
-                title="School & College Level" 
-                subtitle="Online"
-                icon={<BookOpen className="w-6 h-6" />}
-                gradient="from-blue-400 to-cyan-400"
-                badge="Level 2"
+                gradient="from-blue-400 to-indigo-400"
+                badge="Entry Point"
                 delay="200"
               />
-              <ConnectorArrow direction="down" color="blue" />
+            </div>
+            
+            {/* Center Path - Public Student */}
+            <div className="w-full sm:w-72">
               <PathCard 
-                title="Block Level" 
-                subtitle="Online"
-                icon={<Globe className="w-6 h-6" />}
-                gradient="from-blue-400 to-cyan-400"
-                badge="Level 3"
+                title="Private Student Path" 
+                icon={<Users className="w-6 h-6" />}
+                gradient="from-green-400 to-teal-400"
+                badge="Entry Point"
                 delay="300"
               />
             </div>
-          </div>
-
-          {/* Center Connector for Desktop */}
-          <div className="hidden lg:flex flex-col items-center justify-center pt-24">
-            <div className="relative">
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-xl animate-pulse">
-                  <GitMerge className="w-8 h-8 text-white" />
-                </div>
-              </div>
-              <div className="w-1 h-32 bg-gradient-to-b from-blue-400 via-purple-400 to-pink-400"></div>
-            </div>
-          </div>
-
-          {/* Right Path - Public */}
-          <div className="flex-1 relative">
-            {/* Path label */}
-            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 lg:left-0 lg:translate-x-0">
-              <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full shadow-lg inline-flex items-center gap-2">
-                <HeartHandshake className="w-4 h-4" />
-                <span className="font-semibold">Public Path</span>
-              </div>
-            </div>
             
-            <div className="mt-8 space-y-4">
+            {/* Right Path - Another Side Public */}
+            <div className="w-full sm:w-72">
               <PathCard 
-                title="Another Side Public" 
+                title="Public Path" 
                 icon={<HeartHandshake className="w-6 h-6" />}
                 gradient="from-purple-400 to-pink-400"
                 badge="Entry Point"
                 delay="400"
               />
-              <ConnectorArrow direction="down" color="purple" />
-              <PathCard 
-                title="Qualifying Exam" 
-                icon={<GraduationCap className="w-6 h-6" />}
-                gradient="from-purple-400 to-pink-400"
-                badge="Level 1"
-                delay="500"
-              />
-              <ConnectorArrow direction="down" color="purple" />
-              <PathCard 
-                title="School & College Level" 
-                subtitle="Online"
-                icon={<BookOpen className="w-6 h-6" />}
-                gradient="from-purple-400 to-pink-400"
-                badge="Level 2"
-                delay="600"
-              />
-              <ConnectorArrow direction="down" color="purple" />
-              <PathCard 
-                title="Block Level" 
-                subtitle="Online"
-                icon={<Globe className="w-6 h-6" />}
-                gradient="from-purple-400 to-pink-400"
-                badge="Level 3"
-                delay="700"
-              />
             </div>
           </div>
-        </div>
 
-        {/* Mobile Connector */}
-        <div className="lg:hidden flex justify-center items-center my-4">
-          <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-xl">
-            <ArrowDown className="w-8 h-8 text-white" />
+          {/* Convergence arrows - Responsive */}
+          <div className="relative h-24 mb-4">
+            {/* Left diagonal line */}
+            <div className="absolute left-1/4 sm:left-1/3 top-0 w-20 sm:w-32 h-8 sm:h-12 border-t-2 border-r-2 border-purple-400 rounded-tr-xl sm:rounded-tr-2xl" style={{ transform: 'translateX(-50%)' }}></div>
+            
+            {/* Center vertical line */}
+            <div className="absolute left-1/2 top-0 w-0.5 h-8 sm:h-12 bg-purple-400 transform -translate-x-1/2"></div>
+            
+            {/* Right diagonal line */}
+            <div className="absolute right-1/4 sm:right-1/3 top-0 w-20 sm:w-32 h-8 sm:h-12 border-t-2 border-l-2 border-purple-400 rounded-tl-xl sm:rounded-tl-2xl" style={{ transform: 'translateX(50%)' }}></div>
+            
+            {/* Meeting point - horizontal line */}
+            <div className="absolute left-1/2 top-6 sm:top-12 w-32 sm:w-64 h-0.5 bg-purple-400 transform -translate-x-1/2"></div>
+            
+            {/* Meeting point dot */}
+            <div className="absolute left-1/2 top-6 sm:top-12 w-3 h-3 sm:w-4 sm:h-4 bg-purple-500 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-lg"></div>
+            
+            {/* Down arrow from meeting point */}
+            <div className="absolute left-1/2 top-6 sm:top-12 transform -translate-x-1/2">
+              <div className="w-0.5 h-4 sm:h-8 bg-purple-400 mx-auto"></div>
+              <ArrowDown className="text-purple-500 w-3 h-3 sm:w-5 sm:h-5 mx-auto mt-0.5 sm:mt-1 animate-bounce" />
+            </div>
           </div>
-        </div>
 
-        {/* Desktop Horizontal Connector */}
-        <div className="hidden lg:flex justify-center items-center my-8 relative">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"></div>
+          {/* Online Exam - Converged point */}
+          <div className="flex justify-center mb-6">
+            <PathCard 
+              title="Online Exam" 
+              icon={<Globe className="w-6 h-6" />}
+              gradient="from-green-400 to-red-400"
+              badge="Common Path"
+              delay="500"
+              isCenter
+            />
           </div>
-          <div className="relative bg-white px-8 py-3 rounded-full shadow-xl border-2 border-purple-200">
-            <span className="text-lg font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              MERGE PATHS
-            </span>
+          
+          <ConnectorArrow direction="down" color="purple" isCenter />
+          
+          <div className="flex justify-center mb-6">
+            <PathCard 
+              title="Qualifying Exam" 
+              icon={<Target className="w-6 h-6" />}
+              gradient="from-purple-400 to-pink-400"
+              badge="Level 1"
+              delay="600"
+              isCenter
+            />
+          </div>
+          
+          <ConnectorArrow direction="down" color="purple" isCenter />
+          
+          <div className="flex justify-center mb-6">
+            <PathCard 
+              title="School & College Level" 
+              subtitle="Online"
+              icon={<BookOpen className="w-6 h-6" />}
+              gradient="from-purple-400 to-pink-400"
+              badge="Level 2"
+              delay="700"
+              isCenter
+            />
+          </div>
+          
+          <ConnectorArrow direction="down" color="purple" isCenter />
+          
+          <div className="flex justify-center mb-6">
+            <PathCard 
+              title="Block Level" 
+              subtitle="Online"
+              icon={<Globe className="w-6 h-6" />}
+              gradient="from-purple-400 to-pink-400"
+              badge="Level 3"
+              delay="800"
+              isCenter
+            />
           </div>
         </div>
 
@@ -232,33 +221,33 @@ const DualCompetition = () => {
             <PathCard 
               title="Offline Exam" 
               icon={<Shield className="w-6 h-6" />}
-              gradient="from-orange-400 to-red-400"
+              gradient="from-green-400 to-red-400"
               badge="Level 4"
               delay="800"
               isCenter
             />
           </div>
-          <ConnectorArrow direction="down" color="orange" isCenter />
+          <ConnectorArrow direction="down" color="green" isCenter />
           
           <div className="flex justify-center">
             <PathCard 
               title="District Level" 
               subtitle="Offline"
               icon={<MapPin className="w-6 h-6" />}
-              gradient="from-orange-400 to-red-400"
+              gradient="from-green-400 to-red-400"
               badge="Level 5"
               delay="900"
               isCenter
             />
           </div>
-          <ConnectorArrow direction="down" color="orange" isCenter />
+          <ConnectorArrow direction="down" color="green" isCenter />
           
           <div className="flex justify-center">
             <PathCard 
               title="Final Level" 
-              subtitle="National Level Championship"
+              subtitle="Global Level Championship"
               icon={<Crown className="w-6 h-6" />}
-              gradient="from-yellow-400 to-orange-400"
+              gradient="from-green-400 to-emerald-600"
               badge="GRAND FINALE"
               delay="1000"
               isCenter
@@ -267,13 +256,13 @@ const DualCompetition = () => {
           </div>
         </div>
 
-        {/* Victory Animation */}
+        {/* Victory Animation - Green */}
         <div className="flex justify-center mt-8">
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full filter blur-xl opacity-50 animate-pulse"></div>
-            <div className="relative bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-3">
+            <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-600 rounded-full filter blur-xl opacity-50 animate-pulse"></div>
+            <div className="relative bg-gradient-to-r from-green-400 to-emerald-600 text-white px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-3">
               <Trophy className="w-6 h-6" />
-              <span className="font-bold text-lg">National Champion Crowned</span>
+              <span className="font-bold text-lg">Global Champion Crowned</span>
               <Sparkles className="w-6 h-6" />
             </div>
           </div>
@@ -285,7 +274,7 @@ const DualCompetition = () => {
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg">
           <CheckCircle2 className="w-4 h-4 text-green-500" />
           <span className="text-sm text-gray-600">
-            Both paths converge at the National Level for the ultimate showdown
+            Three paths converge at Online Exam for the ultimate showdown to Global Championship
           </span>
         </div>
       </footer>
@@ -326,12 +315,19 @@ const DualCompetition = () => {
         .animate-pulse-slow {
           animation: pulse 3s ease-in-out infinite;
         }
+        @keyframes bounce {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-5px); }
+        }
+        .animate-bounce {
+          animation: bounce 0.5s ease-in-out infinite;
+        }
       `}</style>
     </div>
   );
 };
 
-// Enhanced Path Card Component
+// Enhanced Path Card Component - Desktop unchanged
 const PathCard = ({ title, subtitle, icon, gradient, badge, delay, isCenter, isFinal }) => (
   <div 
     className={`
@@ -345,7 +341,6 @@ const PathCard = ({ title, subtitle, icon, gradient, badge, delay, isCenter, isF
       relative bg-white/90 backdrop-blur-sm 
       rounded-2xl shadow-xl 
       border-2 border-transparent
-      hover:border-${gradient.split(' ')[1].replace('from-', '').replace('-400', '')}-400
       transition-all duration-300
       overflow-hidden
       ${isFinal ? 'transform hover:scale-105' : ''}
@@ -398,30 +393,48 @@ const PathCard = ({ title, subtitle, icon, gradient, badge, delay, isCenter, isF
   </div>
 );
 
-// Connector Arrow Component
-const ConnectorArrow = ({ direction, color, isCenter }) => (
-  <div className={`flex justify-center ${isCenter ? '' : ''}`}>
-    <div className="relative">
-      {/* Pulse effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-      
-      {direction === 'down' ? (
-        <div className="relative">
-          <div className={`w-1 h-10 bg-gradient-to-b from-${color}-400 to-${color}-600 mx-auto rounded-full animate-pulse`}></div>
-          <ArrowDown className={`text-${color}-500 w-5 h-5 mx-auto mt-1 animate-bounce`} />
-        </div>
-      ) : (
-        <div className="flex items-center gap-2">
-          <div className={`w-10 h-1 bg-gradient-to-r from-${color}-400 to-${color}-600 rounded-full`}></div>
-          <ArrowRight className={`text-${color}-500 w-5 h-5 animate-pulse`} />
-          <div className={`w-10 h-1 bg-gradient-to-r from-${color}-400 to-${color}-600 rounded-full`}></div>
-        </div>
-      )}
-    </div>
-  </div>
-);
+// Connector Arrow Component - Desktop unchanged
+const ConnectorArrow = ({ direction, color, isCenter }) => {
+  const getColorClasses = (color) => {
+    switch(color) {
+      case 'purple':
+        return {
+          gradient: 'from-purple-400 to-purple-600',
+          text: 'text-purple-500'
+        };
+      case 'green':
+        return {
+          gradient: 'from-green-400 to-green-600',
+          text: 'text-green-500'
+        };
+      default:
+        return {
+          gradient: 'from-purple-400 to-purple-600',
+          text: 'text-purple-500'
+        };
+    }
+  };
 
-// Missing import for BookOpen
-import { BookOpen } from 'lucide-react';
+  const colorClasses = getColorClasses(color);
+
+  return (
+    <div className={`flex justify-center ${isCenter ? 'mb-6' : ''}`}>
+      <div className="relative">
+        {direction === 'down' ? (
+          <div className="relative">
+            <div className={`w-1 h-10 bg-gradient-to-b ${colorClasses.gradient} mx-auto rounded-full animate-pulse`}></div>
+            <ArrowDown className={`${colorClasses.text} w-5 h-5 mx-auto mt-1 animate-bounce`} />
+          </div>
+        ) : (
+          <div className="flex items-center gap-2">
+            <div className={`w-10 h-1 bg-gradient-to-r ${colorClasses.gradient} rounded-full`}></div>
+            <ArrowRight className={`${colorClasses.text} w-5 h-5 animate-pulse`} />
+            <div className={`w-10 h-1 bg-gradient-to-r ${colorClasses.gradient} rounded-full`}></div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
 
 export default DualCompetition;

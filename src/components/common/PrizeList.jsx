@@ -1,384 +1,282 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Card, Collapse, List } from 'antd'
 import 'antd/dist/reset.css'
 
 // Import local images
-import schoolImg1 from '../../assets/school1.jpg'
 import schoolImg11 from '../../assets/school11.png'
-
-import schoolImg2 from '../../assets/school2.jpg'
-import schoolImg3 from '../../assets/school3.jpg'
-import schoolImg4 from '../../assets/school4.jpg'
-import schoolImg5 from '../../assets/school5.jpg'
-import schoolImg6 from '../../assets/school6.jpg'
-
-import blockImg1 from '../../assets/block1.jpg'
 import blockImg11 from '../../assets/block11.png'
-
-
-import districtImg1 from '../../assets/district1.jpg'
-import districtImg2 from '../../assets/district2.jpg'
-import districtImg3 from '../../assets/district3.jpg'
-import districtImg4 from '../../assets/district4.jpg'
-import districtImg5 from '../../assets/district5.jpg'
-import districtImg6 from '../../assets/district6.jpg'
 import districtImg7 from '../../assets/district7.png'
-
-import stateImg1 from '../../assets/state1.jpg'
-import stateImg2 from '../../assets/state2.jpg'
-import stateImg3 from '../../assets/state3.jpg'
-
-import finalImg1 from '../../assets/final1.jpg'
-import finalImg2 from '../../assets/final2.jpg'
-import finalImg3 from '../../assets/final3.jpg'
+import cupImage from "../../assets/cups.png"
 import finalImg4 from '../../assets/final4.jpg'
 import ruppes from '../../assets/wp4.jpg'
-import cupImage from "../../assets/cups.png";
-
+import k2 from '../../assets/k2.jpg'  
+import k4 from '../../assets/k4.jpg'
 const { Panel } = Collapse
 
-const prizeData = [
-  {
-    level: 'School and College Level (Online)',
-    winner: '1st Winner will get Rs. 10000',
-     winnerone: '',
-    // diamondCard: {
-    //   title: 'Diamond Card Facilities (Top 11)',
-    //   facilities: [
-    //     'Free Online IT Training',
-    //     'Free Legal Support in High Court',
-    //     'Higher Study Chances',
-    //     'Free Career Counselling classes',
-    //     'Extra Personality Buildup Motivation Classes',
-    //   ],
-    // },
-    // images: [schoolImg1, schoolImg2, schoolImg3, schoolImg4, schoolImg5, schoolImg6],
-      images: [schoolImg11],
-  },
-  {
-    level: 'Block Level (Online)',
-    prizes: [
-      '1st, 2nd and 3rd Winners: Rs. 2,00,000/- Accommodation (traveling lodging and fooding) for  offline exam',
-       '',
-    ],
-    images: [blockImg11],
-  },
-  {
-    level: 'District Level (Offline)',
-    prizes: [
-      // '1st Prize >  5,00,000/- + BMW Bike',
-      // '2ed Prize >  3,00,000/- + KTM Bike',
-      // '3rd Prize > 2,00,000/- + Pulsar Bike',
-      'Consolation Prize > 10,00,000/- + All failure candidates will get 10,00,000/-',     
-    ],
-    images: [ districtImg7],
-  },
-  // {
-  //   level: 'State Level (Offline)',
-  //       TopWinners :"",
+// Flip Card Component
+const FlipCard = ({ title, prizeAmount, imageSrc, prizeDetails = null, rewards = [] }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
 
-  //   rounds: [
-  //     'Top 8 Ranker Will Get 50,00,000/- + 50 GM Pure Gold Medal',
-  //     'Consolation Prize > Remaining All Candidates Will Get 10,00,000/- Rupees Each And Every One',
-  //     // 'Final Round: 9 Losers get 4 Crore + 4 BHK Flat + Mercedes Benz',
-  //   ],
-  //   winners: [
-      // {
-      //   title: '1st Prize',
-      //   rewards: [
-      //     '1 Kg Gold Trophy',
-      //     '10 Crore Cash',
-      //     'Jaguar Car',
-      //     '5 BHK Flat',
-      //     'Foreign Tour (4 people, 10 days)',
-      //   ],
-      // },
-      // {
-      //   title: '2nd Prize',
-      //   rewards: [
-      //     '500 gm Gold Trophy',
-      //     '8 Crore Cash',
-      //     'Jaguar Car',
-      //     '5 BHK Flat',
-      //     'Foreign Tour (4 people, 10 days)',
-      //   ],
-      // },
-      // {
-      //   title: '3rd Prize',
-      //   rewards: [
-      //     '250 gm Gold Trophy',
-      //     '6 Crore Cash',
-      //     'Jaguar Car',
-      //     '5 BHK Flat',
-      //     'Foreign Tour (4 people, 10 days)',
-      //   ],
-      // },
-      // {
-      //   title: '4th to 92nd Rankers wiil get',
-      //   rewards: [
+  return (
+    <div 
+      className="flip-card-wrapper w-full cursor-pointer"
+      onMouseEnter={() => setIsFlipped(true)}
+      onMouseLeave={() => setIsFlipped(false)}
+      onClick={() => setIsFlipped(!isFlipped)}
+    >
+      <div className={`flip-card-inner ${isFlipped ? 'flipped' : ''}`}>
+        {/* Front Side - Shows Text */}
+        <div className="flip-card-front">
+          <div className="absolute top-4 right-4">
+            <span className="bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full animate-pulse">
+              🏆 WINNER 🏆
+            </span>
+          </div>
           
-      //     '3 Crore Cash',
-      //     'Fortuner Car',
+          <div className="text-6xl mb-4 animate-bounce">
+            🏆
+          </div>
           
-      //   ],
-      // },
-      // {
-      //   title: '93rd to remaining all competitors wiil get',
-      //   rewards: [
+          <h3 className="text-white text-xl md:text-2xl font-bold mb-3 px-4">
+            {title}
+          </h3>
           
-      //     '50 Lakhs Cash',
-      //     'Maruti Brezza Car',
+          {prizeAmount && (
+            <div className="bg-gradient-to-r from-blue-500 to-green-500 rounded-lg px-4 py-2 mt-2">
+              <p className="text-white font-bold text-lg">
+                💰 {prizeAmount}
+              </p>
+            </div>
+          )}
           
-      //   ],
-      // },
-  //   ],
-  //   images: [ruppes, finalImg2, ],
-  // },
-  // {
-  //   level: 'State Level',
-  //   prizes: [
-  //     '24 members go to Final Level',
-  //     '24 Hyundai Exter Cars',
-  //     'Each gets Rs. 20 Lakh Cash',
-  //     '50 gm Pure Gold Medal (22 carat)',
-  //   ],
-  //   images: [stateImg1, stateImg2, stateImg3],
-  // },
+          {prizeDetails && (
+            <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg px-4 py-2 mt-2">
+              <p className="text-white font-bold text-sm">
+                {prizeDetails}
+              </p>
+            </div>
+          )}
+          
+          <div className="mt-6 text-white/70 text-sm flex items-center justify-center gap-2">
+            <span>👆 Hover to flip</span>
+            <span className="text-lg">🔄</span>
+          </div>
+        </div>
+
+        {/* Back Side - Shows Image and Rewards */}
+        <div className="flip-card-back">
+          <div className="absolute top-4 left-4">
+            <span className="bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">
+              🎁 PRIZE DETAILS
+            </span>
+          </div>
+          
+          {/* Support Single or Multiple Images with Equal Size */}
+          {imageSrc && (
+            Array.isArray(imageSrc) ? (
+              <div className="flex gap-2 justify-center items-center mb-3 px-2">
+                {imageSrc.map((img, i) => (
+                  <div key={i} className="w-1/2 flex justify-center items-center">
+                    <img
+                      src={img}
+                      alt={`prize-${i}`}
+                      className="w-full h-28 md:h-32 object-contain rounded-lg"
+                      style={{ maxHeight: '130px' }}
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="flex justify-center items-center px-2">
+                <img 
+                  src={imageSrc} 
+                  alt="prize"
+                  className="w-full h-32 md:h-36 object-contain rounded-lg mb-2"
+                />
+              </div>
+            )
+          )}
+          
+          {rewards.length > 0 && (
+            <div className="text-white text-left mt-2 w-full px-2">
+              {rewards.map((reward, i) => (
+                <p key={i} className="text-xs md:text-sm mb-1">
+                  ✓ {reward}
+                </p>
+              ))}
+            </div>
+          )}
+          
+          <p className="text-white text-center mt-2 text-xs font-semibold">
+            🎉 Congratulations! 🎉
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Data for the 3 flip cards
+const flipCardsData = [
   {
-    level: 'Final Level (National Level) (offline) ',
-    TopWinners :"Top Winners",
-    // rounds: [
-    //   '1st Round: 500 Losers get 1 Crore cash (Higher Study)',
-    //   '2nd Round: 40 Losers get 2 Crore + 3 BHK Flat',
-    //   'Final Round: 9 Losers get 4 Crore + 4 BHK Flat + Mercedes Benz',
-    // ],
-    winners: [
-      {
-        title: '1st Prize ---- 15Cores',
-        rewards: [
-          '1 Kg Gold Trophy',
-          '10 Crore Cash',
-          'Jaguar Car',
-          '5 BHK Flat',
-          'Scholarship For Abroad Study',
-        ],
-      },
-      {
-        title: '2nd Prize ---- 12Cores',
-        rewards: [
-          '500 gm Gold Trophy',
-          '8 Crore Cash',
-          'Jaguar Car',
-          '5 BHK Flat',
-          'Scholarship For Abroad Study',
-        ],
-      },
-      {
-        title: '3rd Prize ---- 10Cores',
-        rewards: [
-          '250 gm Gold Trophy',
-          '6 Crore Cash',
-          'Jaguar Car',
-          '5 BHK Flat',
-          'Scholarship For Abroad Study',
-        ],
-      },
-      {
-  title: (
-    <>
-      4th to 32nd Rankers <br />
-      Will Get ---- 2 Crores
-    </>
-  ),
-  rewards: [
-    '1,00,00,000/- Cash',
-    '4 BHK Flat',
-    'Thar Car',
-    '50 Gram Pure Gold Medal',
-  ],
-},
-      {
-        title: '33th to 1932th Rankers Will Get',
-        rewards: [
-          
-          '1,00,00,000/-',
-          '3 BHK Flat',
-          'Hyundai Exter Car ',
-          '20 Gram Pure Gold Medal',          
-        ],
-      },
-      // {
-      //   title: 'Remaining 800th Rankers Will Get',
-      //   rewards: [
-          
-      //     '50,00,000/-  Cash',
-      //     '2 BHK Flat',
-      //     'Hyundai Exter Car',
-          
-      //   ],
-      // },
-    ],
-    images: [cupImage, finalImg4,ruppes],
+    title: 'School & College Level',
+    prizeAmount: 'Rs. 1,00,000',
+    prizeDetails: '1st Winner Prize',
+    image: schoolImg11
   },
-]
+  {
+    title: 'Block Level',
+    prizeAmount: 'Rs. 2,00,000/-',
+    prizeDetails: '1st, 2nd & 3rd Winners Will Go To Offline Exam',
+    image: blockImg11
+  },
+  {
+    title: 'District Level',
+    prizeAmount: 'Rs. 10,00,000/-',
+    prizeDetails: 'Consolation Prize for All Failure Candidates',
+    image: districtImg7
+  }
+];
+
+// Final Level Flip Cards Data
+const finalLevelCards = [
+  {
+    title: '1st Prize',
+    prizeAmount: '15 Crores',
+    prizeDetails: 'Winner Takes All',
+    image: [cupImage, ruppes],
+    rewards: [
+      '🏆 1 Kg Gold Trophy',
+      '💰 10 Crore Cash',
+      '🚗 Jaguar Car',
+      '🏠 5 BHK Flat',
+      '🎓 Scholarship For Abroad Study'
+    ]
+  },
+  {
+    title: '2nd Prize',
+    prizeAmount: '12 Crores',
+    prizeDetails: 'Runner Up',
+    image: [cupImage, ruppes],
+    rewards: [
+      '🏆 500 gm Gold Trophy',
+      '💰 8 Crore Cash',
+      '🚗 Jaguar Car',
+      '🏠 5 BHK Flat',
+      '🎓 Scholarship For Abroad Study'
+    ]
+  },
+  {
+    title: '3rd Prize',
+    prizeAmount: '10 Crores',
+    prizeDetails: 'Second Runner Up',
+    image: [cupImage, ruppes],
+    rewards: [
+      '🏆 250 gm Gold Trophy',
+      '💰 6 Crore Cash',
+      '🚗 Jaguar Car',
+      '🏠 5 BHK Flat',
+      '🎓 Scholarship For Abroad Study'
+    ]
+  },
+  {
+    title: '4th to 32nd Rankers',
+    prizeAmount: '2 Crores',
+    prizeDetails: 'Top Performers',
+    image: [k4, ruppes],
+    rewards: [
+      '💰 1,00,00,000/- Cash',
+      '🏠 4 BHK Flat',
+      '🚙 Thar Car',
+      '🥇 50 Gram Pure Gold Medal'
+    ]
+  },
+  {
+    title: '33th to 1932th Rankers',
+    prizeAmount: '50 Laks',
+    prizeDetails: 'All Participants',
+    image: [k2, ruppes],
+    rewards: [
+      '💰 50,00,000/-',
+      '🏠 3 BHK Flat',
+      '🚗 Hyundai Exter Car',
+      '🥇 20 Gram Pure Gold Medal'
+    ]
+  }
+];
 
 const PrizeList = () => {
   return (
-    <div className="p-5 md:p-8 bg-gray-50">
-      <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center mb-2 text-gray-800">
-        KK Padho India's National Cup
-      </h2>
-      <p className="text-center text-sm sm:text-base text-gray-600 mb-10 italic">
-        <span className="font-semibold text-green-600">636 Candidates  </span> Will Be Come<span className="font-semibold text-green-600"> Cororepaties</span>
-      </p>
- {/* <p className="text-center text-sm sm:text-base text-gray-600 mb-10 italic">
-        <span className="font-semibold text-green-600">Level</span> Wise Prize <span className="font-semibold text-green-600"> List</span>
-      </p> */}
-
-    <div className="w-full flex justify-center mt-8">
-  <div className="bg-blue-900 px-6 py-5 rounded-xl shadow-lg text-center 
-                  hover:scale-105 transition-transform cursor-pointer 
-                  w-[90%] sm:w-[80%] md:w-[60%]">
+    <div className="p-5 md:p-8 min-h-screen" style={{ background: "linear-gradient(145deg, #2085c0, #b84dff96)" }}>
       
-    <h1
-      className="
-        text-[22px] sm:text-[40px] md:text-[45px]
-        font-extrabold leading-tight
-        bg-[linear-gradient(90deg,#FF7F00_10%,#FFFFFF_50%,#008000_100%)]
-        bg-clip-text text-transparent
-      "
-    >
-      Level Wise Prize List
-    </h1>
+      {/* Header Section */}
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-2 text-white">
+        KK Padho India's Global Cup
+      </h2>
+      <p className="text-center text-white text-lg mb-10">
+        <span className="font-bold text-yellow-300 animate-pulse">1932 Candidates</span> Will Become <span className="font-bold text-yellow-300">Crorepaties</span>
+      </p>
 
-  </div>
-</div>
-
-
-      <Collapse accordion className="bg-gray-50 p-5">
-  {prizeData.map((section, index) => (
-    <Panel
-      key={index}
-      header={
-        <span
-                 className="mt-4 mb-4 inline-block text-black text-sm sm:text-base font-semibold px-6 py-3 shadow-lg animate-blinkYellow">
-
-          {section.level}
-        </span>
-      }
-    >
-      {section.winner && (
-        <p className="text-base md:text-lg font-semibold text-yellow-700 mb-2">
-          {section.winner}
-        </p>
-      )}
-
-      {section.winnerone && (
-        <p className="text-base md:text-lg font-semibold text-yellow-700 mb-2">
-          {section.winnerone}
-        </p>
-      )}
-
-      {section.images && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 my-4">
-          {section.images.map((imgSrc, i) => (
-            <img
-              key={i}
-              src={imgSrc}
-              alt={`prize-img-${i}`}
-              className="w-full h-auto object-contain rounded-xl"
-            />
-          ))}
+      {/* Gradient Title Box */}
+      <div className="w-full flex justify-center mt-8 mb-12">
+        <div className="bg-gradient-to-r from-blue-900 to-purple-900 px-6 py-5 rounded-xl shadow-2xl text-center hover:scale-105 transition-all duration-300 w-[90%] sm:w-[80%] md:w-[60%]">
+          <h1 className="text-[22px] sm:text-[40px] md:text-[45px] font-extrabold leading-tight bg-gradient-to-r from-green-400 via-yellow-300 to-green-400 bg-clip-text text-transparent">
+            Level Wise Prize List
+          </h1>
         </div>
-      )}
+      </div>
 
-      {section.diamondCard && (
-        <Card
-          title={
-            <span className="font-bold text-gray-800 text-base md:text-lg">
-              {section.diamondCard.title}
-            </span>
-          }
-          className="my-4 bg-yellow-50 border border-gray-300"
-          bordered={false}
-        >
-          <List
-            dataSource={section.diamondCard.facilities}
-            renderItem={(item) => (
-              <List.Item className="text-sm md:text-base font-medium">
-                {item}
-              </List.Item>
-            )}
+      {/* 3 Flip Cards in One Row */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto px-4" style={{ maxWidth: '70rem' }}>
+        {flipCardsData.map((card, index) => (
+          <FlipCard
+            key={index}
+            title={card.title}
+            prizeAmount={card.prizeAmount}
+            prizeDetails={card.prizeDetails}
+            imageSrc={card.image}
           />
-        </Card>
-      )}
+        ))}
+      </div>
 
-      {section.prizes && (
-        <List
-          dataSource={section.prizes}
-          renderItem={(item) => (
-            <List.Item className="text-sm md:text-base font-medium text-gray-700">
-              {item}
-            </List.Item>
-          )}
-          bordered
-          className="mb-4"
-        />
-      )}
+      {/* Final Level Section - Direct Display without Collapse */}
+      <div className="mt-16">
+        {/* Label Header */}
+        <div className="w-full md:w-[90%] lg:w-[85%] mx-auto mb-6">
+          <div className="inline-block text-white text-base sm:text-[2rem] font-semibold px-6 py-3 shadow-lg animate-slideRight rounded-[7px]" 
+               style={{ background: "linear-gradient(145deg, #5274a8, #4dffb596)" }}>
+            Grand Final Level (offline)
+          </div>
+        </div>
 
-      {section.rounds && (
-        <>
-          <h4 className="text-lg font-semibold mt-4 text-yellow-800">
-            Losers Rounds
-          </h4>
-          <List
-            dataSource={section.rounds}
-            renderItem={(item) => (
-              <List.Item className="text-sm md:text-base font-medium">
-                {item}
-              </List.Item>
-            )}
-            bordered
-            className="mb-4"
-          />
-        </>
-      )}
-
-      {section.winners && (
-        <>
-          <h4 className="text-lg font-semibold mt-4 text-yellow-800">
-            {section.TopWinners}
+        {/* Cards Container */}
+        <div className="w-full md:w-[90%] lg:w-[85%] mx-auto">
+          <h4 className="text-xl md:text-2xl font-bold mt-6 mb-4 text-yellow-300 text-center">
+            🎯 Top Winners 🎯
           </h4>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
-            {section.winners.map((winner, idx) => (
-              <Card
-                key={idx}
-                title={
-                  <span className="font-bold text-base md:text-lg">
-                    {winner.title}
-                  </span>
-                }
-                className="bg-blue-50 border border-blue-600"
-                bordered={false}
-              >
-                <List
-                  dataSource={winner.rewards}
-                  renderItem={(item) => (
-                    <List.Item className="text-sm md:text-base font-medium">
-                      {item}
-                    </List.Item>
-                  )}
-                />
-              </Card>
+          {/* Final Level Cards - 5 in 1 row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-4">
+            {finalLevelCards.map((card, index) => (
+              <FlipCard
+                key={index}
+                title={card.title}
+                prizeAmount={card.prizeAmount}
+                prizeDetails={card.prizeDetails}
+                imageSrc={card.image}
+                rewards={card.rewards}
+              />
             ))}
           </div>
-        </>
-      )}
-    </Panel>
-  ))}
-</Collapse>
+        </div>
+      </div>
 
+      {/* Footer */}
+      <div className="text-center mt-10">
+        <p className="text-black/80 text-sm animate-pulse">
+          India's Biggest Scholarship Competition
+        </p>
+      </div>
     </div>
   )
 }

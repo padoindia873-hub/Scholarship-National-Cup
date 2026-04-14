@@ -159,7 +159,7 @@ const DemoQuestions = () => {
   const seconds = time % 60;
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 text-gray-800 px-4 py-10">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 text-gray-800 px-4 py-10"  style={{ background: "linear-gradient(176deg, rgb(92, 90, 255), rgb(79 69 239 / 59%))" }}>
       <h1 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold text-black-300 mb-2 sm:mb-3">
         KK PADHO INDIA PRESENTS
       </h1>

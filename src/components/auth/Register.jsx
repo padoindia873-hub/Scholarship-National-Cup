@@ -220,7 +220,7 @@ const Register = () => {
   // };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 w-full h-screen md:p-4">
+    <div className="flex justify-center items-center min-h-screen bg-gray-100 w-full h-screen md:p-4" style={{ background: "linear-gradient(145deg, #052658, #4dffb596)" }}>
       <div className="bg-white shadow-lg rounded-md flex w-full h-full overflow-hidden relative max-w-4xl mx-auto">
         {/* Left Image */}
         <div className="w-1/2 h-full hidden md:block">

@@ -33,7 +33,7 @@ const prizeData = [
     images: [districtImg7],
   },
   {
-    level: "Final Level (National Level) (Offline)",
+    level: "Final Level (Global Level) (Offline)",
     TopWinners: "Top Winners",
     winners: [
       {

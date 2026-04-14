@@ -94,7 +94,7 @@ const StudentDetails = () => {
 
         {/* EXAM & RESULT */}
         {/* EXAM & RESULT */}
-<Section title="Exam & Result" color="orange">
+<Section title="Exam & Result" color="green">
   <Item
     icon={<IdcardOutlined />}
     label="Buy Roll"

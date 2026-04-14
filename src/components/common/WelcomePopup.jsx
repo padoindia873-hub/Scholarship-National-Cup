@@ -14,7 +14,7 @@ const WelcomePopup = () => {
 
   useEffect(() => {
     Swal.fire({
-      title: "Welcome To Scholarship National Cup Competition!",
+      title: "Welcome To Scholarship Global Cup Competition!",
       text: "BEST OF LUCK 🎉",
       icon: "success",
       confirmButtonText: "OK",

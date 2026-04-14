@@ -82,7 +82,7 @@ const PrizeList = () => {
             {/* Heading */}
             <h1 className="text-4xl font-bold text-gray-800 mb-6">PADHO INDIA SCHOLARSHIP CUP</h1>
 
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">FINAL LEVEL (NATIONAL LEVEL) (TOTALLY OFFLINE)</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">FINAL LEVEL (GLOBAL LEVEL) (TOTALLY OFFLINE)</h1>
 
             {/* Paragraph */}
             <p className="max-w-3xl mx-auto text-base text-gray-600 leading-relaxed mb-6">
@@ -104,7 +104,7 @@ const PrizeList = () => {
 
             {/* Repeat for other levels with headings */}
             <div className="mt-16">
-                <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">FINAL LEVEL (NATIONAL LEVEL) (TOTALLY OFFLINE)</h1>
+                <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">FINAL LEVEL (GLOBAL LEVEL) (TOTALLY OFFLINE)</h1>
                 <p className="text-base text-gray-600 mb-6">COMPETITION : IQ AND G.K. BASED</p>
                 <p className="text-base text-gray-600 mb-10"><strong>2nd Prize:</strong></p>
                 <div className="flex flex-wrap justify-center gap-5">
@@ -119,7 +119,7 @@ const PrizeList = () => {
 
             {/* Third Prize */}
             <div className="mt-16">
-                <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">FINAL LEVEL (NATIONAL LEVEL) (TOTALLY OFFLINE)</h1>
+                <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">FINAL LEVEL (GLOBAL LEVEL) (TOTALLY OFFLINE)</h1>
                 <p className="text-base text-gray-600 mb-6">COMPETITION : IQ AND G.K. BASED</p>
                 <p className="text-base text-gray-600 mb-10"><strong>3rd Prize:</strong></p>
                 <div className="flex flex-wrap justify-center gap-5">
@@ -134,7 +134,7 @@ const PrizeList = () => {
 
             {/* FINAL LEVEL NO PRIZE TEXT */}
             <div className="mt-16">
-                <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">FINAL LEVEL (NATIONAL LEVEL) (TOTALLY OFFLINE)</h1>
+                <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">FINAL LEVEL (GLOBAL LEVEL) (TOTALLY OFFLINE)</h1>
                 <p className="text-base text-gray-600 mb-10">COMPETITION : IQ AND G.K. BASED</p>
                 <div className="flex flex-wrap justify-center gap-5">
                     {Allevel.map((img, index) => (

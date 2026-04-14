@@ -48,8 +48,8 @@ const scholarshipPoints = [
     title: "Revolutionary Scholarship Format",
     icon: <Rocket className="w-6 h-6" />,
     color: "from-blue-500 to-cyan-400",
-    text: 'In the Scholarship National Cup you will win one label and one zero will increase in your account. No one has seen or heard such an interesting competition in the world. But only Padho India has been able to organize such an interesting competition.',
-    highlight: 'Scholarship National Cup you will win one label and one zero will increase in your account',
+    text: 'In the Scholarship Global Cup you will win one label and one zero will increase in your account. No one has seen or heard such an interesting competition in the world. But only Padho India has been able to organize such an interesting competition.',
+    highlight: '✨ Key Highlight: Scholarship Global Cup you will win one label and one zero will increase in your account',
     stats: { views: '10K+', participants: '5K+' }
   },
   {
@@ -58,7 +58,7 @@ const scholarshipPoints = [
     icon: <Users className="w-6 h-6" />,
     color: "from-green-500 to-emerald-400",
     text: 'If your child is a student of class one to class twelve, then in order to maintain the equality of examination, to keep transparency, and to give equal rights to all students, a teacher or guardian must sit with the student at the examination table, and how many levels of online examination You will be able to use also google master in that exam. Even too offline must sit the exam with that associate.',
-    highlight: 'a teacher or guardian must sit with the student at the examination table',
+    highlight: '✨ Key Highlight: A teacher or guardian must sit with the student at the examination table',
     stats: { classes: '1-12', mode: 'Online/Offline' }
   },
   {
@@ -66,17 +66,17 @@ const scholarshipPoints = [
     title: "Multiple Attempts Policy",
     icon: <Clock className="w-6 h-6" />,
     color: "from-purple-500 to-pink-400",
-    text: 'Students from any state can appear in this Scholarship National Cup Competition while the state in which the exam will be conducted is for the state. Can take the Exam not once but more than once To participate in the final. There will be no restrictions on anyone here.',
-    highlight: 'Can take the Exam not once but more than once To participate in the final.',
+    text: 'Students from any state can appear in this Scholarship Global Cup Competition while the state in which the exam will be conducted is for the state. Can take the Exam not once but more than once To participate in the final. There will be no restrictions on anyone here.',
+    highlight: '✨ Key Highlight: Can take the Exam not once but more than once to participate in the final',
     stats: { attempts: 'Unlimited', states: 'All India' }
   },
   {
     id: 4,
     title: "Path to Millionaire",
     icon: <Trophy className="w-6 h-6" />,
-    color: "from-yellow-500 to-orange-400",
-    text: 'In this competition there will be qualifying exam and two more levels 1) School / College Level and 2) Block Level online exam. If you can qualify these labels online, then all Two levels 1) District Level and 2) National Level will be offline, all the students who come to take the exam offline will be benefited. At least you will become a millionaire and a Crorepati will definitely be a multi-participant. Coming to take the exam offline means opening up his luck',
-    highlight: 'all the students who come to take the exam offline will be benefited. At least you will become a millionaire and a Crorepati',
+    color: "from-yellow-500 to-green-400",
+    text: 'In this competition there will be qualifying exam and two more levels 1) School / College Level and 2) Block Level online exam. If you can qualify these labels online, then all Two levels 1) District Level and 2) Global Level will be offline, all the students who come to take the exam offline will be benefited.',
+    highlight: '✨ Key Highlight: All students who come to take the exam offline will be benefited. At least you will become a millionaire and a Crorepati',
     stats: { prize: '₹1Cr+', levels: '4 Levels' }
   },
   {
@@ -85,7 +85,7 @@ const scholarshipPoints = [
     icon: <Globe2 className="w-6 h-6" />,
     color: "from-indigo-500 to-blue-400",
     text: 'In this Competition students or public any person can take the exam. If the public champion in this test, then he can use the scholarship for his/her children to study abroad, and if his/her Children does not reach the appropriate place, then he/she will not get this scholarship. This scholarship will then be used for others poor brilliant students.',
-    highlight: 'If the public champion in this test, then he can use the scholarship for his/her children to study abroad',
+    highlight: '✨ Key Highlight: If the public champion in this test, then he can use the scholarship for his/her children to study abroad',
     stats: { age: 'All Ages', benefit: 'Study Abroad' }
   },
   {
@@ -94,7 +94,7 @@ const scholarshipPoints = [
     icon: <Zap className="w-6 h-6" />,
     color: "from-amber-500 to-yellow-400",
     text: 'This competition is full level Based competition, Online Exam winners of each level must get prize within minutes. If there is no level test then no candidate can claim for the next test. That is why those who are winning in each label are being awarded attractively ... as ordered by the authority of KK Padho India Company.',
-    highlight: 'Online Exam winners of each level must get prize within minutes',
+    highlight: '✨ Key Highlight: Online Exam winners of each level must get prize within minutes',
     stats: { payout: 'Instant', type: 'Level Based' }
   },
   {
@@ -103,7 +103,7 @@ const scholarshipPoints = [
     icon: <Target className="w-6 h-6" />,
     color: "from-red-500 to-pink-400",
     text: 'The exam will be conducted as long as the quota limit of this exam is available, if the exam percentage decreases due to any reason then all clear will be distributed according to that percentage, otherwise no commitment will be accepted.',
-    highlight: 'if the exam percentage decreases due to any reason then all clear will be distributed according to that percentage',
+    highlight: '✨ Key Highlight: If the exam percentage decreases due to any reason then all clear will be distributed according to that percentage',
     stats: { quota: 'Limited', fairness: 'Proportional' }
   },
   {
@@ -112,7 +112,7 @@ const scholarshipPoints = [
     icon: <Scale className="w-6 h-6" />,
     color: "from-teal-500 to-green-400",
     text: 'According to the government rules, all the prize money will be paid to the candidates after deducting the tax. In this case, the plea of any candidate will not be accepted in any way.',
-    highlight: 'all the prize money will be paid to the candidates after deducting the tax',
+    highlight: '✨ Key Highlight: All the prize money will be paid to the candidates after deducting the tax',
     stats: { compliance: '100%', legal: 'Govt Approved' }
   },
   {
@@ -120,8 +120,8 @@ const scholarshipPoints = [
     title: "Social Impact Initiative",
     icon: <Heart className="w-6 h-6" />,
     color: "from-rose-500 to-pink-400",
-    text: 'Half of the prize money available to all National Level candidates for this examination will be given to orphans Sick Children and destitute Children Those who will be used for education and food. In this case, all the recipients of the money can also search the details of the donors from our website',
-    highlight: 'National Level candidates for this examination will be given to orphans Sick Children and destitute Children',
+    text: 'Half of the prize money available to all Global Level candidates for this examination will be given to orphans Sick Children and destitute Children Those who will be used for education and food. In this case, all the recipients of the money can also search the details of the donors from our website',
+    highlight: '✨ Key Highlight: Global Level candidates will give 50% prize money to orphans, sick children, and destitute children',
     stats: { donation: '50%', beneficiaries: 'Orphans & Sick' }
   },
   {
@@ -129,8 +129,8 @@ const scholarshipPoints = [
     title: "Transparent Fee Structure",
     icon: <IndianRupee className="w-6 h-6" />,
     color: "from-emerald-500 to-teal-400",
-    text: 'The entry fee that is being taken in this competition is not for any betting or gambling, this little money is being taken for the traveling, lodging, fooding, online maintenance expenses of the students. No student can make any claim for payment of this amount, no person or guardian can make any kind of claim and if they do it will be completely ignored. No one can take legal aid in any form, every student is willing, healthy and able to pay this money. All students are committed to this. And whoever (KK PADHO INDIA) is accepting this money in India is completely legal.',
-    highlight: 'this little money is being taken for the traveling, lodging, fooding, online maintenance expenses of the students',
+    text: 'The entry fee that is being taken in this competition is not for any betting or gambling, this little money is being taken for the traveling, lodging, fooding, online maintenance expenses of the students. No student can make any claim for payment of this amount, no person or guardian can make any kind of claim and if they do it will be completely ignored.',
+    highlight: '✨ Key Highlight: Entry fee is used for traveling, lodging, fooding, and online maintenance expenses of the students',
     stats: { purpose: 'Expenses', legal: 'Fully Compliant' }
   },
 ]
@@ -144,7 +144,7 @@ const FloatingElement = ({ icon, className }) => (
 
 const ScholarshipHighlights = () => {
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-12 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: "linear-gradient(145deg, rgb(84, 159, 237), rgb(71 112 155))" }}>
       
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -160,11 +160,11 @@ const ScholarshipHighlights = () => {
       </div>
 
       {/* Header Section */}
-      <div className="relative max-w-7xl mx-auto mb-16 text-center">
+      <div className="relative max-w-7xl mx-auto mb-16 text-center" >
         {/* Title badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg mb-6 border border-blue-200">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg mb-6 border border-blue-200" >
           <Sparkles className="w-5 h-5 text-yellow-500" />
-          <span className="text-sm font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <span className="text-sm font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent" >
             Scholarship Program 2024
           </span>
           <Gift className="w-4 h-4 text-purple-500" />
@@ -176,34 +176,25 @@ const ScholarshipHighlights = () => {
             KK Padho India's
           </span>
           <br />
-          <span className="text-3xl sm:text-4xl text-gray-800">
+          <span className="text-3xl sm:text-4xl text-black-800">
             Global Scholarship Competition
           </span>
         </h1>
 
         {/* Subtitle with animated underline */}
         <div className="relative inline-block">
-          <p className="text-xl text-gray-600 mb-2">
+          <p className="text-xl text-black-600 mb-2">
             Empowering dreams through{' '}
-            <span className="relative">
-              <span className="relative z-10 font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">
-                education
-              </span>
-              <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-pulse"></span>
+            <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-black-800 to-emerald-800">
+              Education
             </span>
             ,{' '}
-            <span className="relative">
-              <span className="relative z-10 font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                support
-              </span>
-              <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full animate-pulse"></span>
+            <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+              Support
             </span>
             , and{' '}
-            <span className="relative">
-              <span className="relative z-10 font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
-                opportunity
-              </span>
-              <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse"></span>
+            <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
+              Opportunity
             </span>
           </p>
         </div>
@@ -211,13 +202,13 @@ const ScholarshipHighlights = () => {
         {/* Quick stats */}
         <div className="flex flex-wrap justify-center gap-4 mt-8">
           <div className="px-4 py-2 bg-white/70 backdrop-blur-sm rounded-full shadow-sm border border-blue-100">
-            <span className="text-sm font-medium text-gray-700">🎓 10+ Scholarship Rules</span>
+            <span className="text-sm font-medium text-black-700">🎓 10+ Scholarship Rules</span>
           </div>
           <div className="px-4 py-2 bg-white/70 backdrop-blur-sm rounded-full shadow-sm border border-green-100">
-            <span className="text-sm font-medium text-gray-700">💰 Up to ₹1 Crore Prize</span>
+            <span className="text-sm font-medium text-black-700">💰 Up to ₹1 Crore Prize</span>
           </div>
           <div className="px-4 py-2 bg-white/70 backdrop-blur-sm rounded-full shadow-sm border border-purple-100">
-            <span className="text-sm font-medium text-gray-700">🌍 Pan India Participation</span>
+            <span className="text-sm font-medium text-black-700">🌍 Pan India Participation</span>
           </div>
         </div>
       </div>
@@ -235,7 +226,8 @@ const ScholarshipHighlights = () => {
                 bordered={false}
                 className="relative h-full bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-transparent hover:border-blue-200"
                 bodyStyle={{ padding: '24px' }}
-              >
+              style={{ background: "linear-gradient(176deg, rgba(79, 69, 239, 0.59), rgb(90, 217, 255))" }}
+>
                 {/* Gradient background decoration */}
                 <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-br ${item.color} rounded-full filter blur-3xl opacity-10 group-hover:opacity-20 transition-opacity duration-500`}></div>
                 
@@ -251,13 +243,13 @@ const ScholarshipHighlights = () => {
                       <div className={`absolute inset-0 bg-gradient-to-br ${item.color} rounded-2xl filter blur-md opacity-50 group-hover:opacity-75 transition-opacity`}></div>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-800">{item.title}</h3>
+                      <h3 className="text-xl font-bold text-black-800">{item.title}</h3>
                       <div className="flex items-center gap-2 mt-1">
                         <Tag color="blue" className="text-xs px-2 py-0.5 rounded-full">
                           Rule #{item.id}
                         </Tag>
-                        <span className="text-xs text-gray-400">•</span>
-                        <span className="text-xs text-gray-500">Updated 2024</span>
+                        <span className="text-xs text-black-400">•</span>
+                        <span className="text-xs text-black-500">Updated 2024</span>
                       </div>
                     </div>
                   </div>
@@ -269,45 +261,48 @@ const ScholarshipHighlights = () => {
                 </div>
 
                 {/* Main content */}
-                <div className="relative mb-4">
-                  <div className="absolute -left-2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 to-purple-400 rounded-full"></div>
-                  <p className="text-gray-700 text-base leading-relaxed pl-4">
-                    {item.text.split(item.highlight).map((part, i, arr) => (
-                      <React.Fragment key={i}>
-                        {part}
-                        {i < arr.length - 1 && (
-                          <span className="relative inline-block mx-1">
-                            <span className="relative z-10 font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">
-                              {item.highlight}
-                            </span>
-                            <span className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-green-200 to-emerald-200 rounded-full -z-10"></span>
-                          </span>
-                        )}
-                      </React.Fragment>
-                    ))}
-                  </p>
-                </div>
+                {/* Main content */}
+<div className="relative mb-4">
+  <p className="text-white-700 text-base leading-relaxed">
+    {item.text}
+  </p>
+  
+  {/* Highlight section - displayed below on a new line */}
+  {item.highlight && (
+    <div className="mt-3 p-3 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border-l-4 border-blue-500">
+      <div className="flex items-start gap-2">
+        <Star className="w-4 h-4 text-yellow-500 mt-0.5 flex-shrink-0" />
+        <div>
+          <span className="text-xs font-semibold text-blue-600 uppercase tracking-wide">Key Highlight</span>
+          <p className="text-sm font-medium text-gray-800 mt-1">
+            {item.highlight}
+          </p>
+        </div>
+      </div>
+    </div>
+  )}
+</div>
 
                 {/* Stats grid */}
                 <div className="grid grid-cols-2 gap-3 mt-4">
                   {Object.entries(item.stats).map(([key, value]) => (
-                    <div key={key} className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-2 text-center">
-                      <span className="text-xs text-gray-500 capitalize">{key}:</span>
-                      <span className="block text-sm font-bold text-gray-800">{value}</span>
+                    <div key={key} className="bg-gradient-to-r from-black-50 to-black-100 rounded-xl p-2 text-center">
+                      <span className="text-xs text-black-500 capitalize">{key}:</span>
+                      <span className="block text-sm font-bold text-black-800">{value}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Footer actions */}
-                <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
+                <div className="flex items-center justify-between mt-4 pt-4 border-t border-black-100">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-green-500" />
-                    <span className="text-xs text-gray-500">Verified Rule</span>
+                    <CheckCircle2 className="w-4 h-4 text-black-500" />
+                    <span className="text-xs text-black-500">Verified Rule</span>
                   </div>
-                  <button className="flex items-center gap-1 text-xs text-blue-600 hover:text-blue-800 transition-colors group/btn">
-                    <span>Learn More</span>
-                    <span className="transform group-hover/btn:translate-x-1 transition-transform">→</span>
-                  </button>
+                   <button className="flex items-center gap-1 text-xs text-white bg-green-600 hover:bg-green-700 rounded-lg px-3 py-1.5 transition-all duration-300 group/btn">
+                  <span>Learn More</span>
+                  <span className="transform group-hover/btn:translate-x-1 transition-transform">→</span>
+                </button>
                 </div>
 
                 {/* Corner decoration */}
@@ -324,22 +319,22 @@ const ScholarshipHighlights = () => {
 
       {/* Footer Section */}
       <footer className="relative max-w-7xl mx-auto mt-16">
-        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-blue-100">
+        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-blue-100" style={{ background: "linear-gradient(rgb(163 255 255))" }}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Contact info */}
             <div className="text-center md:text-left">
-              <h4 className="font-bold text-gray-800 mb-3 flex items-center justify-center md:justify-start gap-2">
+              <h4 className="font-bold text-black-800 mb-3 flex items-center justify-center md:justify-start gap-2">
                 <Phone className="w-4 h-4 text-blue-500" />
                 Contact Support
               </h4>
-              <p className="text-sm text-gray-600 mb-1">📞 +91 1234567890</p>
-              <p className="text-sm text-gray-600">✉️ support@kkpadhoindia.com</p>
+              <p className="text-sm text-black-600 mb-1">📞 +91 1234567890</p>
+              <p className="text-sm text-black-600">✉️ support@kkpadhoindia.com</p>
             </div>
 
             {/* Website link */}
             <div className="text-center">
-              <h4 className="font-bold text-gray-800 mb-3 flex items-center justify-center gap-2">
-                <Globe className="w-4 h-4 text-green-500" />
+              <h4 className="font-bold text-black-800 mb-3 flex items-center justify-center gap-2">
+                <Globe className="w-4 h-4 text-black-500" />
                 Official Website
               </h4>
               <a 
@@ -355,25 +350,25 @@ const ScholarshipHighlights = () => {
 
             {/* Social impact */}
             <div className="text-center md:text-right">
-              <h4 className="font-bold text-gray-800 mb-3 flex items-center justify-center md:justify-end gap-2">
+              <h4 className="font-bold text-black-800 mb-3 flex items-center justify-center md:justify-end gap-2">
                 <Heart className="w-4 h-4 text-red-500" />
                 Social Initiative
               </h4>
-              <p className="text-sm text-gray-600">Supporting Orphans & Destitute Children</p>
-              <p className="text-xs text-gray-400 mt-1">50% Prize Money Donated</p>
+              <p className="text-sm text-black-600">Supporting Orphans & Destitute Children</p>
+              <p className="text-xs text-black-400 mt-1">50% Prize Money Donated</p>
             </div>
           </div>
 
           {/* Divider */}
-          <Divider className="my-6 border-gray-200" />
+          <Divider className="my-6 border-black-200" />
 
           {/* Bottom note */}
           <div className="text-center">
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-black-400">
               ⚖️ This scholarship program is fully compliant with Government of India regulations. 
               All prizes are subject to applicable tax deductions.
             </p>
-            <p className="text-xs text-gray-400 mt-2">
+            <p className="text-xs text-black-400 mt-2">
               © 2024 KK Padho India. All rights reserved. | v2.0.0
             </p>
           </div>

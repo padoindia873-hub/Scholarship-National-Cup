@@ -75,7 +75,7 @@ const facilities = [
   },
   {
     id: 4,
-    title: "National Level Top School",
+    title: "Global Level Top School",
     description:
       "Personalized coaching sessions tailored to accelerate individual growth and academic performance.",
     icon: <FaChalkboardTeacher />,
@@ -110,7 +110,7 @@ const facilities = [
       "Interactive, curriculum-based online classes for students from classes 5 to 12 absolutely free.",
     icon: <FaBookReader />,
     img: img7,
-    iconColor: "text-orange-500",
+    iconColor: "text-green-500",
      ls:"freeonlinetuition",
   },
   {

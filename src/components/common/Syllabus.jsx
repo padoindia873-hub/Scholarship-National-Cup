@@ -141,8 +141,8 @@ const syllabusData = [
     subtitle: 'District Level',
     mode: 'Offline Competition',
     icon: <Medal className="w-6 h-6" />,
-    color: 'from-orange-400 to-red-500',
-    badgeColor: 'orange',
+    color: 'from-green-400 to-red-500',
+    badgeColor: 'green',
     subjects: [
       { name: 'GK', icon: <Globe className="w-4 h-4" /> },
       { name: 'Academy', icon: <GraduationCap className="w-4 h-4" /> }
@@ -242,11 +242,11 @@ const Syllabus = () => {
       purple: 'bg-purple-100 text-purple-600 text-purple-700',
       yellow: 'bg-yellow-100 text-yellow-600 text-yellow-700',
     }
-    return colorClasses[color] || 'bg-gray-100 text-gray-600 text-gray-700'
+    return colorClasses[color] || 'bg-black-100 text-black-600 text-black-700'
   }
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 py-8 sm:py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 py-8 sm:py-12 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: "linear-gradient(176deg, rgb(72 139 243), rgb(0 68 43 / 59%))" }} >
       
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -258,11 +258,11 @@ const Syllabus = () => {
       {/* Header Section */}
       <div className="relative mb-12 text-center">
         {/* Decorative elements */}
-        <div className="absolute left-1/2 -translate-x-1/2 -top-6 w-32 h-32 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full filter blur-3xl opacity-30 animate-pulse"></div>
+        <div className="absolute left-1/2 -translate-x-1/2 -top-6 w-32 h-32 bg-gradient-to-r from-yellow-400 to-green-400 rounded-full filter blur-3xl opacity-30 animate-pulse"></div>
         
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg mb-4">
           <Sparkles className="w-5 h-5 text-yellow-500" />
-          <span className="text-sm font-semibold text-gray-700">2024 Edition</span>
+          <span className="text-sm font-semibold text-black-700">2024 Edition</span>
         </div>
 
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-3">
@@ -270,19 +270,19 @@ const Syllabus = () => {
             KK Padho India
           </span>
           <br />
-          <span className="text-2xl sm:text-3xl text-gray-700">Global Scholarship Competition</span>
+          <span className="text-2xl sm:text-3xl text-blue-700">Global Scholarship Competition</span>
         </h1>
 
-        <div className="flex items-center justify-center gap-2 text-gray-600">
+        <div className="flex items-center justify-center gap-2 text-black-600">
           <Rocket className="w-5 h-5 text-purple-500" />
           <p className="text-lg">
-            From <span className="font-bold text-yellow-600">School</span> to{' '}
-            <span className="font-bold text-yellow-600">State Level</span>
+            From <span className="font-bold text-blue-600">School</span> to{' '}
+            <span className="font-bold text-blue-600">State Level</span>
           </p>
           <Target className="w-5 h-5 text-purple-500" />
         </div>
 
-        <p className="text-gray-500 mt-2 italic">
+        <p className="text-black-500 mt-2 italic">
           Unlock Knowledge at Every Step
         </p>
 
@@ -304,7 +304,7 @@ const Syllabus = () => {
       </div>
 
       {/* Main Grid */}
-      <div className="relative grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
+      <div className="relative grid gap-8 lg:grid-cols-2 xl:grid-cols-3" >
         {syllabusData.map((section, index) => (
           <div
             key={index}
@@ -324,7 +324,7 @@ const Syllabus = () => {
                 animate-fadeInUp
               `}
               bodyStyle={{ padding: '1.5rem' }}
-            >
+            style={{ background: "linear-gradient(176deg, rgb(79 69 239 / 59%), rgb(90, 217, 255))" }}>
               {/* Card header with gradient */}
               <div className="relative mb-6">
                 {/* Background decoration */}
@@ -337,9 +337,9 @@ const Syllabus = () => {
                       <span className="text-white">{section.icon}</span>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-800">{section.level}</h3>
+                      <h3 className="text-xl font-bold text-black-800">{section.level}</h3>
                       {section.subtitle && (
-                        <p className="text-sm text-gray-500">{section.subtitle}</p>
+                        <p className="text-sm text-black-500">{section.subtitle}</p>
                       )}
                     </div>
                   </div>
@@ -356,7 +356,7 @@ const Syllabus = () => {
                 {/* Progress indicator */}
                 <div className="mt-4 flex items-center gap-2">
                   <LevelProgress level={section.level} />
-                  <span className="text-xs text-gray-400">Level Progress</span>
+                  <span className="text-xs text-black-400">Level Progress</span>
                 </div>
               </div>
 
@@ -373,7 +373,7 @@ const Syllabus = () => {
               </div>
 
               {/* Footer stats */}
-              <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between text-sm text-gray-500">
+              <div className="mt-6 pt-4 border-t border-black-100 flex items-center justify-between text-sm text-black-500">
                 <div className="flex items-center gap-1">
                   <BookOpen className="w-4 h-4" />
                   <span>{section.subjects.length} Subjects</span>
@@ -386,7 +386,7 @@ const Syllabus = () => {
 
               {/* Corner decoration */}
               <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden">
-                <div className="absolute top-0 right-0 transform rotate-45 translate-x-8 translate-y-[-8px] bg-gradient-to-r from-yellow-400 to-orange-400 px-8 py-1 text-xs text-white font-bold shadow-lg">
+                <div className="absolute top-0 right-0 transform rotate-45 translate-x-8 translate-y-[-8px] bg-gradient-to-r from-yellow-400 to-green-400 px-8 py-1 text-xs text-white font-bold shadow-lg">
                   {index + 1}
                 </div>
               </div>
@@ -413,7 +413,7 @@ const Syllabus = () => {
         </div>
 
         {/* Tip message */}
-        <p className="mt-6 text-sm text-gray-400">
+        <p className="mt-6 text-sm text-black-400">
           💡 Click on any subject to explore detailed syllabus
         </p>
       </footer>

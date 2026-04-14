@@ -5,17 +5,17 @@ import logo from "../../assets/CGL.png"; // Replace with your logo path
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-gray-800 py-12 border-t border-blue-500">
+    <footer className="bg-white text-gray-800 py-12 border-t border-blue-500" style={{ background: "linear-gradient(2deg, rgb(94 7 233 / 48%), rgb(13 188 255 / 59%))" }}>
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
         
         {/* Footer Layout */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           
           {/* Left Section: Larger Logo & Description */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4" >
             <img src={logo} alt="Logo" className="h-24 w-24 object-contain" /> {/* Increased Logo Size */}
             <div>
-              <p className="text-gray-600 mt-5 max-w-sm">
+              <p className="text-black-600 mt-5 max-w-sm">
                 Empowering students through <span className="text-blue-500 font-medium">free education</span> and exclusive scholarships.
               </p>
             </div>
@@ -27,22 +27,22 @@ const Footer = () => {
             {/* Navigation Links */}
             <div className="flex flex-col gap-4">
               <div className="flex gap-6">
-                <Link to="/" className="text-gray-600 hover:text-blue-500 transition-colors">
+                <Link to="/" className="text-black-600 hover:text-blue-500 transition-colors">
                   Home
                 </Link>
-                <Link to="/about" className="text-gray-600 hover:text-blue-500 transition-colors">
+                <Link to="/about" className="text-black-600 hover:text-blue-500 transition-colors">
                   About
                 </Link>
-                <Link to="/scholarship" className="text-gray-600 hover:text-blue-500 transition-colors">
+                <Link to="/scholarship" className="text-black-600 hover:text-blue-500 transition-colors">
                   Scholarships
                 </Link>
-                <Link to="/contact" className="text-gray-600 hover:text-blue-500 transition-colors">
+                <Link to="/contact" className="text-black-600 hover:text-blue-500 transition-colors">
                   Contact
                 </Link>
               </div>
 
               {/* Contact Info Below Navigation Links */}
-              <div className="flex flex-col gap-2 mt-4 text-gray-600 text-sm">
+              <div className="flex flex-col gap-2 mt-4 text-black-600 text-sm">
                 <div className="flex items-center gap-2">
                   <FaPhone className="text-blue-500" />
                   <span>+91 9123744290</span>
@@ -83,7 +83,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright Section */}
-        <div className="text-center mt-8 text-gray-500 text-sm">
+        <div className="text-center mt-8 text-black-500 text-sm">
           &copy; {new Date().getFullYear()} All Rights Reserved.
         </div>
 

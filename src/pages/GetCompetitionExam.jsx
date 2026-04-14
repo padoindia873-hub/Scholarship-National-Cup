@@ -7,9 +7,9 @@ const GetCompetitionExam = () => {
       {/* ===== SECTION 1: Learn to Code ===== */}
       <div className="relative flex flex-col items-center justify-center min-h-screen w-full bg-[#2b2f3a] text-white p-6">
         <div className="z-10">
-          <h1 className="text-4xl font-bold mb-3">Scholarship National Cup </h1>
+          <h1 className="text-4xl font-bold mb-3">Scholarship Global Cup </h1>
           <p className="text-yellow-400 mb-10 text-lg">
-          159 Crorepatis Will Become in a Competition  
+          159 Crorepaties Will Become in a Competition  
           </p>
 
           {/* Search bar */}
@@ -165,7 +165,7 @@ const GetCompetitionExam = () => {
       <div className="flex flex-col items-center justify-center min-h-screen w-full bg-[#ffb3b3] text-center p-6">
         <h1 className="text-5xl font-extrabold text-black mb-4">District Level (Offline)</h1>
         <p className="text-gray-800 text-lg mb-10">
-         Chance For National Level
+         Chance For Global Level
         </p>
 <div className="flex flex-col gap-4 w-full max-w-xs">
           <button className="bg-green-500 text-white font-semibold py-3 rounded-full hover:bg-green-600 transition">
@@ -207,7 +207,7 @@ const GetCompetitionExam = () => {
       </div>
         {/* ===== SECTION 6: HTML Section ===== */}
       <div className="flex flex-col items-center justify-center min-h-screen w-full bg-[#C9FFB3FF] text-center p-6">
-        <h1 className="text-5xl font-extrabold text-black mb-4">National Level (Offline)</h1>
+        <h1 className="text-5xl font-extrabold text-black mb-4">Global Level (Offline)</h1>
         <p className="text-gray-800 text-lg mb-10">
           Chance For Scholarship Asia Cup 
         </p>

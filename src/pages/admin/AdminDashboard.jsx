@@ -67,7 +67,7 @@ const AdminDashboard = () => {
     {label: "Block Level" , score : 70}, 
     {label: "District Level (Offline)" , score : 60},
     {label: "State Level (Offline)" , score : 50},
-    {label: "National Level (Offline)" , score : 40},
+    {label: "Global Level (Offline)" , score : 40},
 
   ]
 
